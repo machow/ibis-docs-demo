@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.361">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>. – expr.datatypes.core</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">.</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html" rel="" target="">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../reference/index.html" rel="" target="">
+ <span class="menu-text">Reference</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#ibis.expr.datatypes.core" id="toc-ibis.expr.datatypes.core" class="nav-link active" data-scroll-target="#ibis.expr.datatypes.core">expr.datatypes.core</a>
+  <ul class="collapse">
+  <li><a href="#classes" id="toc-classes" class="nav-link" data-scroll-target="#classes">Classes</a>
+  <ul class="collapse">
+  <li><a href="#ibis.expr.datatypes.core.Array" id="toc-ibis.expr.datatypes.core.Array" class="nav-link" data-scroll-target="#ibis.expr.datatypes.core.Array">Array</a></li>
+  <li><a href="#ibis.expr.datatypes.core.Binary" id="toc-ibis.expr.datatypes.core.Binary" class="nav-link" data-scroll-target="#ibis.expr.datatypes.core.Binary">Binary</a></li>
+  <li><a href="#ibis.expr.datatypes.core.Boolean" id="toc-ibis.expr.datatypes.core.Boolean" class="nav-link" data-scroll-target="#ibis.expr.datatypes.core.Boolean">Boolean</a></li>
+  <li><a href="#ibis.expr.datatypes.core.Bounds" id="toc-ibis.expr.datatypes.core.Bounds" class="nav-link" data-scroll-target="#ibis.expr.datatypes.core.Bounds">Bounds</a></li>
+  <li><a href="#ibis.expr.datatypes.core.DataType" id="toc-ibis.expr.datatypes.core.DataType" class="nav-link" data-scroll-target="#ibis.expr.datatypes.core.DataType">DataType</a></li>
+  <li><a href="#ibis.expr.datatypes.core.Date" id="toc-ibis.expr.datatypes.core.Date" class="nav-link" data-scroll-target="#ibis.expr.datatypes.core.Date">Date</a></li>
+  <li><a href="#ibis.expr.datatypes.core.Decimal" id="toc-ibis.expr.datatypes.core.Decimal" class="nav-link" data-scroll-target="#ibis.expr.datatypes.core.Decimal">Decimal</a></li>
+  <li><a href="#ibis.expr.datatypes.core.Float16" id="toc-ibis.expr.datatypes.core.Float16" class="nav-link" data-scroll-target="#ibis.expr.datatypes.core.Float16">Float16</a></li>
+  <li><a href="#ibis.expr.datatypes.core.Float32" id="toc-ibis.expr.datatypes.core.Float32" class="nav-link" data-scroll-target="#ibis.expr.datatypes.core.Float32">Float32</a></li>
+  <li><a href="#ibis.expr.datatypes.core.Float64" id="toc-ibis.expr.datatypes.core.Float64" class="nav-link" data-scroll-target="#ibis.expr.datatypes.core.Float64">Float64</a></li>
+  <li><a href="#ibis.expr.datatypes.core.Floating" id="toc-ibis.expr.datatypes.core.Floating" class="nav-link" data-scroll-target="#ibis.expr.datatypes.core.Floating">Floating</a></li>
+  <li><a href="#ibis.expr.datatypes.core.GeoSpatial" id="toc-ibis.expr.datatypes.core.GeoSpatial" class="nav-link" data-scroll-target="#ibis.expr.datatypes.core.GeoSpatial">GeoSpatial</a></li>
+  <li><a href="#ibis.expr.datatypes.core.INET" id="toc-ibis.expr.datatypes.core.INET" class="nav-link" data-scroll-target="#ibis.expr.datatypes.core.INET">INET</a></li>
+  <li><a href="#ibis.expr.datatypes.core.Int16" id="toc-ibis.expr.datatypes.core.Int16" class="nav-link" data-scroll-target="#ibis.expr.datatypes.core.Int16">Int16</a></li>
+  <li><a href="#ibis.expr.datatypes.core.Int32" id="toc-ibis.expr.datatypes.core.Int32" class="nav-link" data-scroll-target="#ibis.expr.datatypes.core.Int32">Int32</a></li>
+  <li><a href="#ibis.expr.datatypes.core.Int64" id="toc-ibis.expr.datatypes.core.Int64" class="nav-link" data-scroll-target="#ibis.expr.datatypes.core.Int64">Int64</a></li>
+  <li><a href="#ibis.expr.datatypes.core.Int8" id="toc-ibis.expr.datatypes.core.Int8" class="nav-link" data-scroll-target="#ibis.expr.datatypes.core.Int8">Int8</a></li>
+  <li><a href="#ibis.expr.datatypes.core.Integer" id="toc-ibis.expr.datatypes.core.Integer" class="nav-link" data-scroll-target="#ibis.expr.datatypes.core.Integer">Integer</a></li>
+  <li><a href="#ibis.expr.datatypes.core.Interval" id="toc-ibis.expr.datatypes.core.Interval" class="nav-link" data-scroll-target="#ibis.expr.datatypes.core.Interval">Interval</a></li>
+  <li><a href="#ibis.expr.datatypes.core.JSON" id="toc-ibis.expr.datatypes.core.JSON" class="nav-link" data-scroll-target="#ibis.expr.datatypes.core.JSON">JSON</a></li>
+  <li><a href="#ibis.expr.datatypes.core.LineString" id="toc-ibis.expr.datatypes.core.LineString" class="nav-link" data-scroll-target="#ibis.expr.datatypes.core.LineString">LineString</a></li>
+  <li><a href="#ibis.expr.datatypes.core.MACADDR" id="toc-ibis.expr.datatypes.core.MACADDR" class="nav-link" data-scroll-target="#ibis.expr.datatypes.core.MACADDR">MACADDR</a></li>
+  <li><a href="#ibis.expr.datatypes.core.Map" id="toc-ibis.expr.datatypes.core.Map" class="nav-link" data-scroll-target="#ibis.expr.datatypes.core.Map">Map</a></li>
+  <li><a href="#ibis.expr.datatypes.core.MultiLineString" id="toc-ibis.expr.datatypes.core.MultiLineString" class="nav-link" data-scroll-target="#ibis.expr.datatypes.core.MultiLineString">MultiLineString</a></li>
+  <li><a href="#ibis.expr.datatypes.core.MultiPoint" id="toc-ibis.expr.datatypes.core.MultiPoint" class="nav-link" data-scroll-target="#ibis.expr.datatypes.core.MultiPoint">MultiPoint</a></li>
+  <li><a href="#ibis.expr.datatypes.core.MultiPolygon" id="toc-ibis.expr.datatypes.core.MultiPolygon" class="nav-link" data-scroll-target="#ibis.expr.datatypes.core.MultiPolygon">MultiPolygon</a></li>
+  <li><a href="#ibis.expr.datatypes.core.Null" id="toc-ibis.expr.datatypes.core.Null" class="nav-link" data-scroll-target="#ibis.expr.datatypes.core.Null">Null</a></li>
+  <li><a href="#ibis.expr.datatypes.core.Numeric" id="toc-ibis.expr.datatypes.core.Numeric" class="nav-link" data-scroll-target="#ibis.expr.datatypes.core.Numeric">Numeric</a></li>
+  <li><a href="#ibis.expr.datatypes.core.Parametric" id="toc-ibis.expr.datatypes.core.Parametric" class="nav-link" data-scroll-target="#ibis.expr.datatypes.core.Parametric">Parametric</a></li>
+  <li><a href="#ibis.expr.datatypes.core.Point" id="toc-ibis.expr.datatypes.core.Point" class="nav-link" data-scroll-target="#ibis.expr.datatypes.core.Point">Point</a></li>
+  <li><a href="#ibis.expr.datatypes.core.Polygon" id="toc-ibis.expr.datatypes.core.Polygon" class="nav-link" data-scroll-target="#ibis.expr.datatypes.core.Polygon">Polygon</a></li>
+  <li><a href="#ibis.expr.datatypes.core.Primitive" id="toc-ibis.expr.datatypes.core.Primitive" class="nav-link" data-scroll-target="#ibis.expr.datatypes.core.Primitive">Primitive</a></li>
+  <li><a href="#ibis.expr.datatypes.core.SignedInteger" id="toc-ibis.expr.datatypes.core.SignedInteger" class="nav-link" data-scroll-target="#ibis.expr.datatypes.core.SignedInteger">SignedInteger</a></li>
+  <li><a href="#ibis.expr.datatypes.core.String" id="toc-ibis.expr.datatypes.core.String" class="nav-link" data-scroll-target="#ibis.expr.datatypes.core.String">String</a></li>
+  <li><a href="#ibis.expr.datatypes.core.Struct" id="toc-ibis.expr.datatypes.core.Struct" class="nav-link" data-scroll-target="#ibis.expr.datatypes.core.Struct">Struct</a></li>
+  <li><a href="#ibis.expr.datatypes.core.Temporal" id="toc-ibis.expr.datatypes.core.Temporal" class="nav-link" data-scroll-target="#ibis.expr.datatypes.core.Temporal">Temporal</a></li>
+  <li><a href="#ibis.expr.datatypes.core.Time" id="toc-ibis.expr.datatypes.core.Time" class="nav-link" data-scroll-target="#ibis.expr.datatypes.core.Time">Time</a></li>
+  <li><a href="#ibis.expr.datatypes.core.Timestamp" id="toc-ibis.expr.datatypes.core.Timestamp" class="nav-link" data-scroll-target="#ibis.expr.datatypes.core.Timestamp">Timestamp</a></li>
+  <li><a href="#ibis.expr.datatypes.core.UInt16" id="toc-ibis.expr.datatypes.core.UInt16" class="nav-link" data-scroll-target="#ibis.expr.datatypes.core.UInt16">UInt16</a></li>
+  <li><a href="#ibis.expr.datatypes.core.UInt32" id="toc-ibis.expr.datatypes.core.UInt32" class="nav-link" data-scroll-target="#ibis.expr.datatypes.core.UInt32">UInt32</a></li>
+  <li><a href="#ibis.expr.datatypes.core.UInt64" id="toc-ibis.expr.datatypes.core.UInt64" class="nav-link" data-scroll-target="#ibis.expr.datatypes.core.UInt64">UInt64</a></li>
+  <li><a href="#ibis.expr.datatypes.core.UInt8" id="toc-ibis.expr.datatypes.core.UInt8" class="nav-link" data-scroll-target="#ibis.expr.datatypes.core.UInt8">UInt8</a></li>
+  <li><a href="#ibis.expr.datatypes.core.UUID" id="toc-ibis.expr.datatypes.core.UUID" class="nav-link" data-scroll-target="#ibis.expr.datatypes.core.UUID">UUID</a></li>
+  <li><a href="#ibis.expr.datatypes.core.Unknown" id="toc-ibis.expr.datatypes.core.Unknown" class="nav-link" data-scroll-target="#ibis.expr.datatypes.core.Unknown">Unknown</a></li>
+  <li><a href="#ibis.expr.datatypes.core.UnsignedInteger" id="toc-ibis.expr.datatypes.core.UnsignedInteger" class="nav-link" data-scroll-target="#ibis.expr.datatypes.core.UnsignedInteger">UnsignedInteger</a></li>
+  <li><a href="#ibis.expr.datatypes.core.Variadic" id="toc-ibis.expr.datatypes.core.Variadic" class="nav-link" data-scroll-target="#ibis.expr.datatypes.core.Variadic">Variadic</a></li>
+  </ul></li>
+  <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions">Functions</a>
+  <ul class="collapse">
+  <li><a href="#ibis.expr.datatypes.core.dtype" id="toc-ibis.expr.datatypes.core.dtype" class="nav-link" data-scroll-target="#ibis.expr.datatypes.core.dtype">dtype</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+<section id="ibis.expr.datatypes.core" class="level1">
+<h1>expr.datatypes.core</h1>
+<p><code>expr.datatypes.core</code></p>
+<section id="classes" class="level2">
+<h2 class="anchored" data-anchor-id="classes">Classes</h2>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="#ibis.expr.datatypes.core.Array">Array</a></td>
+<td>Array values.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.datatypes.core.Binary">Binary</a></td>
+<td>A type representing a sequence of bytes.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.datatypes.core.Boolean">Boolean</a></td>
+<td>[<code>True</code>][True] or [<code>False</code>][False] values.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.datatypes.core.Bounds">Bounds</a></td>
+<td>The lower and upper bound of a fixed-size value.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.datatypes.core.DataType">DataType</a></td>
+<td>Base class for all data types.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.datatypes.core.Date">Date</a></td>
+<td>Date values.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.datatypes.core.Decimal">Decimal</a></td>
+<td>Fixed-precision decimal values.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.datatypes.core.Float16">Float16</a></td>
+<td>16-bit floating point numbers.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.datatypes.core.Float32">Float32</a></td>
+<td>32-bit floating point numbers.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.datatypes.core.Float64">Float64</a></td>
+<td>64-bit floating point numbers.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.datatypes.core.Floating">Floating</a></td>
+<td>Floating point values.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.datatypes.core.GeoSpatial">GeoSpatial</a></td>
+<td>Geospatial values.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.datatypes.core.INET">INET</a></td>
+<td>IP addresses.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.datatypes.core.Int16">Int16</a></td>
+<td>Signed 16-bit integers.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.datatypes.core.Int32">Int32</a></td>
+<td>Signed 32-bit integers.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.datatypes.core.Int64">Int64</a></td>
+<td>Signed 64-bit integers.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.datatypes.core.Int8">Int8</a></td>
+<td>Signed 8-bit integers.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.datatypes.core.Integer">Integer</a></td>
+<td>Integer values.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.datatypes.core.Interval">Interval</a></td>
+<td>Interval values.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.datatypes.core.JSON">JSON</a></td>
+<td>JSON values.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.datatypes.core.LineString">LineString</a></td>
+<td>A sequence of 2 or more points.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.datatypes.core.MACADDR">MACADDR</a></td>
+<td>Media Access Control (MAC) address of a network interface.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.datatypes.core.Map">Map</a></td>
+<td>Associative array values.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.datatypes.core.MultiLineString">MultiLineString</a></td>
+<td>A set of one or more line strings.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.datatypes.core.MultiPoint">MultiPoint</a></td>
+<td>A set of one or more points.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.datatypes.core.MultiPolygon">MultiPolygon</a></td>
+<td>A set of one or more polygons.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.datatypes.core.Null">Null</a></td>
+<td>Null values.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.datatypes.core.Numeric">Numeric</a></td>
+<td>Numeric types.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.datatypes.core.Parametric">Parametric</a></td>
+<td>Types that can be parameterized.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.datatypes.core.Point">Point</a></td>
+<td>A point described by two coordinates.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.datatypes.core.Polygon">Polygon</a></td>
+<td>A set of one or more closed line strings.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.datatypes.core.Primitive">Primitive</a></td>
+<td>Values with known size.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.datatypes.core.SignedInteger">SignedInteger</a></td>
+<td>Signed integer values.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.datatypes.core.String">String</a></td>
+<td>A type representing a string.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.datatypes.core.Struct">Struct</a></td>
+<td>Structured values.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.datatypes.core.Temporal">Temporal</a></td>
+<td>Data types related to time.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.datatypes.core.Time">Time</a></td>
+<td>Time values.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.datatypes.core.Timestamp">Timestamp</a></td>
+<td>Timestamp values.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.datatypes.core.UInt16">UInt16</a></td>
+<td>Unsigned 16-bit integers.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.datatypes.core.UInt32">UInt32</a></td>
+<td>Unsigned 32-bit integers.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.datatypes.core.UInt64">UInt64</a></td>
+<td>Unsigned 64-bit integers.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.datatypes.core.UInt8">UInt8</a></td>
+<td>Unsigned 8-bit integers.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.datatypes.core.UUID">UUID</a></td>
+<td>A 128-bit number used to identify information in computer systems.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.datatypes.core.Unknown">Unknown</a></td>
+<td>An unknown type.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.datatypes.core.UnsignedInteger">UnsignedInteger</a></td>
+<td>Unsigned integer values.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.datatypes.core.Variadic">Variadic</a></td>
+<td>Values with unknown size.</td>
+</tr>
+</tbody>
+</table>
+<section id="ibis.expr.datatypes.core.Array" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.datatypes.core.Array">Array</h3>
+<p><code>expr.datatypes.core.Array()</code></p>
+<p>Array values.</p>
+</section>
+<section id="ibis.expr.datatypes.core.Binary" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.datatypes.core.Binary">Binary</h3>
+<p><code>expr.datatypes.core.Binary()</code></p>
+<section id="notes" class="level4">
+<h4 class="anchored" data-anchor-id="notes">Notes</h4>
+<p>Some databases treat strings and blobs of equally, and some do not.</p>
+<p>For example, Impala doesn’t make a distinction between string and binary types but PostgreSQL has a <code>TEXT</code> type and a <code>BYTEA</code> type which are distinct types that have different behavior.</p>
+</section>
+</section>
+<section id="ibis.expr.datatypes.core.Boolean" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.datatypes.core.Boolean">Boolean</h3>
+<p><code>expr.datatypes.core.Boolean()</code></p>
+<p>[<code>True</code>][True] or [<code>False</code>][False] values.</p>
+</section>
+<section id="ibis.expr.datatypes.core.Bounds" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.datatypes.core.Bounds">Bounds</h3>
+<p><code>expr.datatypes.core.Bounds()</code></p>
+<p>The lower and upper bound of a fixed-size value.</p>
+</section>
+<section id="ibis.expr.datatypes.core.DataType" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.datatypes.core.DataType">DataType</h3>
+<p><code>expr.datatypes.core.DataType()</code></p>
+<p>Base class for all data types.</p>
+<p>[<code>DataType</code>][ibis.expr.datatypes.DataType] instances are immutable.</p>
+<section id="attributes" class="level4">
+<h4 class="anchored" data-anchor-id="attributes">Attributes</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="#ibis.expr.datatypes.core.DataType.name">name</a></td>
+<td>Return the name of the data type.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods" class="level4">
+<h4 class="anchored" data-anchor-id="methods">Methods</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="#ibis.expr.datatypes.core.DataType.from_dask">from_dask</a></td>
+<td>Return the equivalent ibis datatype.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.datatypes.core.DataType.from_numpy">from_numpy</a></td>
+<td>Return the equivalent ibis datatype.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.datatypes.core.DataType.from_pandas">from_pandas</a></td>
+<td>Return the equivalent ibis datatype.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.datatypes.core.DataType.from_pyarrow">from_pyarrow</a></td>
+<td>Return the equivalent ibis datatype.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.datatypes.core.DataType.to_dask">to_dask</a></td>
+<td>Return the equivalent dask datatype.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.datatypes.core.DataType.to_numpy">to_numpy</a></td>
+<td>Return the equivalent numpy datatype.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.datatypes.core.DataType.to_pandas">to_pandas</a></td>
+<td>Return the equivalent pandas datatype.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.datatypes.core.DataType.to_pyarrow">to_pyarrow</a></td>
+<td>Return the equivalent pyarrow datatype.</td>
+</tr>
+</tbody>
+</table>
+<section id="ibis.expr.datatypes.core.DataType.from_dask" class="level5">
+<h5 class="anchored" data-anchor-id="ibis.expr.datatypes.core.DataType.from_dask">from_dask</h5>
+<p><code>expr.datatypes.core.DataType.from_dask(cls, dask_type, nullable=True)</code></p>
+<p>Return the equivalent ibis datatype.</p>
+</section>
+<section id="ibis.expr.datatypes.core.DataType.from_numpy" class="level5">
+<h5 class="anchored" data-anchor-id="ibis.expr.datatypes.core.DataType.from_numpy">from_numpy</h5>
+<p><code>expr.datatypes.core.DataType.from_numpy(cls, numpy_type, nullable=True)</code></p>
+<p>Return the equivalent ibis datatype.</p>
+</section>
+<section id="ibis.expr.datatypes.core.DataType.from_pandas" class="level5">
+<h5 class="anchored" data-anchor-id="ibis.expr.datatypes.core.DataType.from_pandas">from_pandas</h5>
+<p><code>expr.datatypes.core.DataType.from_pandas(cls, pandas_type, nullable=True)</code></p>
+<p>Return the equivalent ibis datatype.</p>
+</section>
+<section id="ibis.expr.datatypes.core.DataType.from_pyarrow" class="level5">
+<h5 class="anchored" data-anchor-id="ibis.expr.datatypes.core.DataType.from_pyarrow">from_pyarrow</h5>
+<p><code>expr.datatypes.core.DataType.from_pyarrow(cls, arrow_type, nullable=True)</code></p>
+<p>Return the equivalent ibis datatype.</p>
+</section>
+<section id="ibis.expr.datatypes.core.DataType.to_dask" class="level5">
+<h5 class="anchored" data-anchor-id="ibis.expr.datatypes.core.DataType.to_dask">to_dask</h5>
+<p><code>expr.datatypes.core.DataType.to_dask(self)</code></p>
+<p>Return the equivalent dask datatype.</p>
+</section>
+<section id="ibis.expr.datatypes.core.DataType.to_numpy" class="level5">
+<h5 class="anchored" data-anchor-id="ibis.expr.datatypes.core.DataType.to_numpy">to_numpy</h5>
+<p><code>expr.datatypes.core.DataType.to_numpy(self)</code></p>
+<p>Return the equivalent numpy datatype.</p>
+</section>
+<section id="ibis.expr.datatypes.core.DataType.to_pandas" class="level5">
+<h5 class="anchored" data-anchor-id="ibis.expr.datatypes.core.DataType.to_pandas">to_pandas</h5>
+<p><code>expr.datatypes.core.DataType.to_pandas(self)</code></p>
+<p>Return the equivalent pandas datatype.</p>
+</section>
+<section id="ibis.expr.datatypes.core.DataType.to_pyarrow" class="level5">
+<h5 class="anchored" data-anchor-id="ibis.expr.datatypes.core.DataType.to_pyarrow">to_pyarrow</h5>
+<p><code>expr.datatypes.core.DataType.to_pyarrow(self)</code></p>
+<p>Return the equivalent pyarrow datatype.</p>
+</section>
+</section>
+</section>
+<section id="ibis.expr.datatypes.core.Date" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.datatypes.core.Date">Date</h3>
+<p><code>expr.datatypes.core.Date()</code></p>
+<p>Date values.</p>
+</section>
+<section id="ibis.expr.datatypes.core.Decimal" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.datatypes.core.Decimal">Decimal</h3>
+<p><code>expr.datatypes.core.Decimal(self, precision=None, scale=None, **kwargs)</code></p>
+<p>Fixed-precision decimal values.</p>
+<section id="attributes-1" class="level4">
+<h4 class="anchored" data-anchor-id="attributes-1">Attributes</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="#ibis.expr.datatypes.core.Decimal.largest">largest</a></td>
+<td>Return the largest type of decimal.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.datatypes.core.Decimal.precision">precision</a></td>
+<td>The number of decimal places values of this type can hold.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.datatypes.core.Decimal.scale">scale</a></td>
+<td>The number of values after the decimal point.</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="ibis.expr.datatypes.core.Float16" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.datatypes.core.Float16">Float16</h3>
+<p><code>expr.datatypes.core.Float16()</code></p>
+<p>16-bit floating point numbers.</p>
+</section>
+<section id="ibis.expr.datatypes.core.Float32" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.datatypes.core.Float32">Float32</h3>
+<p><code>expr.datatypes.core.Float32()</code></p>
+<p>32-bit floating point numbers.</p>
+</section>
+<section id="ibis.expr.datatypes.core.Float64" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.datatypes.core.Float64">Float64</h3>
+<p><code>expr.datatypes.core.Float64()</code></p>
+<p>64-bit floating point numbers.</p>
+</section>
+<section id="ibis.expr.datatypes.core.Floating" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.datatypes.core.Floating">Floating</h3>
+<p><code>expr.datatypes.core.Floating()</code></p>
+<p>Floating point values.</p>
+<section id="attributes-2" class="level4">
+<h4 class="anchored" data-anchor-id="attributes-2">Attributes</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="#ibis.expr.datatypes.core.Floating.largest">largest</a></td>
+<td>Return the largest type of floating point values.</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="ibis.expr.datatypes.core.GeoSpatial" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.datatypes.core.GeoSpatial">GeoSpatial</h3>
+<p><code>expr.datatypes.core.GeoSpatial()</code></p>
+<p>Geospatial values.</p>
+<section id="attributes-3" class="level4">
+<h4 class="anchored" data-anchor-id="attributes-3">Attributes</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="#ibis.expr.datatypes.core.GeoSpatial.geotype">geotype</a></td>
+<td>The specific geospatial type.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.datatypes.core.GeoSpatial.srid">srid</a></td>
+<td>The spatial reference identifier.</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="ibis.expr.datatypes.core.INET" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.datatypes.core.INET">INET</h3>
+<p><code>expr.datatypes.core.INET()</code></p>
+<p>IP addresses.</p>
+</section>
+<section id="ibis.expr.datatypes.core.Int16" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.datatypes.core.Int16">Int16</h3>
+<p><code>expr.datatypes.core.Int16()</code></p>
+<p>Signed 16-bit integers.</p>
+</section>
+<section id="ibis.expr.datatypes.core.Int32" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.datatypes.core.Int32">Int32</h3>
+<p><code>expr.datatypes.core.Int32()</code></p>
+<p>Signed 32-bit integers.</p>
+</section>
+<section id="ibis.expr.datatypes.core.Int64" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.datatypes.core.Int64">Int64</h3>
+<p><code>expr.datatypes.core.Int64()</code></p>
+<p>Signed 64-bit integers.</p>
+</section>
+<section id="ibis.expr.datatypes.core.Int8" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.datatypes.core.Int8">Int8</h3>
+<p><code>expr.datatypes.core.Int8()</code></p>
+<p>Signed 8-bit integers.</p>
+</section>
+<section id="ibis.expr.datatypes.core.Integer" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.datatypes.core.Integer">Integer</h3>
+<p><code>expr.datatypes.core.Integer()</code></p>
+<p>Integer values.</p>
+<section id="attributes-4" class="level4">
+<h4 class="anchored" data-anchor-id="attributes-4">Attributes</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="#ibis.expr.datatypes.core.Integer.nbytes">nbytes</a></td>
+<td>Return the number of bytes used to store values of this type.</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="ibis.expr.datatypes.core.Interval" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.datatypes.core.Interval">Interval</h3>
+<p><code>expr.datatypes.core.Interval()</code></p>
+<p>Interval values.</p>
+<section id="attributes-5" class="level4">
+<h4 class="anchored" data-anchor-id="attributes-5">Attributes</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="#ibis.expr.datatypes.core.Interval.resolution">resolution</a></td>
+<td>The interval unit’s name.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.datatypes.core.Interval.unit">unit</a></td>
+<td>The time unit of the interval.</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="ibis.expr.datatypes.core.JSON" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.datatypes.core.JSON">JSON</h3>
+<p><code>expr.datatypes.core.JSON()</code></p>
+<p>JSON values.</p>
+</section>
+<section id="ibis.expr.datatypes.core.LineString" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.datatypes.core.LineString">LineString</h3>
+<p><code>expr.datatypes.core.LineString()</code></p>
+<p>A sequence of 2 or more points.</p>
+</section>
+<section id="ibis.expr.datatypes.core.MACADDR" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.datatypes.core.MACADDR">MACADDR</h3>
+<p><code>expr.datatypes.core.MACADDR()</code></p>
+<p>Media Access Control (MAC) address of a network interface.</p>
+</section>
+<section id="ibis.expr.datatypes.core.Map" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.datatypes.core.Map">Map</h3>
+<p><code>expr.datatypes.core.Map()</code></p>
+<p>Associative array values.</p>
+</section>
+<section id="ibis.expr.datatypes.core.MultiLineString" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.datatypes.core.MultiLineString">MultiLineString</h3>
+<p><code>expr.datatypes.core.MultiLineString()</code></p>
+<p>A set of one or more line strings.</p>
+</section>
+<section id="ibis.expr.datatypes.core.MultiPoint" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.datatypes.core.MultiPoint">MultiPoint</h3>
+<p><code>expr.datatypes.core.MultiPoint()</code></p>
+<p>A set of one or more points.</p>
+</section>
+<section id="ibis.expr.datatypes.core.MultiPolygon" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.datatypes.core.MultiPolygon">MultiPolygon</h3>
+<p><code>expr.datatypes.core.MultiPolygon()</code></p>
+<p>A set of one or more polygons.</p>
+</section>
+<section id="ibis.expr.datatypes.core.Null" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.datatypes.core.Null">Null</h3>
+<p><code>expr.datatypes.core.Null()</code></p>
+<p>Null values.</p>
+</section>
+<section id="ibis.expr.datatypes.core.Numeric" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.datatypes.core.Numeric">Numeric</h3>
+<p><code>expr.datatypes.core.Numeric()</code></p>
+<p>Numeric types.</p>
+</section>
+<section id="ibis.expr.datatypes.core.Parametric" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.datatypes.core.Parametric">Parametric</h3>
+<p><code>expr.datatypes.core.Parametric()</code></p>
+<p>Types that can be parameterized.</p>
+</section>
+<section id="ibis.expr.datatypes.core.Point" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.datatypes.core.Point">Point</h3>
+<p><code>expr.datatypes.core.Point()</code></p>
+<p>A point described by two coordinates.</p>
+</section>
+<section id="ibis.expr.datatypes.core.Polygon" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.datatypes.core.Polygon">Polygon</h3>
+<p><code>expr.datatypes.core.Polygon()</code></p>
+<p>A set of one or more closed line strings.</p>
+<p>The first line string represents the shape (external ring) and the rest represent holes in that shape (internal rings).</p>
+</section>
+<section id="ibis.expr.datatypes.core.Primitive" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.datatypes.core.Primitive">Primitive</h3>
+<p><code>expr.datatypes.core.Primitive()</code></p>
+<p>Values with known size.</p>
+</section>
+<section id="ibis.expr.datatypes.core.SignedInteger" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.datatypes.core.SignedInteger">SignedInteger</h3>
+<p><code>expr.datatypes.core.SignedInteger()</code></p>
+<p>Signed integer values.</p>
+<section id="attributes-6" class="level4">
+<h4 class="anchored" data-anchor-id="attributes-6">Attributes</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="#ibis.expr.datatypes.core.SignedInteger.largest">largest</a></td>
+<td>Return the largest type of signed integer.</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="ibis.expr.datatypes.core.String" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.datatypes.core.String">String</h3>
+<p><code>expr.datatypes.core.String()</code></p>
+<section id="notes-1" class="level4">
+<h4 class="anchored" data-anchor-id="notes-1">Notes</h4>
+<p>Because of differences in the way different backends handle strings, we cannot assume that strings are UTF-8 encoded.</p>
+</section>
+</section>
+<section id="ibis.expr.datatypes.core.Struct" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.datatypes.core.Struct">Struct</h3>
+<p><code>expr.datatypes.core.Struct()</code></p>
+<p>Structured values.</p>
+<section id="methods-1" class="level4">
+<h4 class="anchored" data-anchor-id="methods-1">Methods</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="#ibis.expr.datatypes.core.Struct.from_tuples">from_tuples</a></td>
+<td>Construct a <code>Struct</code> type from pairs.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.datatypes.core.Struct.names">names</a></td>
+<td>Return the names of the struct’s fields.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.datatypes.core.Struct.types">types</a></td>
+<td>Return the types of the struct’s fields.</td>
+</tr>
+</tbody>
+</table>
+<section id="ibis.expr.datatypes.core.Struct.from_tuples" class="level5">
+<h5 class="anchored" data-anchor-id="ibis.expr.datatypes.core.Struct.from_tuples">from_tuples</h5>
+<p><code>expr.datatypes.core.Struct.from_tuples(cls, pairs, nullable=True)</code></p>
+<p>Construct a <code>Struct</code> type from pairs.</p>
+<section id="parameters" class="level6">
+<h6 class="anchored" data-anchor-id="parameters">Parameters</h6>
+<table class="table">
+<colgroup>
+<col style="width: 6%">
+<col style="width: 62%">
+<col style="width: 24%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>pairs</code></td>
+<td>typing.Iterable[tuple[ibis.expr.datatypes.str, ibis.expr.datatypes.str | ibis.expr.datatypes.core.DataType]]</td>
+<td>An iterable of pairs of field name and type</td>
+<td><em>required</em></td>
+</tr>
+<tr class="even">
+<td><code>nullable</code></td>
+<td>bool</td>
+<td>Whether the type is nullable</td>
+<td><code>True</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="returns" class="level6">
+<h6 class="anchored" data-anchor-id="returns">Returns</h6>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Struct</td>
+<td>Struct data type instance</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="ibis.expr.datatypes.core.Struct.names" class="level5">
+<h5 class="anchored" data-anchor-id="ibis.expr.datatypes.core.Struct.names">names</h5>
+<p><code>expr.datatypes.core.Struct.names(self)</code></p>
+<p>Return the names of the struct’s fields.</p>
+</section>
+<section id="ibis.expr.datatypes.core.Struct.types" class="level5">
+<h5 class="anchored" data-anchor-id="ibis.expr.datatypes.core.Struct.types">types</h5>
+<p><code>expr.datatypes.core.Struct.types(self)</code></p>
+<p>Return the types of the struct’s fields.</p>
+</section>
+</section>
+</section>
+<section id="ibis.expr.datatypes.core.Temporal" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.datatypes.core.Temporal">Temporal</h3>
+<p><code>expr.datatypes.core.Temporal()</code></p>
+<p>Data types related to time.</p>
+</section>
+<section id="ibis.expr.datatypes.core.Time" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.datatypes.core.Time">Time</h3>
+<p><code>expr.datatypes.core.Time()</code></p>
+<p>Time values.</p>
+</section>
+<section id="ibis.expr.datatypes.core.Timestamp" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.datatypes.core.Timestamp">Timestamp</h3>
+<p><code>expr.datatypes.core.Timestamp()</code></p>
+<p>Timestamp values.</p>
+<section id="attributes-7" class="level4">
+<h4 class="anchored" data-anchor-id="attributes-7">Attributes</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="#ibis.expr.datatypes.core.Timestamp.scale">scale</a></td>
+<td>The scale of the timestamp if known.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.datatypes.core.Timestamp.timezone">timezone</a></td>
+<td>The timezone of values of this type.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.datatypes.core.Timestamp.unit">unit</a></td>
+<td>Return the unit of the timestamp.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods-2" class="level4">
+<h4 class="anchored" data-anchor-id="methods-2">Methods</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="#ibis.expr.datatypes.core.Timestamp.from_unit">from_unit</a></td>
+<td>Return a timestamp type with the given unit and timezone.</td>
+</tr>
+</tbody>
+</table>
+<section id="ibis.expr.datatypes.core.Timestamp.from_unit" class="level5">
+<h5 class="anchored" data-anchor-id="ibis.expr.datatypes.core.Timestamp.from_unit">from_unit</h5>
+<p><code>expr.datatypes.core.Timestamp.from_unit(cls, unit, timezone=None, nullable=True)</code></p>
+<p>Return a timestamp type with the given unit and timezone.</p>
+</section>
+</section>
+</section>
+<section id="ibis.expr.datatypes.core.UInt16" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.datatypes.core.UInt16">UInt16</h3>
+<p><code>expr.datatypes.core.UInt16()</code></p>
+<p>Unsigned 16-bit integers.</p>
+</section>
+<section id="ibis.expr.datatypes.core.UInt32" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.datatypes.core.UInt32">UInt32</h3>
+<p><code>expr.datatypes.core.UInt32()</code></p>
+<p>Unsigned 32-bit integers.</p>
+</section>
+<section id="ibis.expr.datatypes.core.UInt64" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.datatypes.core.UInt64">UInt64</h3>
+<p><code>expr.datatypes.core.UInt64()</code></p>
+<p>Unsigned 64-bit integers.</p>
+</section>
+<section id="ibis.expr.datatypes.core.UInt8" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.datatypes.core.UInt8">UInt8</h3>
+<p><code>expr.datatypes.core.UInt8()</code></p>
+<p>Unsigned 8-bit integers.</p>
+</section>
+<section id="ibis.expr.datatypes.core.UUID" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.datatypes.core.UUID">UUID</h3>
+<p><code>expr.datatypes.core.UUID()</code></p>
+<p>A 128-bit number used to identify information in computer systems.</p>
+</section>
+<section id="ibis.expr.datatypes.core.Unknown" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.datatypes.core.Unknown">Unknown</h3>
+<p><code>expr.datatypes.core.Unknown()</code></p>
+<p>An unknown type.</p>
+</section>
+<section id="ibis.expr.datatypes.core.UnsignedInteger" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.datatypes.core.UnsignedInteger">UnsignedInteger</h3>
+<p><code>expr.datatypes.core.UnsignedInteger()</code></p>
+<p>Unsigned integer values.</p>
+<section id="attributes-8" class="level4">
+<h4 class="anchored" data-anchor-id="attributes-8">Attributes</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="#ibis.expr.datatypes.core.UnsignedInteger.largest">largest</a></td>
+<td>Return the largest type of unsigned integer.</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="ibis.expr.datatypes.core.Variadic" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.datatypes.core.Variadic">Variadic</h3>
+<p><code>expr.datatypes.core.Variadic()</code></p>
+<p>Values with unknown size.</p>
+</section>
+</section>
+<section id="functions" class="level2">
+<h2 class="anchored" data-anchor-id="functions">Functions</h2>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="#ibis.expr.datatypes.core.dtype">dtype</a></td>
+<td>Construct an ibis datatype from a python type.</td>
+</tr>
+</tbody>
+</table>
+<section id="ibis.expr.datatypes.core.dtype" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.datatypes.core.dtype">dtype</h3>
+<p><code>expr.datatypes.core.dtype(value, nullable=True)</code></p>
+<p>Construct an ibis datatype from a python type.</p>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

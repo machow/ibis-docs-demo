@@ -1,0 +1,3143 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.361">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>. – expression-generic</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">.</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html" rel="" target="">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../reference/index.html" rel="" target="">
+ <span class="menu-text">Reference</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#generic-expression-apis" id="toc-generic-expression-apis" class="nav-link active" data-scroll-target="#generic-expression-apis">Generic Expression APIs</a></li>
+  <li><a href="#ibis.expr.types.generic.Value" id="toc-ibis.expr.types.generic.Value" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Value">Value</a>
+  <ul class="collapse">
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a>
+  <ul class="collapse">
+  <li><a href="#ibis.expr.types.generic.Value.as_table" id="toc-ibis.expr.types.generic.Value.as_table" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Value.as_table">as_table</a></li>
+  <li><a href="#ibis.expr.types.generic.Value.asc" id="toc-ibis.expr.types.generic.Value.asc" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Value.asc">asc</a></li>
+  <li><a href="#ibis.expr.types.generic.Value.between" id="toc-ibis.expr.types.generic.Value.between" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Value.between">between</a></li>
+  <li><a href="#ibis.expr.types.generic.Value.case" id="toc-ibis.expr.types.generic.Value.case" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Value.case">case</a></li>
+  <li><a href="#ibis.expr.types.generic.Value.cases" id="toc-ibis.expr.types.generic.Value.cases" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Value.cases">cases</a></li>
+  <li><a href="#ibis.expr.types.generic.Value.cast" id="toc-ibis.expr.types.generic.Value.cast" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Value.cast">cast</a></li>
+  <li><a href="#ibis.expr.types.generic.Value.coalesce" id="toc-ibis.expr.types.generic.Value.coalesce" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Value.coalesce">coalesce</a></li>
+  <li><a href="#ibis.expr.types.generic.Value.collect" id="toc-ibis.expr.types.generic.Value.collect" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Value.collect">collect</a></li>
+  <li><a href="#ibis.expr.types.generic.Value.desc" id="toc-ibis.expr.types.generic.Value.desc" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Value.desc">desc</a></li>
+  <li><a href="#ibis.expr.types.generic.Value.fillna" id="toc-ibis.expr.types.generic.Value.fillna" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Value.fillna">fillna</a></li>
+  <li><a href="#ibis.expr.types.generic.Value.greatest" id="toc-ibis.expr.types.generic.Value.greatest" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Value.greatest">greatest</a></li>
+  <li><a href="#ibis.expr.types.generic.Value.group_concat" id="toc-ibis.expr.types.generic.Value.group_concat" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Value.group_concat">group_concat</a></li>
+  <li><a href="#ibis.expr.types.generic.Value.hash" id="toc-ibis.expr.types.generic.Value.hash" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Value.hash">hash</a></li>
+  <li><a href="#ibis.expr.types.generic.Value.identical_to" id="toc-ibis.expr.types.generic.Value.identical_to" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Value.identical_to">identical_to</a></li>
+  <li><a href="#ibis.expr.types.generic.Value.isin" id="toc-ibis.expr.types.generic.Value.isin" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Value.isin">isin</a></li>
+  <li><a href="#ibis.expr.types.generic.Value.isnull" id="toc-ibis.expr.types.generic.Value.isnull" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Value.isnull">isnull</a></li>
+  <li><a href="#ibis.expr.types.generic.Value.least" id="toc-ibis.expr.types.generic.Value.least" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Value.least">least</a></li>
+  <li><a href="#ibis.expr.types.generic.Value.name" id="toc-ibis.expr.types.generic.Value.name" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Value.name">name</a></li>
+  <li><a href="#ibis.expr.types.generic.Value.notin" id="toc-ibis.expr.types.generic.Value.notin" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Value.notin">notin</a></li>
+  <li><a href="#ibis.expr.types.generic.Value.notnull" id="toc-ibis.expr.types.generic.Value.notnull" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Value.notnull">notnull</a></li>
+  <li><a href="#ibis.expr.types.generic.Value.nullif" id="toc-ibis.expr.types.generic.Value.nullif" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Value.nullif">nullif</a></li>
+  <li><a href="#ibis.expr.types.generic.Value.over" id="toc-ibis.expr.types.generic.Value.over" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Value.over">over</a></li>
+  <li><a href="#ibis.expr.types.generic.Value.substitute" id="toc-ibis.expr.types.generic.Value.substitute" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Value.substitute">substitute</a></li>
+  <li><a href="#ibis.expr.types.generic.Value.to_pandas" id="toc-ibis.expr.types.generic.Value.to_pandas" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Value.to_pandas">to_pandas</a></li>
+  <li><a href="#ibis.expr.types.generic.Value.try_cast" id="toc-ibis.expr.types.generic.Value.try_cast" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Value.try_cast">try_cast</a></li>
+  <li><a href="#ibis.expr.types.generic.Value.type" id="toc-ibis.expr.types.generic.Value.type" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Value.type">type</a></li>
+  <li><a href="#ibis.expr.types.generic.Value.typeof" id="toc-ibis.expr.types.generic.Value.typeof" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Value.typeof">typeof</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#ibis.expr.types.generic.Column" id="toc-ibis.expr.types.generic.Column" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Column">Column</a>
+  <ul class="collapse">
+  <li><a href="#methods-1" id="toc-methods-1" class="nav-link" data-scroll-target="#methods-1">Methods</a>
+  <ul class="collapse">
+  <li><a href="#ibis.expr.types.generic.Column.approx_median" id="toc-ibis.expr.types.generic.Column.approx_median" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Column.approx_median">approx_median</a></li>
+  <li><a href="#ibis.expr.types.generic.Column.approx_nunique" id="toc-ibis.expr.types.generic.Column.approx_nunique" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Column.approx_nunique">approx_nunique</a></li>
+  <li><a href="#ibis.expr.types.generic.Column.arbitrary" id="toc-ibis.expr.types.generic.Column.arbitrary" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Column.arbitrary">arbitrary</a></li>
+  <li><a href="#ibis.expr.types.generic.Column.argmax" id="toc-ibis.expr.types.generic.Column.argmax" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Column.argmax">argmax</a></li>
+  <li><a href="#ibis.expr.types.generic.Column.argmin" id="toc-ibis.expr.types.generic.Column.argmin" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Column.argmin">argmin</a></li>
+  <li><a href="#ibis.expr.types.generic.Column.count" id="toc-ibis.expr.types.generic.Column.count" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Column.count">count</a></li>
+  <li><a href="#ibis.expr.types.generic.Column.cume_dist" id="toc-ibis.expr.types.generic.Column.cume_dist" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Column.cume_dist">cume_dist</a></li>
+  <li><a href="#ibis.expr.types.generic.Column.cummax" id="toc-ibis.expr.types.generic.Column.cummax" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Column.cummax">cummax</a></li>
+  <li><a href="#ibis.expr.types.generic.Column.cummin" id="toc-ibis.expr.types.generic.Column.cummin" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Column.cummin">cummin</a></li>
+  <li><a href="#ibis.expr.types.generic.Column.dense_rank" id="toc-ibis.expr.types.generic.Column.dense_rank" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Column.dense_rank">dense_rank</a></li>
+  <li><a href="#ibis.expr.types.generic.Column.first" id="toc-ibis.expr.types.generic.Column.first" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Column.first">first</a></li>
+  <li><a href="#ibis.expr.types.generic.Column.lag" id="toc-ibis.expr.types.generic.Column.lag" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Column.lag">lag</a></li>
+  <li><a href="#ibis.expr.types.generic.Column.last" id="toc-ibis.expr.types.generic.Column.last" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Column.last">last</a></li>
+  <li><a href="#ibis.expr.types.generic.Column.lead" id="toc-ibis.expr.types.generic.Column.lead" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Column.lead">lead</a></li>
+  <li><a href="#ibis.expr.types.generic.Column.max" id="toc-ibis.expr.types.generic.Column.max" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Column.max">max</a></li>
+  <li><a href="#ibis.expr.types.generic.Column.min" id="toc-ibis.expr.types.generic.Column.min" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Column.min">min</a></li>
+  <li><a href="#ibis.expr.types.generic.Column.mode" id="toc-ibis.expr.types.generic.Column.mode" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Column.mode">mode</a></li>
+  <li><a href="#ibis.expr.types.generic.Column.nth" id="toc-ibis.expr.types.generic.Column.nth" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Column.nth">nth</a></li>
+  <li><a href="#ibis.expr.types.generic.Column.ntile" id="toc-ibis.expr.types.generic.Column.ntile" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Column.ntile">ntile</a></li>
+  <li><a href="#ibis.expr.types.generic.Column.nunique" id="toc-ibis.expr.types.generic.Column.nunique" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Column.nunique">nunique</a></li>
+  <li><a href="#ibis.expr.types.generic.Column.percent_rank" id="toc-ibis.expr.types.generic.Column.percent_rank" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Column.percent_rank">percent_rank</a></li>
+  <li><a href="#ibis.expr.types.generic.Column.rank" id="toc-ibis.expr.types.generic.Column.rank" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Column.rank">rank</a></li>
+  <li><a href="#ibis.expr.types.generic.Column.topk" id="toc-ibis.expr.types.generic.Column.topk" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Column.topk">topk</a></li>
+  <li><a href="#ibis.expr.types.generic.Column.value_counts" id="toc-ibis.expr.types.generic.Column.value_counts" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Column.value_counts">value_counts</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#ibis.expr.types.generic.Scalar" id="toc-ibis.expr.types.generic.Scalar" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Scalar">Scalar</a>
+  <ul class="collapse">
+  <li><a href="#methods-2" id="toc-methods-2" class="nav-link" data-scroll-target="#methods-2">Methods</a>
+  <ul class="collapse">
+  <li><a href="#ibis.expr.types.generic.Scalar.as_table" id="toc-ibis.expr.types.generic.Scalar.as_table" class="nav-link" data-scroll-target="#ibis.expr.types.generic.Scalar.as_table">as_table</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+<section id="generic-expression-apis" class="level1">
+<h1>Generic Expression APIs</h1>
+<p>These expressions are available on scalars and columns of any element type.</p>
+</section>
+<section id="ibis.expr.types.generic.Value" class="level1">
+<h1>Value</h1>
+<p><code>expr.types.generic.Value()</code></p>
+<p>Base class for a data generating expression having a known type.</p>
+<section id="methods" class="level2">
+<h2 class="anchored" data-anchor-id="methods">Methods</h2>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="#ibis.expr.types.generic.Value.as_table">as_table</a></td>
+<td>Promote the expression to a table.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.types.generic.Value.asc">asc</a></td>
+<td>Sort an expression ascending.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.types.generic.Value.between">between</a></td>
+<td>Check if this expression is between <code>lower</code> and <code>upper</code>, inclusive.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.types.generic.Value.case">case</a></td>
+<td>Create a SimpleCaseBuilder to chain multiple if-else statements.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.types.generic.Value.cases">cases</a></td>
+<td>Create a case expression in one shot.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.types.generic.Value.cast">cast</a></td>
+<td>Cast expression to indicated data type.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.types.generic.Value.coalesce">coalesce</a></td>
+<td>Return the first non-null value from <code>args</code>.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.types.generic.Value.collect">collect</a></td>
+<td>Aggregate this expression’s elements into an array.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.types.generic.Value.desc">desc</a></td>
+<td>Sort an expression descending.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.types.generic.Value.fillna">fillna</a></td>
+<td>Replace any null values with the indicated fill value.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.types.generic.Value.greatest">greatest</a></td>
+<td>Compute the largest value among the supplied arguments.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.types.generic.Value.group_concat">group_concat</a></td>
+<td>Concatenate values using the indicated separator to produce a string.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.types.generic.Value.hash">hash</a></td>
+<td>Compute an integer hash value.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.types.generic.Value.identical_to">identical_to</a></td>
+<td>Return whether this expression is identical to other.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.types.generic.Value.isin">isin</a></td>
+<td>Check whether this expression’s values are in <code>values</code>.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.types.generic.Value.isnull">isnull</a></td>
+<td>Return whether this expression is NULL.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.types.generic.Value.least">least</a></td>
+<td>Compute the smallest value among the supplied arguments.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.types.generic.Value.name">name</a></td>
+<td>Rename an expression to <code>name</code>.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.types.generic.Value.notin">notin</a></td>
+<td>Check whether this expression’s values are not in <code>values</code>.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.types.generic.Value.notnull">notnull</a></td>
+<td>Return whether this expression is not NULL.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.types.generic.Value.nullif">nullif</a></td>
+<td>Set values to null if they equal the values <code>null_if_expr</code>.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.types.generic.Value.over">over</a></td>
+<td>Construct a window expression.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.types.generic.Value.substitute">substitute</a></td>
+<td>Replace values given in <code>values</code> with <code>replacement</code>.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.types.generic.Value.to_pandas">to_pandas</a></td>
+<td>Convert a column expression to a pandas Series or scalar object.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.types.generic.Value.try_cast">try_cast</a></td>
+<td>Try cast expression to indicated data type.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.types.generic.Value.type">type</a></td>
+<td>Return the [DataType] of this expression.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.types.generic.Value.typeof">typeof</a></td>
+<td>Return the data type of the expression.</td>
+</tr>
+</tbody>
+</table>
+<section id="ibis.expr.types.generic.Value.as_table" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Value.as_table">as_table</h3>
+<p><code>expr.types.generic.Value.as_table(self)</code></p>
+<p>Promote the expression to a table.</p>
+<section id="returns" class="level4">
+<h4 class="anchored" data-anchor-id="returns">Returns</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Table</td>
+<td>A table expression</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="examples" class="level4">
+<h4 class="anchored" data-anchor-id="examples">Examples</h4>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t <span class="op">=</span> ibis.table(<span class="bu">dict</span>(a<span class="op">=</span><span class="st">"str"</span>), name<span class="op">=</span><span class="st">"t"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> expr <span class="op">=</span> t.a.length().name(<span class="st">"len"</span>).as_table()</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> expected <span class="op">=</span> t.select(<span class="bu">len</span><span class="op">=</span>t.a.length())</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> expr.equals(expected)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="va">True</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="ibis.expr.types.generic.Value.asc" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Value.asc">asc</h3>
+<p><code>expr.types.generic.Value.asc(self)</code></p>
+<p>Sort an expression ascending.</p>
+</section>
+<section id="ibis.expr.types.generic.Value.between" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Value.between">between</h3>
+<p><code>expr.types.generic.Value.between(self, lower, upper)</code></p>
+<p>Check if this expression is between <code>lower</code> and <code>upper</code>, inclusive.</p>
+<section id="parameters" class="level4">
+<h4 class="anchored" data-anchor-id="parameters">Parameters</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>lower</code></td>
+<td>Value</td>
+<td>Lower bound</td>
+<td><em>required</em></td>
+</tr>
+<tr class="even">
+<td><code>upper</code></td>
+<td>Value</td>
+<td>Upper bound</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="returns-1" class="level4">
+<h4 class="anchored" data-anchor-id="returns-1">Returns</h4>
+<table class="table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 80%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>BooleanValue</td>
+<td>Expression indicating membership in the provided range</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="examples-1" class="level4">
+<h4 class="anchored" data-anchor-id="examples-1">Examples</h4>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> ibis</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> ibis.options.interactive <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t <span class="op">=</span> ibis.examples.penguins.fetch().limit(<span class="dv">5</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t.bill_length_mm.between(<span class="dv">35</span>, <span class="dv">38</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>┃ Between(bill_length_mm, <span class="dv">35</span>, <span class="dv">38</span>) ┃</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>│ boolean                         │</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>├─────────────────────────────────┤</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>│ <span class="va">False</span>                           │</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>│ <span class="va">False</span>                           │</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>│ <span class="va">False</span>                           │</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>│ NULL                            │</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>│ <span class="va">True</span>                            │</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>└─────────────────────────────────┘</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="ibis.expr.types.generic.Value.case" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Value.case">case</h3>
+<p><code>expr.types.generic.Value.case(self)</code></p>
+<p>Create a SimpleCaseBuilder to chain multiple if-else statements.</p>
+<p>Add new search expressions with the <code>.when()</code> method. These must be comparable with this column expression. Conclude by calling <code>.end()</code></p>
+<section id="returns-2" class="level4">
+<h4 class="anchored" data-anchor-id="returns-2">Returns</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SimpleCaseBuilder</td>
+<td>A case builder</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="examples-2" class="level4">
+<h4 class="anchored" data-anchor-id="examples-2">Examples</h4>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> ibis</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t <span class="op">=</span> ibis.table([(<span class="st">'string_col'</span>, <span class="st">'string'</span>)], name<span class="op">=</span><span class="st">'t'</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> expr <span class="op">=</span> t.string_col</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> case_expr <span class="op">=</span> (expr.case()</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>...              .when(<span class="st">'a'</span>, <span class="st">'an a'</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>...              .when(<span class="st">'b'</span>, <span class="st">'a b'</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>...              .else_(<span class="st">'null or (not a and not b)'</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>...              .end())</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> case_expr</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>r0 <span class="op">:=</span> UnboundTable: t</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  string_col string</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>SimpleCase(...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="ibis.expr.types.generic.Value.cases" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Value.cases">cases</h3>
+<p><code>expr.types.generic.Value.cases(self, case_result_pairs, default=None)</code></p>
+<p>Create a case expression in one shot.</p>
+<section id="parameters-1" class="level4">
+<h4 class="anchored" data-anchor-id="parameters-1">Parameters</h4>
+<table class="table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 46%">
+<col style="width: 33%">
+<col style="width: 7%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>case_result_pairs</code></td>
+<td>typing.Iterable[tuple[ibis.BooleanValue, ibis.expr.types.generic.Value]]</td>
+<td>Conditional-result pairs</td>
+<td><em>required</em></td>
+</tr>
+<tr class="even">
+<td><code>default</code></td>
+<td>ibis.expr.types.generic.Value | None</td>
+<td>Value to return if none of the case conditions are true</td>
+<td><code>None</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="returns-3" class="level4">
+<h4 class="anchored" data-anchor-id="returns-3">Returns</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Value</td>
+<td>Value expression</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="examples-3" class="level4">
+<h4 class="anchored" data-anchor-id="examples-3">Examples</h4>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> ibis</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> ibis.options.interactive <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t <span class="op">=</span> ibis.memtable({<span class="st">"values"</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">4</span>]})</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>┏━━━━━━━━┓</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>┃ values ┃</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>┡━━━━━━━━┩</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>│ int64  │</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>├────────┤</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>│      <span class="dv">1</span> │</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>│      <span class="dv">2</span> │</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>│      <span class="dv">1</span> │</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>│      <span class="dv">2</span> │</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>│      <span class="dv">3</span> │</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>│      <span class="dv">2</span> │</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>│      <span class="dv">4</span> │</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>└────────┘</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> number_letter_map <span class="op">=</span> ((<span class="dv">1</span>, <span class="st">"a"</span>), (<span class="dv">2</span>, <span class="st">"b"</span>), (<span class="dv">3</span>, <span class="st">"c"</span>))</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t.values.cases(number_letter_map, default<span class="op">=</span><span class="st">"unk"</span>).name(<span class="st">"replace"</span>)</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>┏━━━━━━━━━┓</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>┃ replace ┃</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>┡━━━━━━━━━┩</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>│ string  │</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>├─────────┤</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>│ a       │</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>│ b       │</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>│ a       │</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>│ b       │</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>│ c       │</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>│ b       │</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>│ unk     │</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>└─────────┘</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="ibis.expr.types.generic.Value.cast" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Value.cast">cast</h3>
+<p><code>expr.types.generic.Value.cast(self, target_type)</code></p>
+<p>Cast expression to indicated data type.</p>
+<section id="parameters-2" class="level4">
+<h4 class="anchored" data-anchor-id="parameters-2">Parameters</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>target_type</code></td>
+<td>ibis.DataType</td>
+<td>Type to cast to</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="returns-4" class="level4">
+<h4 class="anchored" data-anchor-id="returns-4">Returns</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Value</td>
+<td>Casted expression</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="examples-4" class="level4">
+<h4 class="anchored" data-anchor-id="examples-4">Examples</h4>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> ibis</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> ibis.options.interactive <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t <span class="op">=</span> ibis.table(<span class="bu">dict</span>(a<span class="op">=</span><span class="st">"int64"</span>), name<span class="op">=</span><span class="st">"t"</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t.a.cast(<span class="st">"float"</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>r0 <span class="op">:=</span> UnboundTable: t</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  a int64</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>Cast(a, float64): Cast(r0.a, to<span class="op">=</span>float64)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="ibis.expr.types.generic.Value.coalesce" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Value.coalesce">coalesce</h3>
+<p><code>expr.types.generic.Value.coalesce(self, *args)</code></p>
+<p>Return the first non-null value from <code>args</code>.</p>
+<section id="parameters-3" class="level4">
+<h4 class="anchored" data-anchor-id="parameters-3">Parameters</h4>
+<table class="table">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 67%">
+<col style="width: 13%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>args</code></td>
+<td>Value</td>
+<td>Arguments from which to choose the first non-null value</td>
+<td><code>()</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="returns-5" class="level4">
+<h4 class="anchored" data-anchor-id="returns-5">Returns</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Value</td>
+<td>Coalesced expression</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="examples-5" class="level4">
+<h4 class="anchored" data-anchor-id="examples-5">Examples</h4>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> ibis</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> ibis.coalesce(<span class="va">None</span>, <span class="dv">4</span>, <span class="dv">5</span>).name(<span class="st">"x"</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>x: Coalesce(...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="ibis.expr.types.generic.Value.collect" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Value.collect">collect</h3>
+<p><code>expr.types.generic.Value.collect(self, where=None)</code></p>
+<p>Aggregate this expression’s elements into an array.</p>
+<p>This function is called <code>array_agg</code>, <code>list_agg</code>, or <code>list</code> in other systems.</p>
+<section id="parameters-4" class="level4">
+<h4 class="anchored" data-anchor-id="parameters-4">Parameters</h4>
+<table class="table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 32%">
+<col style="width: 43%">
+<col style="width: 13%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>where</code></td>
+<td>ibis.BooleanValue | None</td>
+<td>Filter to apply before aggregation</td>
+<td><code>None</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="returns-6" class="level4">
+<h4 class="anchored" data-anchor-id="returns-6">Returns</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ArrayScalar</td>
+<td>Collected array</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="examples-6" class="level4">
+<h4 class="anchored" data-anchor-id="examples-6">Examples</h4>
+<p>Basic collect usage</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> ibis</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> ibis.options.interactive <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t <span class="op">=</span> ibis.memtable({<span class="st">"key"</span>: <span class="bu">list</span>(<span class="st">"aaabb"</span>), <span class="st">"value"</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]})</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>┏━━━━━━━━┳━━━━━━━┓</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>┃ key    ┃ value ┃</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>┡━━━━━━━━╇━━━━━━━┩</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>│ string │ int64 │</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>├────────┼───────┤</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>│ a      │     <span class="dv">1</span> │</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>│ a      │     <span class="dv">2</span> │</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>│ a      │     <span class="dv">3</span> │</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>│ b      │     <span class="dv">4</span> │</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>│ b      │     <span class="dv">5</span> │</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>└────────┴───────┘</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t.value.collect()</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="bu">type</span>(t.value.collect())</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span><span class="kw">class</span> <span class="st">'ibis.expr.types.arrays.ArrayScalar'</span><span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Collect elements per group</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t.group_by(<span class="st">"key"</span>).agg(v<span class="op">=</span><span class="kw">lambda</span> t: t.value.collect())</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>┏━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>┃ key    ┃ v                    ┃</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>┡━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>│ string │ array<span class="op">&lt;</span>int64<span class="op">&gt;</span>         │</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>├────────┼──────────────────────┤</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>│ a      │ [<span class="dv">1</span>, <span class="dv">2</span>, ... <span class="op">+</span><span class="dv">1</span>]       │</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>│ b      │ [<span class="dv">4</span>, <span class="dv">5</span>]               │</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>└────────┴──────────────────────┘</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Collect elements per group using a filter</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t.group_by(<span class="st">"key"</span>).agg(v<span class="op">=</span><span class="kw">lambda</span> t: t.value.collect(where<span class="op">=</span>t.value <span class="op">&gt;</span> <span class="dv">1</span>))</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>┏━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>┃ key    ┃ v                    ┃</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>┡━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>│ string │ array<span class="op">&lt;</span>int64<span class="op">&gt;</span>         │</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>├────────┼──────────────────────┤</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>│ a      │ [<span class="dv">2</span>, <span class="dv">3</span>]               │</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>│ b      │ [<span class="dv">4</span>, <span class="dv">5</span>]               │</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>└────────┴──────────────────────┘</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="ibis.expr.types.generic.Value.desc" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Value.desc">desc</h3>
+<p><code>expr.types.generic.Value.desc(self)</code></p>
+<p>Sort an expression descending.</p>
+</section>
+<section id="ibis.expr.types.generic.Value.fillna" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Value.fillna">fillna</h3>
+<p><code>expr.types.generic.Value.fillna(self, fill_value)</code></p>
+<p>Replace any null values with the indicated fill value.</p>
+<section id="parameters-5" class="level4">
+<h4 class="anchored" data-anchor-id="parameters-5">Parameters</h4>
+<table class="table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 9%">
+<col style="width: 60%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>fill_value</code></td>
+<td>Scalar</td>
+<td>Value with which to replace <code>NA</code> values in <code>self</code></td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="examples-7" class="level4">
+<h4 class="anchored" data-anchor-id="examples-7">Examples</h4>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> ibis</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> ibis.options.interactive <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t <span class="op">=</span> ibis.examples.penguins.fetch().limit(<span class="dv">5</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t.sex</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>┏━━━━━━━━┓</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>┃ sex    ┃</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>┡━━━━━━━━┩</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>│ string │</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>├────────┤</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>│ male   │</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>│ female │</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>│ female │</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>│ NULL   │</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>│ female │</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>└────────┘</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t.sex.fillna(<span class="st">"unrecorded"</span>).name(<span class="st">"sex"</span>)</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>┏━━━━━━━━━━━━┓</span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>┃ sex        ┃</span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>┡━━━━━━━━━━━━┩</span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>│ string     │</span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>├────────────┤</span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>│ male       │</span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>│ female     │</span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>│ female     │</span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>│ unrecorded │</span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>│ female     │</span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>└────────────┘</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="returns-7" class="level4">
+<h4 class="anchored" data-anchor-id="returns-7">Returns</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Value</td>
+<td><code>self</code> filled with <code>fill_value</code> where it is <code>NA</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="ibis.expr.types.generic.Value.greatest" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Value.greatest">greatest</h3>
+<p><code>expr.types.generic.Value.greatest(self, *args)</code></p>
+<p>Compute the largest value among the supplied arguments.</p>
+<section id="parameters-6" class="level4">
+<h4 class="anchored" data-anchor-id="parameters-6">Parameters</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>args</code></td>
+<td>ibis.Value</td>
+<td>Arguments to choose from</td>
+<td><code>()</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="returns-8" class="level4">
+<h4 class="anchored" data-anchor-id="returns-8">Returns</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Value</td>
+<td>Maximum of the passed arguments</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="ibis.expr.types.generic.Value.group_concat" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Value.group_concat">group_concat</h3>
+<p><code>expr.types.generic.Value.group_concat(self, sep=',', where=None)</code></p>
+<p>Concatenate values using the indicated separator to produce a string.</p>
+<section id="parameters-7" class="level4">
+<h4 class="anchored" data-anchor-id="parameters-7">Parameters</h4>
+<table class="table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 31%">
+<col style="width: 45%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>sep</code></td>
+<td>str</td>
+<td>Separator will be used to join strings</td>
+<td><code>','</code></td>
+</tr>
+<tr class="even">
+<td><code>where</code></td>
+<td>ibis.BooleanValue | None</td>
+<td>Filter expression</td>
+<td><code>None</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="returns-9" class="level4">
+<h4 class="anchored" data-anchor-id="returns-9">Returns</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>StringScalar</td>
+<td>Concatenated string expression</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="examples-8" class="level4">
+<h4 class="anchored" data-anchor-id="examples-8">Examples</h4>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> ibis</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> ibis.options.interactive <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t <span class="op">=</span> ibis.examples.penguins.fetch().limit(<span class="dv">5</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t[[<span class="st">"bill_length_mm"</span>, <span class="st">"bill_depth_mm"</span>]]</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>┏━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┓</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>┃ bill_length_mm ┃ bill_depth_mm ┃</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>┡━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━┩</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>│ float64        │ float64       │</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>├────────────────┼───────────────┤</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>│           <span class="fl">39.1</span> │          <span class="fl">18.7</span> │</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>│           <span class="fl">39.5</span> │          <span class="fl">17.4</span> │</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>│           <span class="fl">40.3</span> │          <span class="fl">18.0</span> │</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>│            nan │           nan │</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>│           <span class="fl">36.7</span> │          <span class="fl">19.3</span> │</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>└────────────────┴───────────────┘</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t.bill_length_mm.group_concat()</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a><span class="co">'39.1,39.5,40.3,36.7'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t.bill_length_mm.group_concat(sep<span class="op">=</span><span class="st">": "</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">'39.1: 39.5: 40.3: 36.7'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t.bill_length_mm.group_concat(sep<span class="op">=</span><span class="st">": "</span>, where<span class="op">=</span>t.bill_depth_mm <span class="op">&gt;</span> <span class="dv">18</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co">'39.1: 36.7'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="ibis.expr.types.generic.Value.hash" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Value.hash">hash</h3>
+<p><code>expr.types.generic.Value.hash(self)</code></p>
+<p>Compute an integer hash value.</p>
+<p>!!! info “The hashing function used is backend-dependent.”</p>
+<section id="returns-10" class="level4">
+<h4 class="anchored" data-anchor-id="returns-10">Returns</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>IntegerValue</td>
+<td>The hash value of <code>self</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="ibis.expr.types.generic.Value.identical_to" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Value.identical_to">identical_to</h3>
+<p><code>expr.types.generic.Value.identical_to(self, other)</code></p>
+<p>Return whether this expression is identical to other.</p>
+<p>Corresponds to <code>IS NOT DISTINCT FROM</code> in SQL.</p>
+<section id="parameters-8" class="level4">
+<h4 class="anchored" data-anchor-id="parameters-8">Parameters</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>other</code></td>
+<td>Value</td>
+<td>Expression to compare to</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="returns-11" class="level4">
+<h4 class="anchored" data-anchor-id="returns-11">Returns</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>BooleanValue</td>
+<td>Whether this expression is not distinct from <code>other</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="examples-9" class="level4">
+<h4 class="anchored" data-anchor-id="examples-9">Examples</h4>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> ibis</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> ibis.options.interactive <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> one <span class="op">=</span> ibis.literal(<span class="dv">1</span>)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> two <span class="op">=</span> ibis.literal(<span class="dv">2</span>)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> two.identical_to(one <span class="op">+</span> one)</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="va">True</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="ibis.expr.types.generic.Value.isin" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Value.isin">isin</h3>
+<p><code>expr.types.generic.Value.isin(self, values)</code></p>
+<p>Check whether this expression’s values are in <code>values</code>.</p>
+<section id="parameters-9" class="level4">
+<h4 class="anchored" data-anchor-id="parameters-9">Parameters</h4>
+<table class="table">
+<colgroup>
+<col style="width: 6%">
+<col style="width: 54%">
+<col style="width: 30%">
+<col style="width: 7%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>values</code></td>
+<td>ibis.expr.types.generic.Value | typing.Sequence[ibis.expr.types.generic.Value]</td>
+<td>Values or expression to check for membership</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="returns-12" class="level4">
+<h4 class="anchored" data-anchor-id="returns-12">Returns</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>BooleanValue</td>
+<td>Expression indicating membership</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="examples-10" class="level4">
+<h4 class="anchored" data-anchor-id="examples-10">Examples</h4>
+<p>Check whether a column’s values are contained in a sequence</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> ibis</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> table <span class="op">=</span> ibis.table(<span class="bu">dict</span>(string_col<span class="op">=</span><span class="st">'string'</span>), name<span class="op">=</span><span class="st">"t"</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> table.string_col.isin([<span class="st">'foo'</span>, <span class="st">'bar'</span>, <span class="st">'baz'</span>])</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>r0 <span class="op">:=</span> UnboundTable: t</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  string_col string</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>Contains(string_col): Contains(...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Check whether a column’s values are contained in another table’s column</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> table2 <span class="op">=</span> ibis.table(<span class="bu">dict</span>(other_string_col<span class="op">=</span><span class="st">'string'</span>), name<span class="op">=</span><span class="st">"t2"</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> table.string_col.isin(table2.other_string_col)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>r0 <span class="op">:=</span> UnboundTable: t</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  string_col string</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>r1 <span class="op">:=</span> UnboundTable: t2</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  other_string_col string</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>Contains(string_col, other_string_col): Contains(...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="ibis.expr.types.generic.Value.isnull" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Value.isnull">isnull</h3>
+<p><code>expr.types.generic.Value.isnull(self)</code></p>
+<p>Return whether this expression is NULL.</p>
+<section id="examples-11" class="level4">
+<h4 class="anchored" data-anchor-id="examples-11">Examples</h4>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> ibis</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> ibis.options.interactive <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t <span class="op">=</span> ibis.examples.penguins.fetch().limit(<span class="dv">5</span>)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t.bill_depth_mm</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>┏━━━━━━━━━━━━━━━┓</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>┃ bill_depth_mm ┃</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>┡━━━━━━━━━━━━━━━┩</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>│ float64       │</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>├───────────────┤</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>│          <span class="fl">18.7</span> │</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>│          <span class="fl">17.4</span> │</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>│          <span class="fl">18.0</span> │</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>│           nan │</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>│          <span class="fl">19.3</span> │</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>└───────────────┘</span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t.bill_depth_mm.isnull()</span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>┏━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>┃ IsNull(bill_depth_mm) ┃</span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>┡━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>│ boolean               │</span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>├───────────────────────┤</span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>│ <span class="va">False</span>                 │</span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>│ <span class="va">False</span>                 │</span>
+<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a>│ <span class="va">False</span>                 │</span>
+<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a>│ <span class="va">True</span>                  │</span>
+<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a>│ <span class="va">False</span>                 │</span>
+<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a>└───────────────────────┘</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="ibis.expr.types.generic.Value.least" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Value.least">least</h3>
+<p><code>expr.types.generic.Value.least(self, *args)</code></p>
+<p>Compute the smallest value among the supplied arguments.</p>
+<section id="parameters-10" class="level4">
+<h4 class="anchored" data-anchor-id="parameters-10">Parameters</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>args</code></td>
+<td>ibis.Value</td>
+<td>Arguments to choose from</td>
+<td><code>()</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="returns-13" class="level4">
+<h4 class="anchored" data-anchor-id="returns-13">Returns</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Value</td>
+<td>Minimum of the passed arguments</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="ibis.expr.types.generic.Value.name" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Value.name">name</h3>
+<p><code>expr.types.generic.Value.name(self, name)</code></p>
+<p>Rename an expression to <code>name</code>.</p>
+<section id="parameters-11" class="level4">
+<h4 class="anchored" data-anchor-id="parameters-11">Parameters</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>name</code></td>
+<td></td>
+<td>The new name of the expression</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="returns-14" class="level4">
+<h4 class="anchored" data-anchor-id="returns-14">Returns</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Value</td>
+<td><code>self</code> with name <code>name</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="examples-12" class="level4">
+<h4 class="anchored" data-anchor-id="examples-12">Examples</h4>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> ibis</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t <span class="op">=</span> ibis.table(<span class="bu">dict</span>(a<span class="op">=</span><span class="st">"int64"</span>), name<span class="op">=</span><span class="st">"t"</span>)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t.a.name(<span class="st">"b"</span>)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>r0 <span class="op">:=</span> UnboundTable: t</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  a int64</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>b: r0.a</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="ibis.expr.types.generic.Value.notin" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Value.notin">notin</h3>
+<p><code>expr.types.generic.Value.notin(self, values)</code></p>
+<p>Check whether this expression’s values are not in <code>values</code>.</p>
+<section id="parameters-12" class="level4">
+<h4 class="anchored" data-anchor-id="parameters-12">Parameters</h4>
+<table class="table">
+<colgroup>
+<col style="width: 6%">
+<col style="width: 52%">
+<col style="width: 33%">
+<col style="width: 7%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>values</code></td>
+<td>ibis.expr.types.generic.Value | typing.Sequence[ibis.expr.types.generic.Value]</td>
+<td>Values or expression to check for lack of membership</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="returns-15" class="level4">
+<h4 class="anchored" data-anchor-id="returns-15">Returns</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>BooleanValue</td>
+<td>Whether <code>self</code>’s values are not contained in <code>values</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="examples-13" class="level4">
+<h4 class="anchored" data-anchor-id="examples-13">Examples</h4>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> ibis</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> ibis.options.interactive <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t <span class="op">=</span> ibis.examples.penguins.fetch().limit(<span class="dv">5</span>)</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t.bill_depth_mm</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>┏━━━━━━━━━━━━━━━┓</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>┃ bill_depth_mm ┃</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>┡━━━━━━━━━━━━━━━┩</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>│ float64       │</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>├───────────────┤</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>│          <span class="fl">18.7</span> │</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>│          <span class="fl">17.4</span> │</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>│          <span class="fl">18.0</span> │</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>│           nan │</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>│          <span class="fl">19.3</span> │</span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>└───────────────┘</span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t.bill_depth_mm.notin([<span class="fl">18.7</span>, <span class="fl">18.1</span>])</span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>┃ NotContains(bill_depth_mm) ┃</span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>│ boolean                    │</span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>├────────────────────────────┤</span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a>│ <span class="va">False</span>                      │</span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>│ <span class="va">True</span>                       │</span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>│ <span class="va">True</span>                       │</span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a>│ NULL                       │</span>
+<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a>│ <span class="va">True</span>                       │</span>
+<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a>└────────────────────────────┘</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="ibis.expr.types.generic.Value.notnull" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Value.notnull">notnull</h3>
+<p><code>expr.types.generic.Value.notnull(self)</code></p>
+<p>Return whether this expression is not NULL.</p>
+<section id="examples-14" class="level4">
+<h4 class="anchored" data-anchor-id="examples-14">Examples</h4>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> ibis</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> ibis.options.interactive <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t <span class="op">=</span> ibis.examples.penguins.fetch().limit(<span class="dv">5</span>)</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t.bill_depth_mm</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>┏━━━━━━━━━━━━━━━┓</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>┃ bill_depth_mm ┃</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>┡━━━━━━━━━━━━━━━┩</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>│ float64       │</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>├───────────────┤</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>│          <span class="fl">18.7</span> │</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>│          <span class="fl">17.4</span> │</span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>│          <span class="fl">18.0</span> │</span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>│           nan │</span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>│          <span class="fl">19.3</span> │</span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>└───────────────┘</span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t.bill_depth_mm.notnull()</span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>┏━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>┃ NotNull(bill_depth_mm) ┃</span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>┡━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>│ boolean                │</span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a>├────────────────────────┤</span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a>│ <span class="va">True</span>                   │</span>
+<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a>│ <span class="va">True</span>                   │</span>
+<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a>│ <span class="va">True</span>                   │</span>
+<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a>│ <span class="va">False</span>                  │</span>
+<span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a>│ <span class="va">True</span>                   │</span>
+<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a>└────────────────────────┘</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="ibis.expr.types.generic.Value.nullif" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Value.nullif">nullif</h3>
+<p><code>expr.types.generic.Value.nullif(self, null_if_expr)</code></p>
+<p>Set values to null if they equal the values <code>null_if_expr</code>.</p>
+<p>Commonly use to avoid divide-by-zero problems by replacing zero with <code>NULL</code> in the divisor.</p>
+<section id="parameters-13" class="level4">
+<h4 class="anchored" data-anchor-id="parameters-13">Parameters</h4>
+<table class="table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 9%">
+<col style="width: 58%">
+<col style="width: 13%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>null_if_expr</code></td>
+<td>Value</td>
+<td>Expression indicating what values should be NULL</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="returns-16" class="level4">
+<h4 class="anchored" data-anchor-id="returns-16">Returns</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Value</td>
+<td>Value expression</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="ibis.expr.types.generic.Value.over" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Value.over">over</h3>
+<p><code>expr.types.generic.Value.over(self, window=None, *, rows=None, range=None, group_by=None, order_by=None)</code></p>
+<p>Construct a window expression.</p>
+<section id="parameters-14" class="level4">
+<h4 class="anchored" data-anchor-id="parameters-14">Parameters</h4>
+<table class="table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 10%">
+<col style="width: 57%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>window</code></td>
+<td></td>
+<td>Window specification</td>
+<td><code>None</code></td>
+</tr>
+<tr class="even">
+<td><code>rows</code></td>
+<td></td>
+<td>Whether to use the <code>ROWS</code> window clause</td>
+<td><code>None</code></td>
+</tr>
+<tr class="odd">
+<td><code>range</code></td>
+<td></td>
+<td>Whether to use the <code>RANGE</code> window clause</td>
+<td><code>None</code></td>
+</tr>
+<tr class="even">
+<td><code>group_by</code></td>
+<td></td>
+<td>Grouping key</td>
+<td><code>None</code></td>
+</tr>
+<tr class="odd">
+<td><code>order_by</code></td>
+<td></td>
+<td>Ordering key</td>
+<td><code>None</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="returns-17" class="level4">
+<h4 class="anchored" data-anchor-id="returns-17">Returns</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Value</td>
+<td>A window function expression</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="ibis.expr.types.generic.Value.substitute" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Value.substitute">substitute</h3>
+<p><code>expr.types.generic.Value.substitute(self, value, replacement=None, else_=None)</code></p>
+<p>Replace values given in <code>values</code> with <code>replacement</code>.</p>
+<p>This is similar to the pandas <code>replace</code> method.</p>
+<section id="parameters-15" class="level4">
+<h4 class="anchored" data-anchor-id="parameters-15">Parameters</h4>
+<table class="table">
+<colgroup>
+<col style="width: 7%">
+<col style="width: 19%">
+<col style="width: 66%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>value</code></td>
+<td>ibis.expr.types.generic.Value | dict</td>
+<td>Expression or dict.</td>
+<td><em>required</em></td>
+</tr>
+<tr class="even">
+<td><code>replacement</code></td>
+<td>ibis.expr.types.generic.Value | None</td>
+<td>If an expression is passed to value, this must be passed.</td>
+<td><code>None</code></td>
+</tr>
+<tr class="odd">
+<td><code>else_</code></td>
+<td>ibis.expr.types.generic.Value | None</td>
+<td>If an original value does not match <code>value</code>, then <code>else_</code> is used. The default of <code>None</code> means leave the original value unchanged.</td>
+<td><code>None</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="returns-18" class="level4">
+<h4 class="anchored" data-anchor-id="returns-18">Returns</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Value</td>
+<td>Replaced values</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="examples-15" class="level4">
+<h4 class="anchored" data-anchor-id="examples-15">Examples</h4>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> ibis</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> ibis.options.interactive <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t <span class="op">=</span> ibis.examples.penguins.fetch()</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t.island.value_counts()</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>┏━━━━━━━━━━━┳━━━━━━━━━━━━━━┓</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>┃ island    ┃ island_count ┃</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>┡━━━━━━━━━━━╇━━━━━━━━━━━━━━┩</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>│ string    │ int64        │</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>├───────────┼──────────────┤</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>│ Torgersen │           <span class="dv">52</span> │</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>│ Biscoe    │          <span class="dv">168</span> │</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>│ Dream     │          <span class="dv">124</span> │</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>└───────────┴──────────────┘</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t.island.substitute({<span class="st">"Torgersen"</span>: <span class="st">"torg"</span>, <span class="st">"Biscoe"</span>: <span class="st">"bisc"</span>}).value_counts()</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓</span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>┃ SimpleCase(island, island) ┃ SimpleCase(island, island)_count ┃</span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩</span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>│ string                     │ int64                            │</span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>├────────────────────────────┼──────────────────────────────────┤</span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>│ torg                       │                               <span class="dv">52</span> │</span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>│ bisc                       │                              <span class="dv">168</span> │</span>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>│ Dream                      │                              <span class="dv">124</span> │</span>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>└────────────────────────────┴──────────────────────────────────┘</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="ibis.expr.types.generic.Value.to_pandas" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Value.to_pandas">to_pandas</h3>
+<p><code>expr.types.generic.Value.to_pandas(self, **kwargs)</code></p>
+<p>Convert a column expression to a pandas Series or scalar object.</p>
+<section id="parameters-16" class="level4">
+<h4 class="anchored" data-anchor-id="parameters-16">Parameters</h4>
+<table class="table">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 7%">
+<col style="width: 72%">
+<col style="width: 10%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>kwargs</code></td>
+<td></td>
+<td>Same as keyword arguments to [<code>execute</code>][ibis.expr.types.core.Expr.execute]</td>
+<td><code>{}</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="examples-16" class="level4">
+<h4 class="anchored" data-anchor-id="examples-16">Examples</h4>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> ibis</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> ibis.options.interactive <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t <span class="op">=</span> ibis.examples.penguins.fetch().limit(<span class="dv">5</span>)</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t.to_pandas()</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>  species     island  bill_length_mm  ...  body_mass_g     sex  year</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span>  Adelie  Torgersen            <span class="fl">39.1</span>  ...       <span class="fl">3750.0</span>    male  <span class="dv">2007</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>  Adelie  Torgersen            <span class="fl">39.5</span>  ...       <span class="fl">3800.0</span>  female  <span class="dv">2007</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span>  Adelie  Torgersen            <span class="fl">40.3</span>  ...       <span class="fl">3250.0</span>  female  <span class="dv">2007</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span>  Adelie  Torgersen             NaN  ...          NaN    <span class="va">None</span>  <span class="dv">2007</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span>  Adelie  Torgersen            <span class="fl">36.7</span>  ...       <span class="fl">3450.0</span>  female  <span class="dv">2007</span></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>[<span class="dv">5</span> rows x <span class="dv">8</span> columns]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="ibis.expr.types.generic.Value.try_cast" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Value.try_cast">try_cast</h3>
+<p><code>expr.types.generic.Value.try_cast(self, target_type)</code></p>
+<p>Try cast expression to indicated data type. If the cast fails for a row, the value is returned as null or NaN depending on target_type and backend behavior.</p>
+<section id="parameters-17" class="level4">
+<h4 class="anchored" data-anchor-id="parameters-17">Parameters</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>target_type</code></td>
+<td>ibis.DataType</td>
+<td>Type to try cast to</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="returns-19" class="level4">
+<h4 class="anchored" data-anchor-id="returns-19">Returns</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Value</td>
+<td>Casted expression</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="examples-17" class="level4">
+<h4 class="anchored" data-anchor-id="examples-17">Examples</h4>
+<div class="sourceCode" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> ibis</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">from</span> ibis <span class="im">import</span> _</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> ibis.options.interactive <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t <span class="op">=</span> ibis.memtable({<span class="st">"numbers"</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>], <span class="st">"strings"</span>: [<span class="st">"1.0"</span>, <span class="st">"2"</span>, <span class="st">"hello"</span>, <span class="st">"world"</span>]})</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>┏━━━━━━━━━┳━━━━━━━━━┓</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>┃ numbers ┃ strings ┃</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>┡━━━━━━━━━╇━━━━━━━━━┩</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>│ int64   │ string  │</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>├─────────┼─────────┤</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>│       <span class="dv">1</span> │ <span class="fl">1.0</span>     │</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>│       <span class="dv">2</span> │ <span class="dv">2</span>       │</span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>│       <span class="dv">3</span> │ hello   │</span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>│       <span class="dv">4</span> │ world   │</span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>└─────────┴─────────┘</span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t <span class="op">=</span> t.mutate(numbers_to_strings<span class="op">=</span>_.numbers.try_cast(<span class="st">"string"</span>))</span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t <span class="op">=</span> t.mutate(strings_to_numbers<span class="op">=</span>_.strings.try_cast(<span class="st">"int"</span>))</span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t</span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>┏━━━━━━━━━┳━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━┓</span>
+<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a>┃ numbers ┃ strings ┃ numbers_to_strings ┃ strings_to_numbers ┃</span>
+<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a>┡━━━━━━━━━╇━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━┩</span>
+<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a>│ int64   │ string  │ string             │ int64              │</span>
+<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a>├─────────┼─────────┼────────────────────┼────────────────────┤</span>
+<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a>│       <span class="dv">1</span> │ <span class="fl">1.0</span>     │ <span class="dv">1</span>                  │                  <span class="dv">1</span> │</span>
+<span id="cb23-25"><a href="#cb23-25" aria-hidden="true" tabindex="-1"></a>│       <span class="dv">2</span> │ <span class="dv">2</span>       │ <span class="dv">2</span>                  │                  <span class="dv">2</span> │</span>
+<span id="cb23-26"><a href="#cb23-26" aria-hidden="true" tabindex="-1"></a>│       <span class="dv">3</span> │ hello   │ <span class="dv">3</span>                  │               NULL │</span>
+<span id="cb23-27"><a href="#cb23-27" aria-hidden="true" tabindex="-1"></a>│       <span class="dv">4</span> │ world   │ <span class="dv">4</span>                  │               NULL │</span>
+<span id="cb23-28"><a href="#cb23-28" aria-hidden="true" tabindex="-1"></a>└─────────┴─────────┴────────────────────┴────────────────────┘</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="ibis.expr.types.generic.Value.type" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Value.type">type</h3>
+<p><code>expr.types.generic.Value.type(self)</code></p>
+<p>Return the [DataType] of this expression.</p>
+</section>
+<section id="ibis.expr.types.generic.Value.typeof" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Value.typeof">typeof</h3>
+<p><code>expr.types.generic.Value.typeof(self)</code></p>
+<p>Return the data type of the expression.</p>
+<p>The values of the returned strings are necessarily backend dependent.</p>
+<section id="returns-20" class="level4">
+<h4 class="anchored" data-anchor-id="returns-20">Returns</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>StringValue</td>
+<td>A string indicating the type of the value</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+</section>
+<section id="ibis.expr.types.generic.Column" class="level1">
+<h1>Column</h1>
+<p><code>expr.types.generic.Column()</code></p>
+<section id="methods-1" class="level2">
+<h2 class="anchored" data-anchor-id="methods-1">Methods</h2>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="#ibis.expr.types.generic.Column.approx_median">approx_median</a></td>
+<td>Return an approximate of the median of <code>self</code>.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.types.generic.Column.approx_nunique">approx_nunique</a></td>
+<td>Return the approximate number of distinct elements in <code>self</code>.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.types.generic.Column.arbitrary">arbitrary</a></td>
+<td>Select an arbitrary value in a column.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.types.generic.Column.argmax">argmax</a></td>
+<td>Return the value of <code>self</code> that maximizes <code>key</code>.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.types.generic.Column.argmin">argmin</a></td>
+<td>Return the value of <code>self</code> that minimizes <code>key</code>.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.types.generic.Column.count">count</a></td>
+<td>Compute the number of rows in an expression.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.types.generic.Column.cume_dist">cume_dist</a></td>
+<td>Return the cumulative distribution over a window.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.types.generic.Column.cummax">cummax</a></td>
+<td>Return the cumulative max over a window.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.types.generic.Column.cummin">cummin</a></td>
+<td>Return the cumulative min over a window.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.types.generic.Column.dense_rank">dense_rank</a></td>
+<td>Position of first element within each group of equal values.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.types.generic.Column.first">first</a></td>
+<td>Return the first value of a column.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.types.generic.Column.lag">lag</a></td>
+<td>Return the row located at <code>offset</code> rows <strong>before</strong> the current row.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.types.generic.Column.last">last</a></td>
+<td>Return the last value of a column.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.types.generic.Column.lead">lead</a></td>
+<td>Return the row located at <code>offset</code> rows <strong>after</strong> the current row.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.types.generic.Column.max">max</a></td>
+<td>Return the maximum of a column.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.types.generic.Column.min">min</a></td>
+<td>Return the minimum of a column.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.types.generic.Column.mode">mode</a></td>
+<td>Return the mode of a column.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.types.generic.Column.nth">nth</a></td>
+<td>Return the <code>n</code>th value (0-indexed) over a window.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.types.generic.Column.ntile">ntile</a></td>
+<td>Return the integer number of a partitioning of the column values.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.types.generic.Column.nunique">nunique</a></td>
+<td>Compute the number of distinct rows in an expression.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.types.generic.Column.percent_rank">percent_rank</a></td>
+<td>Return the relative rank of the values in the column.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.types.generic.Column.rank">rank</a></td>
+<td>Compute position of first element within each equal-value group in sorted order.</td>
+</tr>
+<tr class="odd">
+<td><a href="#ibis.expr.types.generic.Column.topk">topk</a></td>
+<td>Return a “top k” expression.</td>
+</tr>
+<tr class="even">
+<td><a href="#ibis.expr.types.generic.Column.value_counts">value_counts</a></td>
+<td>Compute a frequency table.</td>
+</tr>
+</tbody>
+</table>
+<section id="ibis.expr.types.generic.Column.approx_median" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Column.approx_median">approx_median</h3>
+<p><code>expr.types.generic.Column.approx_median(self, where=None)</code></p>
+<p>Return an approximate of the median of <code>self</code>.</p>
+<p>!!! info “The result may or may not be exact”</p>
+<pre><code>Whether the result is an approximation depends on the backend.
+
+!!! warning "Do not depend on the results being exact"</code></pre>
+<section id="parameters-18" class="level4">
+<h4 class="anchored" data-anchor-id="parameters-18">Parameters</h4>
+<table class="table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 30%">
+<col style="width: 46%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>where</code></td>
+<td>ibis.BooleanValue | None</td>
+<td>Filter in values when <code>where</code> is <code>True</code></td>
+<td><code>None</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="returns-21" class="level4">
+<h4 class="anchored" data-anchor-id="returns-21">Returns</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Scalar</td>
+<td>An approximation of the median of <code>self</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="examples-18" class="level4">
+<h4 class="anchored" data-anchor-id="examples-18">Examples</h4>
+<div class="sourceCode" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> ibis</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> ibis.options.interactive <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t <span class="op">=</span> ibis.examples.penguins.fetch()</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t.body_mass_g.approx_median()</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="dv">4030</span></span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t.body_mass_g.approx_median(where<span class="op">=</span>t.species <span class="op">==</span> <span class="st">"Chinstrap"</span>)</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="dv">3700</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="ibis.expr.types.generic.Column.approx_nunique" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Column.approx_nunique">approx_nunique</h3>
+<p><code>expr.types.generic.Column.approx_nunique(self, where=None)</code></p>
+<p>Return the approximate number of distinct elements in <code>self</code>.</p>
+<p>!!! info “The result may or may not be exact”</p>
+<pre><code>Whether the result is an approximation depends on the backend.
+
+!!! warning "Do not depend on the results being exact"</code></pre>
+<section id="parameters-19" class="level4">
+<h4 class="anchored" data-anchor-id="parameters-19">Parameters</h4>
+<table class="table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 30%">
+<col style="width: 46%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>where</code></td>
+<td>ibis.BooleanValue | None</td>
+<td>Filter in values when <code>where</code> is <code>True</code></td>
+<td><code>None</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="returns-22" class="level4">
+<h4 class="anchored" data-anchor-id="returns-22">Returns</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Scalar</td>
+<td>An approximate count of the distinct elements of <code>self</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="examples-19" class="level4">
+<h4 class="anchored" data-anchor-id="examples-19">Examples</h4>
+<div class="sourceCode" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> ibis</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> ibis.options.interactive <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t <span class="op">=</span> ibis.examples.penguins.fetch()</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t.body_mass_g.approx_nunique()</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="dv">94</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t.body_mass_g.approx_nunique(where<span class="op">=</span>t.species <span class="op">==</span> <span class="st">"Adelie"</span>)</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="dv">55</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="ibis.expr.types.generic.Column.arbitrary" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Column.arbitrary">arbitrary</h3>
+<p><code>expr.types.generic.Column.arbitrary(self, where=None, how='first')</code></p>
+<p>Select an arbitrary value in a column.</p>
+<section id="parameters-20" class="level4">
+<h4 class="anchored" data-anchor-id="parameters-20">Parameters</h4>
+<table class="table">
+<colgroup>
+<col style="width: 2%">
+<col style="width: 12%">
+<col style="width: 81%">
+<col style="width: 3%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>where</code></td>
+<td>ibis.BooleanValue | None</td>
+<td>A filter expression</td>
+<td><code>None</code></td>
+</tr>
+<tr class="even">
+<td><code>how</code></td>
+<td>typing.Literal[‘first’, ‘last’, ‘heavy’]</td>
+<td>The method to use for selecting the element. * <code>"first"</code>: Select the first non-<code>NULL</code> element * <code>"last"</code>: Select the last non-<code>NULL</code> element * <code>"heavy"</code>: Select a frequently occurring value using the heavy hitters algorithm. <code>"heavy"</code> is only supported by Clickhouse backend.</td>
+<td><code>'first'</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="returns-23" class="level4">
+<h4 class="anchored" data-anchor-id="returns-23">Returns</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Scalar</td>
+<td>An expression</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="ibis.expr.types.generic.Column.argmax" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Column.argmax">argmax</h3>
+<p><code>expr.types.generic.Column.argmax(self, key, where=None)</code></p>
+<p>Return the value of <code>self</code> that maximizes <code>key</code>.</p>
+<section id="parameters-21" class="level4">
+<h4 class="anchored" data-anchor-id="parameters-21">Parameters</h4>
+<table class="table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 30%">
+<col style="width: 46%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>where</code></td>
+<td>ibis.BooleanValue | None</td>
+<td>Filter in values when <code>where</code> is <code>True</code></td>
+<td><code>None</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="returns-24" class="level4">
+<h4 class="anchored" data-anchor-id="returns-24">Returns</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Scalar</td>
+<td>The value of <code>self</code> that maximizes <code>key</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="examples-20" class="level4">
+<h4 class="anchored" data-anchor-id="examples-20">Examples</h4>
+<div class="sourceCode" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> ibis</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> ibis.options.interactive <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t <span class="op">=</span> ibis.examples.penguins.fetch()</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t.species.argmax(t.body_mass_g)</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="co">'Gentoo'</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t.species.argmax(t.body_mass_g, where<span class="op">=</span>t.island <span class="op">==</span> <span class="st">"Dream"</span>)</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="co">'Chinstrap'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="ibis.expr.types.generic.Column.argmin" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Column.argmin">argmin</h3>
+<p><code>expr.types.generic.Column.argmin(self, key, where=None)</code></p>
+<p>Return the value of <code>self</code> that minimizes <code>key</code>.</p>
+<section id="parameters-22" class="level4">
+<h4 class="anchored" data-anchor-id="parameters-22">Parameters</h4>
+<table class="table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 30%">
+<col style="width: 46%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>where</code></td>
+<td>ibis.BooleanValue | None</td>
+<td>Filter in values when <code>where</code> is <code>True</code></td>
+<td><code>None</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="returns-25" class="level4">
+<h4 class="anchored" data-anchor-id="returns-25">Returns</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Scalar</td>
+<td>The value of <code>self</code> that minimizes <code>key</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="examples-21" class="level4">
+<h4 class="anchored" data-anchor-id="examples-21">Examples</h4>
+<div class="sourceCode" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> ibis</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> ibis.options.interactive <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t <span class="op">=</span> ibis.examples.penguins.fetch()</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t.species.argmin(t.body_mass_g)</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="co">'Chinstrap'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t.species.argmin(t.body_mass_g, where<span class="op">=</span>t.island <span class="op">==</span> <span class="st">"Biscoe"</span>)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="co">'Adelie'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="ibis.expr.types.generic.Column.count" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Column.count">count</h3>
+<p><code>expr.types.generic.Column.count(self, where=None)</code></p>
+<p>Compute the number of rows in an expression.</p>
+<section id="parameters-23" class="level4">
+<h4 class="anchored" data-anchor-id="parameters-23">Parameters</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>where</code></td>
+<td>ibis.BooleanValue | None</td>
+<td>Filter expression</td>
+<td><code>None</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="returns-26" class="level4">
+<h4 class="anchored" data-anchor-id="returns-26">Returns</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>IntegerScalar</td>
+<td>Number of elements in an expression</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="ibis.expr.types.generic.Column.cume_dist" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Column.cume_dist">cume_dist</h3>
+<p><code>expr.types.generic.Column.cume_dist(self)</code></p>
+<p>Return the cumulative distribution over a window.</p>
+</section>
+<section id="ibis.expr.types.generic.Column.cummax" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Column.cummax">cummax</h3>
+<p><code>expr.types.generic.Column.cummax(self)</code></p>
+<p>Return the cumulative max over a window.</p>
+</section>
+<section id="ibis.expr.types.generic.Column.cummin" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Column.cummin">cummin</h3>
+<p><code>expr.types.generic.Column.cummin(self)</code></p>
+<p>Return the cumulative min over a window.</p>
+</section>
+<section id="ibis.expr.types.generic.Column.dense_rank" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Column.dense_rank">dense_rank</h3>
+<p><code>expr.types.generic.Column.dense_rank(self)</code></p>
+<p>Position of first element within each group of equal values.</p>
+<p>Values are returned in sorted order and duplicate values are ignored.</p>
+<p>Equivalent to SQL’s <code>DENSE_RANK()</code>.</p>
+<section id="returns-27" class="level4">
+<h4 class="anchored" data-anchor-id="returns-27">Returns</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>IntegerColumn</td>
+<td>The rank</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="examples-22" class="level4">
+<h4 class="anchored" data-anchor-id="examples-22">Examples</h4>
+<div class="sourceCode" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> ibis</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> ibis.options.interactive <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t <span class="op">=</span> ibis.memtable({<span class="st">"values"</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">2</span>]})</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t.mutate(rank<span class="op">=</span>t.values.dense_rank())</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>┏━━━━━━━━┳━━━━━━━┓</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>┃ values ┃ rank  ┃</span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>┡━━━━━━━━╇━━━━━━━┩</span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>│ int64  │ int64 │</span>
+<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a>├────────┼───────┤</span>
+<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a>│      <span class="dv">1</span> │     <span class="dv">0</span> │</span>
+<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>│      <span class="dv">1</span> │     <span class="dv">0</span> │</span>
+<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a>│      <span class="dv">2</span> │     <span class="dv">1</span> │</span>
+<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a>│      <span class="dv">2</span> │     <span class="dv">1</span> │</span>
+<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a>│      <span class="dv">2</span> │     <span class="dv">1</span> │</span>
+<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a>│      <span class="dv">3</span> │     <span class="dv">2</span> │</span>
+<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a>└────────┴───────┘</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="ibis.expr.types.generic.Column.first" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Column.first">first</h3>
+<p><code>expr.types.generic.Column.first(self, where=None)</code></p>
+<p>Return the first value of a column.</p>
+<section id="examples-23" class="level4">
+<h4 class="anchored" data-anchor-id="examples-23">Examples</h4>
+<div class="sourceCode" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> ibis</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> ibis.options.interactive <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t <span class="op">=</span> ibis.memtable({<span class="st">"chars"</span>: [<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>, <span class="st">"d"</span>]})</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>┏━━━━━━━━┓</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>┃ chars  ┃</span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>┡━━━━━━━━┩</span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>│ string │</span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>├────────┤</span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>│ a      │</span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>│ b      │</span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>│ c      │</span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>│ d      │</span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>└────────┘</span>
+<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t.chars.first()</span>
+<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a><span class="co">'a'</span></span>
+<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t.chars.first(where<span class="op">=</span>t.chars <span class="op">!=</span> <span class="st">'a'</span>)</span>
+<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a><span class="co">'b'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="ibis.expr.types.generic.Column.lag" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Column.lag">lag</h3>
+<p><code>expr.types.generic.Column.lag(self, offset=None, default=None)</code></p>
+<p>Return the row located at <code>offset</code> rows <strong>before</strong> the current row.</p>
+<section id="parameters-24" class="level4">
+<h4 class="anchored" data-anchor-id="parameters-24">Parameters</h4>
+<table class="table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 38%">
+<col style="width: 40%">
+<col style="width: 10%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>offset</code></td>
+<td>int | ibis.IntegerValue | None</td>
+<td>Index of row to select</td>
+<td><code>None</code></td>
+</tr>
+<tr class="even">
+<td><code>default</code></td>
+<td>ibis.expr.types.generic.Value | None</td>
+<td>Value used if no row exists at <code>offset</code></td>
+<td><code>None</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="ibis.expr.types.generic.Column.last" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Column.last">last</h3>
+<p><code>expr.types.generic.Column.last(self, where=None)</code></p>
+<p>Return the last value of a column.</p>
+<section id="examples-24" class="level4">
+<h4 class="anchored" data-anchor-id="examples-24">Examples</h4>
+<div class="sourceCode" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> ibis</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> ibis.options.interactive <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t <span class="op">=</span> ibis.memtable({<span class="st">"chars"</span>: [<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>, <span class="st">"d"</span>]})</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>┏━━━━━━━━┓</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>┃ chars  ┃</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>┡━━━━━━━━┩</span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>│ string │</span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>├────────┤</span>
+<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a>│ a      │</span>
+<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a>│ b      │</span>
+<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a>│ c      │</span>
+<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a>│ d      │</span>
+<span id="cb33-14"><a href="#cb33-14" aria-hidden="true" tabindex="-1"></a>└────────┘</span>
+<span id="cb33-15"><a href="#cb33-15" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t.chars.last()</span>
+<span id="cb33-16"><a href="#cb33-16" aria-hidden="true" tabindex="-1"></a><span class="co">'d'</span></span>
+<span id="cb33-17"><a href="#cb33-17" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t.chars.last(where<span class="op">=</span>t.chars <span class="op">!=</span> <span class="st">'d'</span>)</span>
+<span id="cb33-18"><a href="#cb33-18" aria-hidden="true" tabindex="-1"></a><span class="co">'c'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="ibis.expr.types.generic.Column.lead" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Column.lead">lead</h3>
+<p><code>expr.types.generic.Column.lead(self, offset=None, default=None)</code></p>
+<p>Return the row located at <code>offset</code> rows <strong>after</strong> the current row.</p>
+<section id="parameters-25" class="level4">
+<h4 class="anchored" data-anchor-id="parameters-25">Parameters</h4>
+<table class="table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 38%">
+<col style="width: 40%">
+<col style="width: 10%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>offset</code></td>
+<td>int | ibis.IntegerValue | None</td>
+<td>Index of row to select</td>
+<td><code>None</code></td>
+</tr>
+<tr class="even">
+<td><code>default</code></td>
+<td>ibis.expr.types.generic.Value | None</td>
+<td>Value used if no row exists at <code>offset</code></td>
+<td><code>None</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="ibis.expr.types.generic.Column.max" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Column.max">max</h3>
+<p><code>expr.types.generic.Column.max(self, where=None)</code></p>
+<p>Return the maximum of a column.</p>
+<section id="parameters-26" class="level4">
+<h4 class="anchored" data-anchor-id="parameters-26">Parameters</h4>
+<table class="table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 30%">
+<col style="width: 46%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>where</code></td>
+<td>ibis.BooleanValue | None</td>
+<td>Filter in values when <code>where</code> is <code>True</code></td>
+<td><code>None</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="returns-28" class="level4">
+<h4 class="anchored" data-anchor-id="returns-28">Returns</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Scalar</td>
+<td>The maximum value in <code>self</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="examples-25" class="level4">
+<h4 class="anchored" data-anchor-id="examples-25">Examples</h4>
+<div class="sourceCode" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> ibis</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> ibis.options.interactive <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t <span class="op">=</span> ibis.examples.penguins.fetch()</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t.body_mass_g.<span class="bu">max</span>()</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="dv">6300</span></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t.body_mass_g.<span class="bu">max</span>(where<span class="op">=</span>t.species <span class="op">==</span> <span class="st">"Chinstrap"</span>)</span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a><span class="dv">4800</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="ibis.expr.types.generic.Column.min" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Column.min">min</h3>
+<p><code>expr.types.generic.Column.min(self, where=None)</code></p>
+<p>Return the minimum of a column.</p>
+<section id="parameters-27" class="level4">
+<h4 class="anchored" data-anchor-id="parameters-27">Parameters</h4>
+<table class="table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 30%">
+<col style="width: 46%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>where</code></td>
+<td>ibis.BooleanValue | None</td>
+<td>Filter in values when <code>where</code> is <code>True</code></td>
+<td><code>None</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="returns-29" class="level4">
+<h4 class="anchored" data-anchor-id="returns-29">Returns</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Scalar</td>
+<td>The minimum value in <code>self</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="examples-26" class="level4">
+<h4 class="anchored" data-anchor-id="examples-26">Examples</h4>
+<div class="sourceCode" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> ibis</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> ibis.options.interactive <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t <span class="op">=</span> ibis.examples.penguins.fetch()</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t.body_mass_g.<span class="bu">min</span>()</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="dv">2700</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t.body_mass_g.<span class="bu">min</span>(where<span class="op">=</span>t.species <span class="op">==</span> <span class="st">"Adelie"</span>)</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a><span class="dv">2850</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="ibis.expr.types.generic.Column.mode" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Column.mode">mode</h3>
+<p><code>expr.types.generic.Column.mode(self, where=None)</code></p>
+<p>Return the mode of a column.</p>
+<section id="parameters-28" class="level4">
+<h4 class="anchored" data-anchor-id="parameters-28">Parameters</h4>
+<table class="table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 30%">
+<col style="width: 46%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>where</code></td>
+<td>ibis.BooleanValue | None</td>
+<td>Filter in values when <code>where</code> is <code>True</code></td>
+<td><code>None</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="returns-30" class="level4">
+<h4 class="anchored" data-anchor-id="returns-30">Returns</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Scalar</td>
+<td>The mode of <code>self</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="examples-27" class="level4">
+<h4 class="anchored" data-anchor-id="examples-27">Examples</h4>
+<div class="sourceCode" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> ibis</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> ibis.options.interactive <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t <span class="op">=</span> ibis.examples.penguins.fetch()</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t.body_mass_g.mode()</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="dv">3800</span></span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t.body_mass_g.mode(where<span class="op">=</span>(t.species <span class="op">==</span> <span class="st">"Gentoo"</span>) <span class="op">&amp;</span> (t.sex <span class="op">==</span> <span class="st">"male"</span>))</span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="dv">5550</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="ibis.expr.types.generic.Column.nth" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Column.nth">nth</h3>
+<p><code>expr.types.generic.Column.nth(self, n)</code></p>
+<p>Return the <code>n</code>th value (0-indexed) over a window.</p>
+<p><code>.nth(0)</code> is equivalent to <code>.first()</code>. Negative will result in <code>NULL</code>. If the value of <code>n</code> is greater than the number of rows in the window, <code>NULL</code> will be returned.</p>
+<section id="parameters-29" class="level4">
+<h4 class="anchored" data-anchor-id="parameters-29">Parameters</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>n</code></td>
+<td>int | ibis.IntegerValue</td>
+<td>Desired rank value</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="returns-31" class="level4">
+<h4 class="anchored" data-anchor-id="returns-31">Returns</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Column</td>
+<td>The nth value over a window</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="ibis.expr.types.generic.Column.ntile" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Column.ntile">ntile</h3>
+<p><code>expr.types.generic.Column.ntile(self, buckets)</code></p>
+<p>Return the integer number of a partitioning of the column values.</p>
+<section id="parameters-30" class="level4">
+<h4 class="anchored" data-anchor-id="parameters-30">Parameters</h4>
+<table class="table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 30%">
+<col style="width: 43%">
+<col style="width: 13%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>buckets</code></td>
+<td>int | ibis.IntegerValue</td>
+<td>Number of buckets to partition into</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="ibis.expr.types.generic.Column.nunique" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Column.nunique">nunique</h3>
+<p><code>expr.types.generic.Column.nunique(self, where=None)</code></p>
+<p>Compute the number of distinct rows in an expression.</p>
+<section id="parameters-31" class="level4">
+<h4 class="anchored" data-anchor-id="parameters-31">Parameters</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>where</code></td>
+<td>ibis.BooleanValue | None</td>
+<td>Filter expression</td>
+<td><code>None</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="returns-32" class="level4">
+<h4 class="anchored" data-anchor-id="returns-32">Returns</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>IntegerScalar</td>
+<td>Number of distinct elements in an expression</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="examples-28" class="level4">
+<h4 class="anchored" data-anchor-id="examples-28">Examples</h4>
+<div class="sourceCode" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> ibis</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> ibis.options.interactive <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t <span class="op">=</span> ibis.examples.penguins.fetch()</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t.body_mass_g.nunique()</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="dv">94</span></span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t.body_mass_g.nunique(where<span class="op">=</span>t.species <span class="op">==</span> <span class="st">"Adelie"</span>)</span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="dv">55</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="ibis.expr.types.generic.Column.percent_rank" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Column.percent_rank">percent_rank</h3>
+<p><code>expr.types.generic.Column.percent_rank(self)</code></p>
+<p>Return the relative rank of the values in the column.</p>
+</section>
+<section id="ibis.expr.types.generic.Column.rank" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Column.rank">rank</h3>
+<p><code>expr.types.generic.Column.rank(self)</code></p>
+<p>Compute position of first element within each equal-value group in sorted order.</p>
+<p>Equivalent to SQL’s <code>RANK()</code> window function.</p>
+<section id="returns-33" class="level4">
+<h4 class="anchored" data-anchor-id="returns-33">Returns</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Int64Column</td>
+<td>The min rank</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="examples-29" class="level4">
+<h4 class="anchored" data-anchor-id="examples-29">Examples</h4>
+<div class="sourceCode" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> ibis</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> ibis.options.interactive <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t <span class="op">=</span> ibis.memtable({<span class="st">"values"</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">2</span>]})</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t.mutate(rank<span class="op">=</span>t.values.rank())</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>┏━━━━━━━━┳━━━━━━━┓</span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>┃ values ┃ rank  ┃</span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>┡━━━━━━━━╇━━━━━━━┩</span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>│ int64  │ int64 │</span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>├────────┼───────┤</span>
+<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a>│      <span class="dv">1</span> │     <span class="dv">0</span> │</span>
+<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a>│      <span class="dv">1</span> │     <span class="dv">0</span> │</span>
+<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a>│      <span class="dv">2</span> │     <span class="dv">2</span> │</span>
+<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a>│      <span class="dv">2</span> │     <span class="dv">2</span> │</span>
+<span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a>│      <span class="dv">2</span> │     <span class="dv">2</span> │</span>
+<span id="cb38-15"><a href="#cb38-15" aria-hidden="true" tabindex="-1"></a>│      <span class="dv">3</span> │     <span class="dv">5</span> │</span>
+<span id="cb38-16"><a href="#cb38-16" aria-hidden="true" tabindex="-1"></a>└────────┴───────┘</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="ibis.expr.types.generic.Column.topk" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Column.topk">topk</h3>
+<p><code>expr.types.generic.Column.topk(self, k, by=None)</code></p>
+<p>Return a “top k” expression.</p>
+<section id="parameters-32" class="level4">
+<h4 class="anchored" data-anchor-id="parameters-32">Parameters</h4>
+<table class="table">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 25%">
+<col style="width: 48%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>k</code></td>
+<td>int</td>
+<td>Return this number of rows</td>
+<td><em>required</em></td>
+</tr>
+<tr class="even">
+<td><code>by</code></td>
+<td>ibis.Value | None</td>
+<td>An expression. Defaults to <code>count</code>.</td>
+<td><code>None</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="returns-34" class="level4">
+<h4 class="anchored" data-anchor-id="returns-34">Returns</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>TableExpr</td>
+<td>A top-k expression</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="ibis.expr.types.generic.Column.value_counts" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Column.value_counts">value_counts</h3>
+<p><code>expr.types.generic.Column.value_counts(self)</code></p>
+<p>Compute a frequency table.</p>
+<section id="returns-35" class="level4">
+<h4 class="anchored" data-anchor-id="returns-35">Returns</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Table</td>
+<td>Frequency table expression</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="examples-30" class="level4">
+<h4 class="anchored" data-anchor-id="examples-30">Examples</h4>
+<div class="sourceCode" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> ibis</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> ibis.options.interactive <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t <span class="op">=</span> ibis.memtable({<span class="st">"chars"</span>: char} <span class="cf">for</span> char <span class="kw">in</span> <span class="st">"aabcddd"</span>)</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>┏━━━━━━━━┓</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>┃ chars  ┃</span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>┡━━━━━━━━┩</span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a>│ string │</span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>├────────┤</span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>│ a      │</span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>│ a      │</span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a>│ b      │</span>
+<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a>│ c      │</span>
+<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a>│ d      │</span>
+<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a>│ d      │</span>
+<span id="cb39-16"><a href="#cb39-16" aria-hidden="true" tabindex="-1"></a>│ d      │</span>
+<span id="cb39-17"><a href="#cb39-17" aria-hidden="true" tabindex="-1"></a>└────────┘</span>
+<span id="cb39-18"><a href="#cb39-18" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t.chars.value_counts()</span>
+<span id="cb39-19"><a href="#cb39-19" aria-hidden="true" tabindex="-1"></a>┏━━━━━━━━┳━━━━━━━━━━━━━┓</span>
+<span id="cb39-20"><a href="#cb39-20" aria-hidden="true" tabindex="-1"></a>┃ chars  ┃ chars_count ┃</span>
+<span id="cb39-21"><a href="#cb39-21" aria-hidden="true" tabindex="-1"></a>┡━━━━━━━━╇━━━━━━━━━━━━━┩</span>
+<span id="cb39-22"><a href="#cb39-22" aria-hidden="true" tabindex="-1"></a>│ string │ int64       │</span>
+<span id="cb39-23"><a href="#cb39-23" aria-hidden="true" tabindex="-1"></a>├────────┼─────────────┤</span>
+<span id="cb39-24"><a href="#cb39-24" aria-hidden="true" tabindex="-1"></a>│ a      │           <span class="dv">2</span> │</span>
+<span id="cb39-25"><a href="#cb39-25" aria-hidden="true" tabindex="-1"></a>│ b      │           <span class="dv">1</span> │</span>
+<span id="cb39-26"><a href="#cb39-26" aria-hidden="true" tabindex="-1"></a>│ c      │           <span class="dv">1</span> │</span>
+<span id="cb39-27"><a href="#cb39-27" aria-hidden="true" tabindex="-1"></a>│ d      │           <span class="dv">3</span> │</span>
+<span id="cb39-28"><a href="#cb39-28" aria-hidden="true" tabindex="-1"></a>└────────┴─────────────┘</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+</section>
+</section>
+<section id="ibis.expr.types.generic.Scalar" class="level1">
+<h1>Scalar</h1>
+<p><code>expr.types.generic.Scalar()</code></p>
+<section id="methods-2" class="level2">
+<h2 class="anchored" data-anchor-id="methods-2">Methods</h2>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="#ibis.expr.types.generic.Scalar.as_table">as_table</a></td>
+<td>Promote the scalar expression to a table.</td>
+</tr>
+</tbody>
+</table>
+<section id="ibis.expr.types.generic.Scalar.as_table" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.expr.types.generic.Scalar.as_table">as_table</h3>
+<p><code>expr.types.generic.Scalar.as_table(self)</code></p>
+<p>Promote the scalar expression to a table.</p>
+<section id="returns-36" class="level4">
+<h4 class="anchored" data-anchor-id="returns-36">Returns</h4>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Table</td>
+<td>A table expression</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="examples-31" class="level4">
+<h4 class="anchored" data-anchor-id="examples-31">Examples</h4>
+<p>Promote an aggregation to a table</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> ibis</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> ibis.expr.types <span class="im">as</span> ir</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> t <span class="op">=</span> ibis.table(<span class="bu">dict</span>(a<span class="op">=</span><span class="st">"str"</span>), name<span class="op">=</span><span class="st">"t"</span>)</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> expr <span class="op">=</span> t.a.length().<span class="bu">sum</span>().name(<span class="st">"len"</span>).as_table()</span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="bu">isinstance</span>(expr, ir.Table)</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a><span class="va">True</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Promote a literal value to a table</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> ibis.expr.types <span class="im">as</span> ir</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> lit <span class="op">=</span> ibis.literal(<span class="dv">1</span>).name(<span class="st">"a"</span>).as_table()</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="bu">isinstance</span>(lit, ir.Table)</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="va">True</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+
+</section>
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
