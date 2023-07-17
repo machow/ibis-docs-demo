@@ -1,0 +1,2 @@
+ibis-framework @ git+https://github.com/ibis-project/ibis.git@c643fcaf57a46a36b5d2bdb24088d18bd386a1bf
+quartodoc
