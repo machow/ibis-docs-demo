@@ -16,10 +16,13 @@ format:
     css: styles.css
     toc: true
 
+metadata-files:
+  - reference/_sidebar.yml
 
 quartodoc:
   package: ibis
   title: Reference
+  sidebar: reference/_sidebar.yml
   sections:
     - title: Expressions
       desc: ""
