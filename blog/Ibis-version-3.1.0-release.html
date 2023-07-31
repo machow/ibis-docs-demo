@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>. – config.repr</title>
+<title>. – ibis-version-3.1.0-release</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -66,7 +100,6 @@ ul.task-list li input[type="checkbox"] {
 
 <body class="nav-sidebar floating nav-fixed">
 
-
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
@@ -87,11 +120,11 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../blog/rendered/ibis-version-6.0.0-release.html" rel="" target="">
+    <a class="nav-link active" href="../blog/rendered/ibis-version-6.0.0-release.html" rel="" target="" aria-current="page">
  <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../reference/index.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../reference/index.html" rel="" target="">
  <span class="menu-text">Reference</span></a>
   </li>  
   <li class="nav-item">
@@ -109,7 +142,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../reference/selectors.html">Other</a></li><li class="breadcrumb-item"><a href="../reference/config.Repr.html">config.Repr</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../blog/Ibis-version-3.1.0-release.html">Ibis v3.1.0</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -123,122 +156,76 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../reference/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Reference</span></a>
+  <a href="../blog/rendered/ibis-version-6.0.0-release.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ibis v6.0.0</span></a>
   </div>
 </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">Expressions</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../reference/top_level.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Top-level APIs</span></a>
+  <a href="../blog/rendered/torch.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ibis on 🔥: Supercharge Your Workflow with DuckDB and PyTorch</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../reference/expression-tables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Table Expressions</span></a>
+  <a href="../blog/rendered/campaign-finance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exploring Campaign Finance Data</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../reference/expression-generic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Generic Expression APIs</span></a>
+  <a href="../blog/ibis-to-file.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ibis Sneak Peek: Writing to Files</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../reference/expression-numeric.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Numeric and Boolean Expressions</span></a>
+  <a href="../blog/ibis-examples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ibis Sneak Peek: Examples</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../reference/expression-strings.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">String Expressions</span></a>
+  <a href="../blog/selectors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Maximizing Productivity with Selectors</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../reference/temporal.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">temporal</span></a>
+  <a href="../blog/ibis_substrait_to_duckdb.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ibis + Substrait + DuckDB</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../reference/expression-collections.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Complex Type Expressions</span></a>
+  <a href="../blog/ibis-version-4.0.0-release.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ibis v4.0.0</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../reference/expression-geospatial.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Geospatial Expressions</span></a>
+  <a href="../blog/rendered/ci-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Analysis of Ibis’s CI Performance</span></a>
   </div>
 </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text">Other</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../reference/selectors.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">selectors</span></a>
+  <a href="../blog/ffill-and-bfill-using-ibis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><code>ffill</code> and <code>bfill</code> using Ibis</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../reference/expr.schema.Schema.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">expr.schema.Schema</span></a>
+  <a href="../blog/Ibis-version-3.1.0-release.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Ibis v3.1.0</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../reference/config.Options.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">config.Options</span></a>
+  <a href="../blog/Ibis-version-3.0.0-release.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ibis v3.0.0</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../reference/config.Repr.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">config.Repr</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../reference/config.SQL.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">config.SQL</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../reference/config.ContextAdjustment.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">config.ContextAdjustment</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../reference/expr.datatypes.core.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">expr.datatypes.core</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
     </ul>
     </div>
 </nav>
@@ -249,9 +236,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#ibis.config.Repr" id="toc-ibis.config.Repr" class="nav-link active" data-scroll-target="#ibis.config.Repr">config.Repr</a>
+  <li><a href="#ibis-v3.1.0" id="toc-ibis-v3.1.0" class="nav-link active" data-scroll-target="#ibis-v3.1.0">Ibis v3.1.0</a>
   <ul class="collapse">
-  <li><a href="#attributes" id="toc-attributes" class="nav-link" data-scroll-target="#attributes">Attributes</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#ibis.connect" id="toc-ibis.connect" class="nav-link" data-scroll-target="#ibis.connect"><code>ibis.connect</code></a></li>
+  <li><a href="#unnest-support" id="toc-unnest-support" class="nav-link" data-scroll-target="#unnest-support">Unnest Support</a></li>
+  <li><a href="#api" id="toc-api" class="nav-link" data-scroll-target="#api"><code>_</code> API</a></li>
+  <li><a href="#additional-changes" id="toc-additional-changes" class="nav-link" data-scroll-target="#additional-changes">Additional Changes</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -261,53 +252,189 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="ibis.config.Repr" class="level1">
-<h1>config.Repr</h1>
-<p><code>config.Repr()</code></p>
-<p>Expression printing options.</p>
-<section id="attributes" class="level2">
-<h2 class="anchored" data-anchor-id="attributes">Attributes</h2>
-<table class="table">
-<colgroup>
-<col style="width: 15%">
-<col style="width: 6%">
-<col style="width: 78%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>depth</td>
-<td>int</td>
-<td>The maximum number of expression nodes to print when repring.</td>
-</tr>
-<tr class="even">
-<td>table_columns</td>
-<td>int</td>
-<td>The number of columns to show in leaf table expressions.</td>
-</tr>
-<tr class="odd">
-<td>query_text_length</td>
-<td>int</td>
-<td>The maximum number of characters to show in the <code>query</code> field repr of SQLQueryResult operations.</td>
-</tr>
-<tr class="even">
-<td>show_types</td>
-<td>bool</td>
-<td>Show the inferred type of value expressions in the repr.</td>
-</tr>
-<tr class="odd">
-<td>interactive</td>
-<td>bool</td>
-<td>Options controlling the interactive repr.</td>
-</tr>
-</tbody>
-</table>
+<section id="ibis-v3.1.0" class="level1">
+<h1>Ibis v3.1.0</h1>
+<p><strong>by Marlene Mhangami</strong></p>
+<p>25 July 2022</p>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Ibis 3.1 has officially been released as the latest version of the package. With this release comes new convenience features, increased backend operation coverage and a plethora of bug fixes. As usual, a full list of the changes can be found in the project release notes <a href="../release_notes.html">here</a> Let’s talk about some of the new changes 3.1 brings for Ibis users.</p>
+</section>
+<section id="ibis.connect" class="level2">
+<h2 class="anchored" data-anchor-id="ibis.connect"><code>ibis.connect</code></h2>
+<p>The first significant change to note is that, Ibis now provides a more convenient way to connect to a backend using the <code>ibis.connect</code> method. You can now use this function to connect to an appropriate backend using a connection string.</p>
+<p>Here are some examples:</p>
+<!-- prettier-ignore-start -->
+<p>=== “DuckDB”</p>
+<pre><code>Initialize a DuckDB instance using `'duckdb://:memory:'`
+~~~python
+conn = ibis.connect('duckdb://:memory:')
+~~~
+And begin registering your tables:
+~~~python
+conn.register('csv://farm_data/dates.csv', 'dates')
+conn.register('csv://farm_data/farmer_groups.csv', 'farmer_groups')
+conn.register('csv://farm_data/crops.csv', 'crops')
+conn.register('csv://farm_data/farms.csv', 'farms')
+conn.register('csv://farm_data/harvest.csv', 'harvest')
+conn.register('csv://farm_data/farmers.csv', 'farmers')
+conn.register('csv://farm_data/tracts.csv', 'tracts')
+conn.register('csv://farm_data/fields.csv', 'fields')
+~~~
+You can also do this programmatically:
+~~~python
+files = glob.glob('farm_data/*.csv')
+
+for file in files:
+    fname = 'csv://' + file
+    tname = file.replace('farm_data/', '').replace('.csv', '')
+    conn.register(fname, tname)
+~~~
+This method isn’t limited to `csv://`.  It works with `parquet://` and `csv.gz://` as well.
+Give it a try!</code></pre>
+<p>=== “Postgres”</p>
+<pre><code>~~~python
+conn = ibis.connect('postgres://&lt;username&gt;:&lt;password&gt;@&lt;host&gt;:&lt;port&gt;/&lt;database&gt;')
+~~~
+Or, using a [.pgpass file](https://www.postgresql.org/docs/9.3/libpq-pgpass.html):
+~~~python
+conn = ibis.connect('postgres://&lt;username&gt;@&lt;host&gt;:&lt;port&gt;/&lt;database&gt;')
+~~~</code></pre>
+<!-- prettier-ignore-end -->
+</section>
+<section id="unnest-support" class="level2">
+<h2 class="anchored" data-anchor-id="unnest-support">Unnest Support</h2>
+<p>One of the trickier parts about working with data is that it doesn’t usually come organized in neat, predictable rows and columns. Instead data often consists of rows that could contain a single bit of data or arrays of it. When data is organized in layers, as with arrays, it can sometimes be difficult to work with. Ibis 3.1 introduces the <code>unnest</code> function as a way to flatten arrays of data.</p>
+<p>Unnest takes a column containing an array of values and separates the individual values into rows as shown:</p>
+<p>Before Unnest:</p>
+<pre><code>    | col    |
+    | ------ |
+    | [1, 2] |</code></pre>
+<p>After Unnest:</p>
+<pre><code>    | col |
+    | --- |
+    |  1  |
+    |  2  |</code></pre>
+<p>Here is a self-contained example of creating a dataset with an array and then unnesting it:</p>
+<!-- prettier-ignore-start -->
+<p>=== “DuckDB”</p>
+<pre><code>~~~python
+import ibis
+import pandas as pd
+
+# Parquet save path
+fname = 'array_data.parquet'
+
+# Mock Data
+data = [
+    ['array_id', 'array_value']
+    ,[1, [1, 3, 4]]
+    ,[2, [2, 4, 5]]
+    ,[3, [6, 8]]
+    ,[4, [1, 6]]
+]
+
+# Save as parquet
+pd.DataFrame(data[1:], columns=data[0]).to_parquet(fname)
+
+# Connect to the file using a DuckDB backend
+conn = ibis.connect(f"duckdb://{fname}")
+
+# Create a table expression for your loaded data
+array_data = conn.table("array_data")
+
+# Optionally execute the array data to preview
+array_data.execute()
+
+# select the unnested values with their corresponding IDs
+array_data.select(['array_id', array_data['array_value'].unnest()]).execute()
+~~~</code></pre>
+<p>=== “Postgres”</p>
+<pre><code>~~~python
+import ibis
+import pandas as pd
+
+# Postgres connection string for user 'ibistutorials' with a valid .pgpass file in ~/
+# See https://www.postgresql.org/docs/9.3/libpq-pgpass.html for details on ~/.pgpass
+cstring = 'postgres://ibistutorials@localhost:5432/pg-ibis'
+
+# Mock Data
+data = [
+    ['array_id', 'array_value']
+    ,[1, [1, 3, 4]]
+    ,[2, [2, 4, 5]]
+    ,[3, [6, 8]]
+    ,[4, [1, 6]]
+]
+
+# Create a dataframe for easy loading
+df = pd.DataFrame(data[1:], columns=data[0])
+
+# Postgres backend connection
+conn = ibis.connect(cstring)
+
+# SQLAlchemy Types
+# Integer type
+int_type = ibis.backends.postgres.sa.types.INT()
+# Array type function
+arr_f = ibis.backends.postgres.sa.types.ARRAY
+
+# Load data to table using pd.DataFrame.to_sql
+df.to_sql(
+    name='array_data'
+    ,con=conn.con.connect()
+    ,if_exists='replace'
+    ,index=False
+    ,dtype={
+        'array_id': int_type
+        ,'array_value': arr_f(int_type)
+    }
+)
+
+# Array Data Table Expression
+array_data = conn.table("array_data")
+
+# Optionally execute to preview entire table
+# array_data.execute()
+
+# Unnest
+array_data.select(['array_id', array_data['array_value'].unnest()]).execute()
+~~~</code></pre>
+<!-- prettier-ignore-end -->
+</section>
+<section id="api" class="level2">
+<h2 class="anchored" data-anchor-id="api"><code>_</code> API</h2>
+<p>There is now a shorthand for lambda functions using underscore (<code>_</code>). This is useful for chaining expressions to one another and helps reduce total line characters and appearances of lambdas.</p>
+<p>For example, let’s use <code>array_data</code> from above. We will unnest <code>array_value</code>, find the weighted average, and then sum in one expression:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ibis <span class="im">import</span> _</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>(</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    array_data</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    .select([</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">'array_id'</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>        <span class="co"># array_data returns a TableExpr, `_` here is shorthand</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>        <span class="co"># for that returned expression</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>        ,_[<span class="st">'array_value'</span>].unnest().name(<span class="st">'arval'</span>)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>        <span class="co"># we can use it instead of saying `array_data`</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>        ,(_[<span class="st">'array_value'</span>].length().cast(<span class="st">'float'</span>)</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>          <span class="op">/</span> _[<span class="st">'array_value'</span>].length().<span class="bu">sum</span>().cast(<span class="st">'float'</span>)).name(<span class="st">'wgt'</span>)</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    ])</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Since the above `select` statement returns a TableExpr, we can use</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># `_` to reference that one as well:</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    .mutate(wgt_prod<span class="op">=</span>_.arval <span class="op">*</span> _.wgt)</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># And again:</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    .aggregate(vsum<span class="op">=</span>_.wgt_prod.<span class="bu">sum</span>(), vcount<span class="op">=</span>_.wgt_prod.count())</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># And again:</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    .mutate(wgt_mean<span class="op">=</span>_.vsum <span class="op">/</span> _.vcount)</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>).execute()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Note that if you import <code>_</code> directly from <code>ibis</code> (<code>from ibis import _</code>), the default <code>_</code> object will lose its functionality, so be mindful if you have a habit of using it outside of Ibis.</p>
+</section>
+<section id="additional-changes" class="level2">
+<h2 class="anchored" data-anchor-id="additional-changes">Additional Changes</h2>
+<p>Along with these changes, the operation matrix has had a few more holes filled. Contributors should note that backend test data is now loaded dynamically. Most users won’t be exposed to this update, but it should make contribution a bit more streamlined.</p>
+<p>To see the full patch notes, go to the <a href="../release_notes.html">patch notes page</a></p>
+<p>As always, Ibis is free and open source. Contributions are welcome and encouraged–drop into the discussions, raise an issue, or put in a pull request.</p>
+<p>Download ibis 3.1 today!</p>
 
 
 </section>

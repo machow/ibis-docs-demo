@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.361">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>. – selectors</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">.</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../blog/rendered/ibis-version-6.0.0-release.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../reference/index.html" rel="" target="">
+ <span class="menu-text">Reference</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../release_notes.html" rel="" target="">
+ <span class="menu-text">🚧 Release notes</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../blog/selectors.html">Maximizing Productivity with Selectors</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../blog/rendered/ibis-version-6.0.0-release.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ibis v6.0.0</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../blog/rendered/torch.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ibis on 🔥: Supercharge Your Workflow with DuckDB and PyTorch</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../blog/rendered/campaign-finance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exploring Campaign Finance Data</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../blog/ibis-to-file.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ibis Sneak Peek: Writing to Files</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../blog/ibis-examples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ibis Sneak Peek: Examples</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../blog/selectors.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Maximizing Productivity with Selectors</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../blog/ibis_substrait_to_duckdb.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ibis + Substrait + DuckDB</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../blog/ibis-version-4.0.0-release.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ibis v4.0.0</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../blog/rendered/ci-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Analysis of Ibis’s CI Performance</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../blog/ffill-and-bfill-using-ibis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><code>ffill</code> and <code>bfill</code> using Ibis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../blog/Ibis-version-3.1.0-release.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ibis v3.1.0</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../blog/Ibis-version-3.0.0-release.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ibis v3.0.0</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#maximizing-productivity-with-selectors" id="toc-maximizing-productivity-with-selectors" class="nav-link active" data-scroll-target="#maximizing-productivity-with-selectors">Maximizing Productivity with Selectors</a>
+  <ul class="collapse">
+  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">Setup</a></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a>
+  <ul class="collapse">
+  <li><a href="#normalization" id="toc-normalization" class="nav-link" data-scroll-target="#normalization">Normalization</a></li>
+  <li><a href="#whats-up-with-the-year-column" id="toc-whats-up-with-the-year-column" class="nav-link" data-scroll-target="#whats-up-with-the-year-column">What’s Up With the <code>year</code> Column?</a></li>
+  <li><a href="#composable-group-by" id="toc-composable-group-by" class="nav-link" data-scroll-target="#composable-group-by">Composable Group By</a></li>
+  <li><a href="#min-max-normalization" id="toc-min-max-normalization" class="nav-link" data-scroll-target="#min-max-normalization">Min-max Normalization</a></li>
+  <li><a href="#casting-and-munging" id="toc-casting-and-munging" class="nav-link" data-scroll-target="#casting-and-munging">Casting and Munging</a></li>
+  <li><a href="#multiple-computations-per-column" id="toc-multiple-computations-per-column" class="nav-link" data-scroll-target="#multiple-computations-per-column">Multiple Computations per Column</a></li>
+  <li><a href="#working-with-other-ibis-apis" id="toc-working-with-other-ibis-apis" class="nav-link" data-scroll-target="#working-with-other-ibis-apis">Working with other Ibis APIs</a></li>
+  <li><a href="#filtering-selectors" id="toc-filtering-selectors" class="nav-link" data-scroll-target="#filtering-selectors">Filtering Selectors</a></li>
+  <li><a href="#bonus-generated-sql" id="toc-bonus-generated-sql" class="nav-link" data-scroll-target="#bonus-generated-sql">Bonus: Generated SQL</a></li>
+  </ul></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+<section id="maximizing-productivity-with-selectors" class="level1">
+<h1>Maximizing Productivity with Selectors</h1>
+<p>Before Ibis 5.0 it’s been challenging to concisely express whole-table operations with ibis. Happily this is no longer the case in ibis 5.0.</p>
+<p>Let’s jump right in!</p>
+<p>We’ll look at selectors examples using the <a href="https://allisonhorst.github.io/palmerpenguins/"><code>palmerpenguins</code> data set</a> with the <a href="https://ibis-project.org/backends/DuckDB/">DuckDB backend</a>.</p>
+<section id="setup" class="level2">
+<h2 class="anchored" data-anchor-id="setup">Setup</h2>
+<pre><code>In [8]: from ibis.interactive import *
+
+In [11]: t = ex.penguins.fetch()
+
+In [12]: t
+Out[12]:
+┏━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━┓
+┃ species ┃ island    ┃ bill_length_mm ┃ bill_depth_mm ┃ flipper_length_mm ┃ body_mass_g ┃ sex    ┃ year  ┃
+┡━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━┩
+│ string  │ string    │ float64        │ float64       │ int64             │ int64       │ string │ int64 │
+├─────────┼───────────┼────────────────┼───────────────┼───────────────────┼─────────────┼────────┼───────┤
+│ Adelie  │ Torgersen │           39.1 │          18.7 │               181 │        3750 │ male   │  2007 │
+│ Adelie  │ Torgersen │           39.5 │          17.4 │               186 │        3800 │ female │  2007 │
+│ Adelie  │ Torgersen │           40.3 │          18.0 │               195 │        3250 │ female │  2007 │
+│ Adelie  │ Torgersen │            nan │           nan │              NULL │        NULL │ NULL   │  2007 │
+│ Adelie  │ Torgersen │           36.7 │          19.3 │               193 │        3450 │ female │  2007 │
+│ Adelie  │ Torgersen │           39.3 │          20.6 │               190 │        3650 │ male   │  2007 │
+│ Adelie  │ Torgersen │           38.9 │          17.8 │               181 │        3625 │ female │  2007 │
+│ Adelie  │ Torgersen │           39.2 │          19.6 │               195 │        4675 │ male   │  2007 │
+│ Adelie  │ Torgersen │           34.1 │          18.1 │               193 │        3475 │ NULL   │  2007 │
+│ Adelie  │ Torgersen │           42.0 │          20.2 │               190 │        4250 │ NULL   │  2007 │
+│ …       │ …         │              … │             … │                 … │           … │ …      │     … │
+└─────────┴───────────┴────────────────┴───────────────┴───────────────────┴─────────────┴────────┴───────┘</code></pre>
+</section>
+<section id="examples" class="level2">
+<h2 class="anchored" data-anchor-id="examples">Examples</h2>
+<section id="normalization" class="level3">
+<h3 class="anchored" data-anchor-id="normalization">Normalization</h3>
+<p>Let’s say you want to compute the <a href="https://en.wikipedia.org/wiki/Standard_score">z-score</a> of every numeric column and replace the existing data with that normalized value. Here’s how you’d do that with selectors:</p>
+<pre><code>In [13]: t.mutate(s.across(s.numeric(), (_ - _.mean()) / _.std()))
+Out[13]:
+┏━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━┓
+┃ species ┃ island    ┃ bill_length_mm ┃ bill_depth_mm ┃ flipper_length_mm ┃ body_mass_g ┃ sex    ┃ year      ┃
+┡━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━┩
+│ string  │ string    │ float64        │ float64       │ float64           │ float64     │ string │ float64   │
+├─────────┼───────────┼────────────────┼───────────────┼───────────────────┼─────────────┼────────┼───────────┤
+│ Adelie  │ Torgersen │      -0.883205 │      0.784300 │         -1.416272 │   -0.563317 │ male   │ -1.257484 │
+│ Adelie  │ Torgersen │      -0.809939 │      0.126003 │         -1.060696 │   -0.500969 │ female │ -1.257484 │
+│ Adelie  │ Torgersen │      -0.663408 │      0.429833 │         -0.420660 │   -1.186793 │ female │ -1.257484 │
+│ Adelie  │ Torgersen │            nan │           nan │               nan │         nan │ NULL   │ -1.257484 │
+│ Adelie  │ Torgersen │      -1.322799 │      1.088129 │         -0.562890 │   -0.937403 │ female │ -1.257484 │
+│ Adelie  │ Torgersen │      -0.846572 │      1.746426 │         -0.776236 │   -0.688012 │ male   │ -1.257484 │
+│ Adelie  │ Torgersen │      -0.919837 │      0.328556 │         -1.416272 │   -0.719186 │ female │ -1.257484 │
+│ Adelie  │ Torgersen │      -0.864888 │      1.240044 │         -0.420660 │    0.590115 │ male   │ -1.257484 │
+│ Adelie  │ Torgersen │      -1.799025 │      0.480471 │         -0.562890 │   -0.906229 │ NULL   │ -1.257484 │
+│ Adelie  │ Torgersen │      -0.352029 │      1.543873 │         -0.776236 │    0.060160 │ NULL   │ -1.257484 │
+│ …       │ …         │              … │             … │                 … │           … │ …      │         … │
+└─────────┴───────────┴────────────────┴───────────────┴───────────────────┴─────────────┴────────┴───────────┘</code></pre>
+</section>
+<section id="whats-up-with-the-year-column" class="level3">
+<h3 class="anchored" data-anchor-id="whats-up-with-the-year-column">What’s Up With the <code>year</code> Column?</h3>
+<p>Whoops, looks like we included <code>year</code> in our normalization because it’s an <code>int64</code> column (and therefore numeric) but normalizing the year doesn’t make sense.</p>
+<p>We can exclude <code>year</code> from the normalization using another selector:</p>
+<pre><code>In [14]: t.mutate(s.across(s.numeric() &amp; ~s.c("year"), (_ - _.mean()) / _.std()))
+Out[14]:
+┏━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━┓
+┃ species ┃ island    ┃ bill_length_mm ┃ bill_depth_mm ┃ flipper_length_mm ┃ body_mass_g ┃ sex    ┃ year  ┃
+┡━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━┩
+│ string  │ string    │ float64        │ float64       │ float64           │ float64     │ string │ int64 │
+├─────────┼───────────┼────────────────┼───────────────┼───────────────────┼─────────────┼────────┼───────┤
+│ Adelie  │ Torgersen │      -0.883205 │      0.784300 │         -1.416272 │   -0.563317 │ male   │  2007 │
+│ Adelie  │ Torgersen │      -0.809939 │      0.126003 │         -1.060696 │   -0.500969 │ female │  2007 │
+│ Adelie  │ Torgersen │      -0.663408 │      0.429833 │         -0.420660 │   -1.186793 │ female │  2007 │
+│ Adelie  │ Torgersen │            nan │           nan │               nan │         nan │ NULL   │  2007 │
+│ Adelie  │ Torgersen │      -1.322799 │      1.088129 │         -0.562890 │   -0.937403 │ female │  2007 │
+│ Adelie  │ Torgersen │      -0.846572 │      1.746426 │         -0.776236 │   -0.688012 │ male   │  2007 │
+│ Adelie  │ Torgersen │      -0.919837 │      0.328556 │         -1.416272 │   -0.719186 │ female │  2007 │
+│ Adelie  │ Torgersen │      -0.864888 │      1.240044 │         -0.420660 │    0.590115 │ male   │  2007 │
+│ Adelie  │ Torgersen │      -1.799025 │      0.480471 │         -0.562890 │   -0.906229 │ NULL   │  2007 │
+│ Adelie  │ Torgersen │      -0.352029 │      1.543873 │         -0.776236 │    0.060160 │ NULL   │  2007 │
+│ …       │ …         │              … │             … │                 … │           … │ …      │     … │
+└─────────┴───────────┴────────────────┴───────────────┴───────────────────┴─────────────┴────────┴───────┘</code></pre>
+<p><code>c</code> is short for “column” and the <code>~</code> means “negate”. Combining those we get “not the year column”!</p>
+<p>Pretty neat right?</p>
+</section>
+<section id="composable-group-by" class="level3">
+<h3 class="anchored" data-anchor-id="composable-group-by">Composable Group By</h3>
+<p>The power of this approach comes in when you want the grouped version. Perhaps we think some of these columns vary by species.</p>
+<p>With selectors, all you need to do is slap a <code>.group_by("species")</code> onto <code>t</code>:</p>
+<pre><code>In [18]: t.group_by("species").mutate(
+    ...:     s.across(s.numeric() &amp; ~s.c("year"), (_ - _.mean()) / _.std())
+    ...: )
+Out[18]:
+┏━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━┓
+┃ species ┃ island ┃ bill_length_mm ┃ bill_depth_mm ┃ flipper_length_mm ┃ body_mass_g ┃ sex    ┃ year  ┃
+┡━━━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━┩
+│ string  │ string │ float64        │ float64       │ float64           │ float64     │ string │ int64 │
+├─────────┼────────┼────────────────┼───────────────┼───────────────────┼─────────────┼────────┼───────┤
+│ Gentoo  │ Biscoe │      -0.455854 │     -1.816223 │         -0.954050 │   -1.142626 │ female │  2007 │
+│ Gentoo  │ Biscoe │      -0.975022 │     -0.287513 │         -0.491442 │   -0.448342 │ female │  2009 │
+│ Gentoo  │ Biscoe │       0.387793 │     -0.898997 │         -1.108253 │   -1.241809 │ female │  2007 │
+│ Gentoo  │ Biscoe │       0.809616 │      0.222056 │          0.125368 │    1.237778 │ male   │  2007 │
+│ Gentoo  │ Biscoe │       0.030865 │     -0.491341 │         -0.337240 │    0.642677 │ male   │  2007 │
+│ Gentoo  │ Biscoe │      -0.326062 │     -1.510481 │         -1.108253 │   -1.043442 │ female │  2007 │
+│ Gentoo  │ Biscoe │      -0.682990 │     -0.389427 │         -0.954050 │   -0.547525 │ female │  2007 │
+│ Gentoo  │ Biscoe │      -0.261167 │      0.323970 │          0.279571 │    0.245943 │ male   │  2007 │
+│ Gentoo  │ Biscoe │      -1.364397 │     -1.612395 │         -1.262455 │   -1.340993 │ female │  2007 │
+│ Gentoo  │ Biscoe │      -0.228719 │      0.425884 │         -0.337240 │    0.146759 │ male   │  2007 │
+│ …       │ …      │              … │             … │                 … │           … │ …      │     … │
+└─────────┴────────┴────────────────┴───────────────┴───────────────────┴─────────────┴────────┴───────┘</code></pre>
+<p>Since ibis translates this into a run-of-the-mill selection as if you had called <code>select</code> or <code>mutate</code> without selectors, nothing special is needed for a backend to work with these new constructs.</p>
+<p>Let’s look at some more examples.</p>
+</section>
+<section id="min-max-normalization" class="level3">
+<h3 class="anchored" data-anchor-id="min-max-normalization">Min-max Normalization</h3>
+<p>Grouped min/max normalization? Easy:</p>
+<pre><code>In [22]: t.group_by("species").mutate(
+    ...:     s.across(s.numeric() &amp; ~s.c("year"), (_ - _.min()) / (_.max() - _.min()))
+    ...: )
+Out[22]:
+┏━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━┓
+┃ species ┃ island ┃ bill_length_mm ┃ bill_depth_mm ┃ flipper_length_mm ┃ body_mass_g ┃ sex    ┃ year  ┃
+┡━━━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━┩
+│ string  │ string │ float64        │ float64       │ float64           │ float64     │ string │ int64 │
+├─────────┼────────┼────────────────┼───────────────┼───────────────────┼─────────────┼────────┼───────┤
+│ Gentoo  │ Biscoe │       0.278075 │      0.023810 │          0.285714 │    0.234043 │ female │  2007 │
+│ Gentoo  │ Biscoe │       0.192513 │      0.380952 │          0.392857 │    0.382979 │ female │  2009 │
+│ Gentoo  │ Biscoe │       0.417112 │      0.238095 │          0.250000 │    0.212766 │ female │  2007 │
+│ Gentoo  │ Biscoe │       0.486631 │      0.500000 │          0.535714 │    0.744681 │ male   │  2007 │
+│ Gentoo  │ Biscoe │       0.358289 │      0.333333 │          0.428571 │    0.617021 │ male   │  2007 │
+│ Gentoo  │ Biscoe │       0.299465 │      0.095238 │          0.250000 │    0.255319 │ female │  2007 │
+│ Gentoo  │ Biscoe │       0.240642 │      0.357143 │          0.285714 │    0.361702 │ female │  2007 │
+│ Gentoo  │ Biscoe │       0.310160 │      0.523810 │          0.571429 │    0.531915 │ male   │  2007 │
+│ Gentoo  │ Biscoe │       0.128342 │      0.071429 │          0.214286 │    0.191489 │ female │  2007 │
+│ Gentoo  │ Biscoe │       0.315508 │      0.547619 │          0.428571 │    0.510638 │ male   │  2007 │
+│ …       │ …      │              … │             … │                 … │           … │ …      │     … │
+└─────────┴────────┴────────────────┴───────────────┴───────────────────┴─────────────┴────────┴───────┘</code></pre>
+</section>
+<section id="casting-and-munging" class="level3">
+<h3 class="anchored" data-anchor-id="casting-and-munging">Casting and Munging</h3>
+<p>How about casting every column whose name ends with any of the strings <code>"mm"</code> or <code>"g"</code> to a <code>float32</code>? No problem!</p>
+<pre><code>In [23]: t.mutate(s.across(s.endswith(("mm", "g")), _.cast("float32")))
+Out[23]:
+┏━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━┓
+┃ species ┃ island    ┃ bill_length_mm ┃ bill_depth_mm ┃ flipper_length_mm ┃ body_mass_g ┃ sex    ┃ year  ┃
+┡━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━┩
+│ string  │ string    │ float32        │ float32       │ float32           │ float32     │ string │ int64 │
+├─────────┼───────────┼────────────────┼───────────────┼───────────────────┼─────────────┼────────┼───────┤
+│ Adelie  │ Torgersen │      39.099998 │     18.700001 │             181.0 │      3750.0 │ male   │  2007 │
+│ Adelie  │ Torgersen │      39.500000 │     17.400000 │             186.0 │      3800.0 │ female │  2007 │
+│ Adelie  │ Torgersen │      40.299999 │     18.000000 │             195.0 │      3250.0 │ female │  2007 │
+│ Adelie  │ Torgersen │            nan │           nan │               nan │         nan │ NULL   │  2007 │
+│ Adelie  │ Torgersen │      36.700001 │     19.299999 │             193.0 │      3450.0 │ female │  2007 │
+│ Adelie  │ Torgersen │      39.299999 │     20.600000 │             190.0 │      3650.0 │ male   │  2007 │
+│ Adelie  │ Torgersen │      38.900002 │     17.799999 │             181.0 │      3625.0 │ female │  2007 │
+│ Adelie  │ Torgersen │      39.200001 │     19.600000 │             195.0 │      4675.0 │ male   │  2007 │
+│ Adelie  │ Torgersen │      34.099998 │     18.100000 │             193.0 │      3475.0 │ NULL   │  2007 │
+│ Adelie  │ Torgersen │      42.000000 │     20.200001 │             190.0 │      4250.0 │ NULL   │  2007 │
+│ …       │ …         │              … │             … │                 … │           … │ …      │     … │
+└─────────┴───────────┴────────────────┴───────────────┴───────────────────┴─────────────┴────────┴───────┘</code></pre>
+<p>We can make all string columns have the same case too!</p>
+<pre><code>In [35]: t.mutate(s.across(s.of_type("string"), _.lower()))
+Out[35]:
+┏━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━┓
+┃ species ┃ island    ┃ bill_length_mm ┃ bill_depth_mm ┃ flipper_length_mm ┃ body_mass_g ┃ sex    ┃ year  ┃
+┡━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━┩
+│ string  │ string    │ float64        │ float64       │ int64             │ int64       │ string │ int64 │
+├─────────┼───────────┼────────────────┼───────────────┼───────────────────┼─────────────┼────────┼───────┤
+│ adelie  │ torgersen │           39.1 │          18.7 │               181 │        3750 │ male   │  2007 │
+│ adelie  │ torgersen │           39.5 │          17.4 │               186 │        3800 │ female │  2007 │
+│ adelie  │ torgersen │           40.3 │          18.0 │               195 │        3250 │ female │  2007 │
+│ adelie  │ torgersen │            nan │           nan │              NULL │        NULL │ NULL   │  2007 │
+│ adelie  │ torgersen │           36.7 │          19.3 │               193 │        3450 │ female │  2007 │
+│ adelie  │ torgersen │           39.3 │          20.6 │               190 │        3650 │ male   │  2007 │
+│ adelie  │ torgersen │           38.9 │          17.8 │               181 │        3625 │ female │  2007 │
+│ adelie  │ torgersen │           39.2 │          19.6 │               195 │        4675 │ male   │  2007 │
+│ adelie  │ torgersen │           34.1 │          18.1 │               193 │        3475 │ NULL   │  2007 │
+│ adelie  │ torgersen │           42.0 │          20.2 │               190 │        4250 │ NULL   │  2007 │
+│ …       │ …         │              … │             … │                 … │           … │ …      │     … │
+└─────────┴───────────┴────────────────┴───────────────┴───────────────────┴─────────────┴────────┴───────┘</code></pre>
+</section>
+<section id="multiple-computations-per-column" class="level3">
+<h3 class="anchored" data-anchor-id="multiple-computations-per-column">Multiple Computations per Column</h3>
+<p>What if I want to compute multiple things? Heck yeah!</p>
+<pre><code>In [9]: t.group_by("sex").mutate(
+   ...:     s.across(
+   ...:         s.numeric() &amp; ~s.c("year"),
+   ...:         dict(centered=_ - _.mean(), zscore=(_ - _.mean()) / _.std()),
+   ...:     )
+   ...: ).select("sex", s.endswith(("_centered", "_zscore")))
+Out[9]:
+┏━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━┓
+┃ sex    ┃ bill_length_mm_centered ┃ bill_depth_mm_centered ┃ flipper_length_mm_centered ┃ body_mass_g_centered ┃ bill_length_mm_zscore ┃ bill_depth_mm_zscore ┃ flipper_length_mm_zscore ┃ … ┃
+┡━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━┩
+│ string │ float64                 │ float64                │ float64                    │ float64              │ float64               │ float64              │ float64                  │ … │
+├────────┼─────────────────────────┼────────────────────────┼────────────────────────────┼──────────────────────┼───────────────────────┼──────────────────────┼──────────────────────────┼───┤
+│ male   │                0.445238 │              -2.091071 │                  10.494048 │           504.315476 │              0.082960 │            -1.122210 │                 0.721346 │ … │
+│ male   │                2.245238 │              -2.791071 │                   4.494048 │           954.315476 │              0.418349 │            -1.497878 │                 0.308914 │ … │
+│ male   │               -6.254762 │               0.208929 │                 -18.505952 │           -95.684524 │             -1.165434 │             0.112125 │                -1.272072 │ … │
+│ male   │               -5.054762 │               1.008929 │                   3.494048 │          -245.684524 │             -0.941841 │             0.541459 │                 0.240176 │ … │
+│ male   │              -11.254762 │               3.208929 │                  -6.505952 │          -145.684524 │             -2.097071 │             1.722128 │                -0.447210 │ … │
+│ male   │               -3.354762 │               2.808929 │                  -7.505952 │           -45.684524 │             -0.625084 │             1.507461 │                -0.515948 │ … │
+│ male   │                0.145238 │               3.608929 │                 -10.505952 │          -345.684524 │              0.027062 │             1.936795 │                -0.722164 │ … │
+│ male   │               -8.154762 │               0.808929 │                 -24.505952 │          -945.684524 │             -1.519456 │             0.434126 │                -1.684504 │ … │
+│ male   │               -7.654762 │               0.208929 │                 -19.505952 │          -595.684524 │             -1.426292 │             0.112125 │                -1.340811 │ … │
+│ male   │               -7.054762 │              -0.691071 │                 -24.505952 │          -745.684524 │             -1.314496 │            -0.370876 │                -1.684504 │ … │
+│ …      │                       … │                      … │                          … │                    … │                     … │                    … │                        … │ … │
+└────────┴─────────────────────────┴────────────────────────┴────────────────────────────┴──────────────────────┴───────────────────────┴──────────────────────┴──────────────────────────┴───┘</code></pre>
+<p>Don’t like the naming convention?</p>
+<p>Pass a function to make your own name!</p>
+<pre><code>In [12]: t.select(s.startswith("bill")).mutate(
+    ...:     s.across(
+    ...:         s.all(),
+    ...:         dict(x=_ - _.mean(), y=_.max()),
+    ...:         names=lambda col, fn: f"{col}_{fn}_improved",
+    ...:     )
+    ...: )
+Out[12]:
+┏━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ bill_length_mm ┃ bill_depth_mm ┃ bill_length_mm_x_improved ┃ bill_depth_mm_x_improved ┃ bill_length_mm_y_improved ┃ bill_depth_mm_y_improved ┃
+┡━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ float64        │ float64       │ float64                   │ float64                  │ float64                   │ float64                  │
+├────────────────┼───────────────┼───────────────────────────┼──────────────────────────┼───────────────────────────┼──────────────────────────┤
+│           39.1 │          18.7 │                  -4.82193 │                  1.54883 │                      59.6 │                     21.5 │
+│           39.5 │          17.4 │                  -4.42193 │                  0.24883 │                      59.6 │                     21.5 │
+│           40.3 │          18.0 │                  -3.62193 │                  0.84883 │                      59.6 │                     21.5 │
+│            nan │           nan │                       nan │                      nan │                      59.6 │                     21.5 │
+│           36.7 │          19.3 │                  -7.22193 │                  2.14883 │                      59.6 │                     21.5 │
+│           39.3 │          20.6 │                  -4.62193 │                  3.44883 │                      59.6 │                     21.5 │
+│           38.9 │          17.8 │                  -5.02193 │                  0.64883 │                      59.6 │                     21.5 │
+│           39.2 │          19.6 │                  -4.72193 │                  2.44883 │                      59.6 │                     21.5 │
+│           34.1 │          18.1 │                  -9.82193 │                  0.94883 │                      59.6 │                     21.5 │
+│           42.0 │          20.2 │                  -1.92193 │                  3.04883 │                      59.6 │                     21.5 │
+│              … │             … │                         … │                        … │                         … │                        … │
+└────────────────┴───────────────┴───────────────────────────┴──────────────────────────┴───────────────────────────┴──────────────────────────┘</code></pre>
+<p>Don’t like lambda functions? We support a format string too!</p>
+<pre><code>In [5]: t.select(s.startswith("bill")).mutate(
+   ...:     s.across(
+   ...:         s.all(),
+   ...:         func=dict(x=_ - _.mean(), y=_.max()),
+   ...:         names="{col}_{fn}_improved",
+   ...:     )
+   ...: ).head(2)
+Out[5]:
+┏━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ bill_length_mm ┃ bill_depth_mm ┃ bill_length_mm_x_improved ┃ bill_depth_mm_x_improved ┃ bill_length_mm_y_improved ┃ bill_depth_mm_y_improved ┃
+┡━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ float64        │ float64       │ float64                   │ float64                  │ float64                   │ float64                  │
+├────────────────┼───────────────┼───────────────────────────┼──────────────────────────┼───────────────────────────┼──────────────────────────┤
+│           39.1 │          18.7 │                  -4.82193 │                  1.54883 │                      59.6 │                     21.5 │
+│           39.5 │          17.4 │                  -4.42193 │                  0.24883 │                      59.6 │                     21.5 │
+└────────────────┴───────────────┴───────────────────────────┴──────────────────────────┴───────────────────────────┴──────────────────────────┘</code></pre>
+</section>
+<section id="working-with-other-ibis-apis" class="level3">
+<h3 class="anchored" data-anchor-id="working-with-other-ibis-apis">Working with other Ibis APIs</h3>
+<p>We’ve seen lots of mutate use, but selectors also work with <code>.agg</code>:</p>
+<pre><code>In [31]: t.group_by("year").agg(s.across(s.numeric() &amp; ~s.c("year"), _.mean())).order_by("year")
+Out[31]:
+┏━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━┓
+┃ year  ┃ bill_length_mm ┃ bill_depth_mm ┃ flipper_length_mm ┃ body_mass_g ┃
+┡━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━┩
+│ int64 │ float64        │ float64       │ float64           │ float64     │
+├───────┼────────────────┼───────────────┼───────────────────┼─────────────┤
+│  2007 │      43.740367 │     17.427523 │        196.880734 │ 4124.541284 │
+│  2008 │      43.541228 │     16.914035 │        202.798246 │ 4266.666667 │
+│  2009 │      44.452941 │     17.125210 │        202.806723 │ 4210.294118 │
+└───────┴────────────────┴───────────────┴───────────────────┴─────────────┘</code></pre>
+<p>Naturally, selectors work in grouping keys too, for even more convenience:</p>
+<pre><code>In [12]: t.group_by(~s.numeric() | s.c("year")).mutate(
+    ...:     s.across(s.numeric() &amp; ~s.c("year"), dict(centered=_ - _.mean(), std=_.std()))
+    ...: ).select("species", s.endswith(("_centered", "_std")))
+Out[12]:
+┏━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+┃ species ┃ bill_length_mm_centered ┃ bill_depth_mm_centered ┃ flipper_length_mm_centered ┃ body_mass_g_centered ┃ bill_length_mm_std ┃ bill_depth_mm_std ┃ flipper_length_mm_std ┃ body_mass_g_std ┃
+┡━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ string  │ float64                 │ float64                │ float64                    │ float64              │ float64            │ float64           │ float64               │ float64         │
+├─────────┼─────────────────────────┼────────────────────────┼────────────────────────────┼──────────────────────┼────────────────────┼───────────────────┼───────────────────────┼─────────────────┤
+│ Adelie  │                1.187500 │               1.412500 │                       -1.0 │          -550.000000 │           2.087676 │          0.756755 │              7.764388 │      311.677489 │
+│ Adelie  │               -3.812500 │               0.612500 │                       -5.0 │          -300.000000 │           2.087676 │          0.756755 │              7.764388 │      311.677489 │
+│ Adelie  │               -1.812500 │               0.312500 │                       -6.0 │          -150.000000 │           2.087676 │          0.756755 │              7.764388 │      311.677489 │
+│ Adelie  │                0.987500 │              -0.787500 │                       10.0 │           200.000000 │           2.087676 │          0.756755 │              7.764388 │      311.677489 │
+│ Adelie  │               -0.512500 │              -0.787500 │                       -9.0 │           350.000000 │           2.087676 │          0.756755 │              7.764388 │      311.677489 │
+│ Adelie  │                0.687500 │               0.012500 │                       13.0 │           200.000000 │           2.087676 │          0.756755 │              7.764388 │      311.677489 │
+│ Adelie  │                0.187500 │              -0.387500 │                        1.0 │           250.000000 │           2.087676 │          0.756755 │              7.764388 │      311.677489 │
+│ Adelie  │                3.087500 │              -0.387500 │                       -3.0 │             0.000000 │           2.087676 │          0.756755 │              7.764388 │      311.677489 │
+│ Adelie  │                1.644444 │              -1.144444 │                       -7.0 │           -19.444444 │           2.119028 │          0.860394 │              5.408327 │      170.375403 │
+│ Adelie  │                1.644444 │              -0.044444 │                        3.0 │            30.555556 │           2.119028 │          0.860394 │              5.408327 │      170.375403 │
+│ …       │                       … │                      … │                          … │                    … │                  … │                 … │                     … │               … │
+└─────────┴─────────────────────────┴────────────────────────┴────────────────────────────┴──────────────────────┴────────────────────┴───────────────────┴───────────────────────┴─────────────────┘</code></pre>
+</section>
+<section id="filtering-selectors" class="level3">
+<h3 class="anchored" data-anchor-id="filtering-selectors">Filtering Selectors</h3>
+<p>You can also express complex filters more concisely.</p>
+<p>Let’s say we only want to keep rows where all the bill size z-score related columns’ absolute values are greater than 2.</p>
+<!-- prettier-ignore-start -->
+<pre><code>In [78]: t.drop("year").group_by("species").mutate(
+    ...:     s.across(s.numeric(), dict(zscore=(_ - _.mean()) / _.std()))
+    ...: ).filter(s.if_all(s.startswith("bill") &amp; s.endswith("_zscore"), _.abs() &gt; 2))
+Out[78]:
+┏━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━┓
+┃ species ┃ island    ┃ bill_length_mm ┃ bill_depth_mm ┃ flipper_length_mm ┃ body_mass_g ┃ sex    ┃ bill_length_mm_zscore ┃ bill_depth_mm_zscore ┃ flipper_length_mm_zscore ┃ body_mass_g_zscore ┃
+┡━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━┩
+│ string  │ string    │ float64        │ float64       │ int64             │ int64       │ string │ float64               │ float64              │ float64                  │ float64            │
+├─────────┼───────────┼────────────────┼───────────────┼───────────────────┼─────────────┼────────┼───────────────────────┼──────────────────────┼──────────────────────────┼────────────────────┤
+│ Gentoo  │ Biscoe    │           59.6 │          17.0 │               230 │        6050 │ male   │              3.924621 │             2.056508 │                 1.975799 │           1.932062 │
+│ Gentoo  │ Biscoe    │           55.9 │          17.0 │               228 │        5600 │ male   │              2.724046 │             2.056508 │                 1.667394 │           1.039411 │
+│ Adelie  │ Torgersen │           46.0 │          21.5 │               194 │        4200 │ male   │              2.706539 │             2.592071 │                 0.618760 │           1.088911 │
+│ Adelie  │ Dream     │           32.1 │          15.5 │               188 │        3050 │ female │             -2.512345 │            -2.339505 │                -0.298747 │          -1.418906 │
+└─────────┴───────────┴────────────────┴───────────────┴───────────────────┴─────────────┴────────┴───────────────────────┴──────────────────────┴──────────────────────────┴────────────────────┘```</code></pre>
+<!-- prettier-ignore-end -->
+</section>
+<section id="bonus-generated-sql" class="level3">
+<h3 class="anchored" data-anchor-id="bonus-generated-sql">Bonus: Generated SQL</h3>
+<p>The SQL for that last expression is pretty gnarly:</p>
+<pre><code>In [79]: ibis.show_sql(
+    ...:     t.drop("year")
+    ...:     .group_by("species")
+    ...:     .mutate(s.across(s.numeric(), dict(zscore=(_ - _.mean()) / _.std())))
+    ...:     .filter(s.if_all(s.startswith("bill") &amp; s.endswith("_zscore"), _.abs() &gt; 2))
+    ...: )</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">WITH</span> t0 <span class="kw">AS</span> (</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">SELECT</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    t2.species <span class="kw">AS</span> species,</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    t2.island <span class="kw">AS</span> island,</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    t2.bill_length_mm <span class="kw">AS</span> bill_length_mm,</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    t2.bill_depth_mm <span class="kw">AS</span> bill_depth_mm,</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    t2.flipper_length_mm <span class="kw">AS</span> flipper_length_mm,</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    t2.body_mass_g <span class="kw">AS</span> body_mass_g,</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    t2.sex <span class="kw">AS</span> sex</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> ibis_read_csv_3 <span class="kw">AS</span> t2</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>), t1 <span class="kw">AS</span> (</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>  <span class="kw">SELECT</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>    t0.species <span class="kw">AS</span> species,</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>    t0.island <span class="kw">AS</span> island,</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>    t0.bill_length_mm <span class="kw">AS</span> bill_length_mm,</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>    t0.bill_depth_mm <span class="kw">AS</span> bill_depth_mm,</span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>    t0.flipper_length_mm <span class="kw">AS</span> flipper_length_mm,</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>    t0.body_mass_g <span class="kw">AS</span> body_mass_g,</span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>    t0.sex <span class="kw">AS</span> sex,</span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>    (</span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>      t0.bill_length_mm <span class="op">-</span> <span class="fu">AVG</span>(t0.bill_length_mm) <span class="kw">OVER</span> (<span class="kw">PARTITION</span> <span class="kw">BY</span> t0.species <span class="kw">ROWS</span> <span class="kw">BETWEEN</span> <span class="kw">UNBOUNDED</span> <span class="kw">PRECEDING</span> <span class="kw">AND</span> <span class="kw">UNBOUNDED</span> <span class="kw">FOLLOWING</span>)</span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>    ) <span class="op">/</span> <span class="fu">STDDEV_SAMP</span>(t0.bill_length_mm) <span class="kw">OVER</span> (<span class="kw">PARTITION</span> <span class="kw">BY</span> t0.species <span class="kw">ROWS</span> <span class="kw">BETWEEN</span> <span class="kw">UNBOUNDED</span> <span class="kw">PRECEDING</span> <span class="kw">AND</span> <span class="kw">UNBOUNDED</span> <span class="kw">FOLLOWING</span>) <span class="kw">AS</span> bill_length_mm_zscore,</span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>    (</span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>      t0.bill_depth_mm <span class="op">-</span> <span class="fu">AVG</span>(t0.bill_depth_mm) <span class="kw">OVER</span> (<span class="kw">PARTITION</span> <span class="kw">BY</span> t0.species <span class="kw">ROWS</span> <span class="kw">BETWEEN</span> <span class="kw">UNBOUNDED</span> <span class="kw">PRECEDING</span> <span class="kw">AND</span> <span class="kw">UNBOUNDED</span> <span class="kw">FOLLOWING</span>)</span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>    ) <span class="op">/</span> <span class="fu">STDDEV_SAMP</span>(t0.bill_depth_mm) <span class="kw">OVER</span> (<span class="kw">PARTITION</span> <span class="kw">BY</span> t0.species <span class="kw">ROWS</span> <span class="kw">BETWEEN</span> <span class="kw">UNBOUNDED</span> <span class="kw">PRECEDING</span> <span class="kw">AND</span> <span class="kw">UNBOUNDED</span> <span class="kw">FOLLOWING</span>) <span class="kw">AS</span> bill_depth_mm_zscore,</span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>    (</span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>      t0.flipper_length_mm <span class="op">-</span> <span class="fu">AVG</span>(t0.flipper_length_mm) <span class="kw">OVER</span> (<span class="kw">PARTITION</span> <span class="kw">BY</span> t0.species <span class="kw">ROWS</span> <span class="kw">BETWEEN</span> <span class="kw">UNBOUNDED</span> <span class="kw">PRECEDING</span> <span class="kw">AND</span> <span class="kw">UNBOUNDED</span> <span class="kw">FOLLOWING</span>)</span>
+<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a>    ) <span class="op">/</span> <span class="fu">STDDEV_SAMP</span>(t0.flipper_length_mm) <span class="kw">OVER</span> (<span class="kw">PARTITION</span> <span class="kw">BY</span> t0.species <span class="kw">ROWS</span> <span class="kw">BETWEEN</span> <span class="kw">UNBOUNDED</span> <span class="kw">PRECEDING</span> <span class="kw">AND</span> <span class="kw">UNBOUNDED</span> <span class="kw">FOLLOWING</span>) <span class="kw">AS</span> flipper_length_mm_zscore,</span>
+<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a>    (</span>
+<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a>      t0.body_mass_g <span class="op">-</span> <span class="fu">AVG</span>(t0.body_mass_g) <span class="kw">OVER</span> (<span class="kw">PARTITION</span> <span class="kw">BY</span> t0.species <span class="kw">ROWS</span> <span class="kw">BETWEEN</span> <span class="kw">UNBOUNDED</span> <span class="kw">PRECEDING</span> <span class="kw">AND</span> <span class="kw">UNBOUNDED</span> <span class="kw">FOLLOWING</span>)</span>
+<span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a>    ) <span class="op">/</span> <span class="fu">STDDEV_SAMP</span>(t0.body_mass_g) <span class="kw">OVER</span> (<span class="kw">PARTITION</span> <span class="kw">BY</span> t0.species <span class="kw">ROWS</span> <span class="kw">BETWEEN</span> <span class="kw">UNBOUNDED</span> <span class="kw">PRECEDING</span> <span class="kw">AND</span> <span class="kw">UNBOUNDED</span> <span class="kw">FOLLOWING</span>) <span class="kw">AS</span> body_mass_g_zscore</span>
+<span id="cb15-32"><a href="#cb15-32" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> t0</span>
+<span id="cb15-33"><a href="#cb15-33" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb15-34"><a href="#cb15-34" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span></span>
+<span id="cb15-35"><a href="#cb15-35" aria-hidden="true" tabindex="-1"></a>  t1.species,</span>
+<span id="cb15-36"><a href="#cb15-36" aria-hidden="true" tabindex="-1"></a>  t1.island,</span>
+<span id="cb15-37"><a href="#cb15-37" aria-hidden="true" tabindex="-1"></a>  t1.bill_length_mm,</span>
+<span id="cb15-38"><a href="#cb15-38" aria-hidden="true" tabindex="-1"></a>  t1.bill_depth_mm,</span>
+<span id="cb15-39"><a href="#cb15-39" aria-hidden="true" tabindex="-1"></a>  t1.flipper_length_mm,</span>
+<span id="cb15-40"><a href="#cb15-40" aria-hidden="true" tabindex="-1"></a>  t1.body_mass_g,</span>
+<span id="cb15-41"><a href="#cb15-41" aria-hidden="true" tabindex="-1"></a>  t1.sex,</span>
+<span id="cb15-42"><a href="#cb15-42" aria-hidden="true" tabindex="-1"></a>  t1.bill_length_mm_zscore,</span>
+<span id="cb15-43"><a href="#cb15-43" aria-hidden="true" tabindex="-1"></a>  t1.bill_depth_mm_zscore,</span>
+<span id="cb15-44"><a href="#cb15-44" aria-hidden="true" tabindex="-1"></a>  t1.flipper_length_mm_zscore,</span>
+<span id="cb15-45"><a href="#cb15-45" aria-hidden="true" tabindex="-1"></a>  t1.body_mass_g_zscore</span>
+<span id="cb15-46"><a href="#cb15-46" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> t1</span>
+<span id="cb15-47"><a href="#cb15-47" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span></span>
+<span id="cb15-48"><a href="#cb15-48" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ABS</span>(t1.bill_length_mm_zscore) <span class="op">&gt;</span> <span class="fu">CAST</span>(<span class="dv">2</span> <span class="kw">AS</span> <span class="dt">SMALLINT</span>)</span>
+<span id="cb15-49"><a href="#cb15-49" aria-hidden="true" tabindex="-1"></a>  <span class="kw">AND</span> <span class="fu">ABS</span>(t1.bill_depth_mm_zscore) <span class="op">&gt;</span> <span class="fu">CAST</span>(<span class="dv">2</span> <span class="kw">AS</span> <span class="dt">SMALLINT</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Good thing you didn’t have to write that by hand!</p>
+</section>
+</section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>This blog post illustrates the ability to apply computations to many columns at once and the power of ibis as a composable, expressive library for analytics.</p>
+<ul>
+<li><a href="https://ibis-project.org/community/contribute/">Get involved!</a></li>
+<li><a href="https://github.com/ibis-project/ibis/issues/new/choose">Report issues!</a></li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
