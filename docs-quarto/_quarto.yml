@@ -19,9 +19,12 @@ website:
     left:
       - href: index.qmd
         text: Home
+      - href: concept/why_ibis.md
+      - href: tutorial/index.md
+      - href: how_to/configuration.md
+      - href: reference/index.qmd
       - href: blog/rendered/ibis-version-6.0.0-release.ipynb
         text: Blog
-      - href: reference/index.qmd
       - href: release_notes.md
         text: "🚧 Release notes"
 
@@ -41,6 +44,36 @@ website:
         - blog/ffill-and-bfill-using-ibis.md
         - blog/Ibis-version-3.1.0-release.md
         - blog/Ibis-version-3.0.0-release.md
+    - id: concept
+      title: Concepts
+      contents:
+        - concept/why_ibis.md
+        - concept/design.md
+        - concept/backends.md
+    - id: tutorial
+      title: Tutorials
+      contents: 
+        - tutorial/index.md
+        # TODO: note that two tutorials need titles
+        # they show up as "install" as a result
+        - auto: tutorial/*
+    - id: how-to
+      title: How-to guides
+      contents:
+        - configuration.md
+        - chain_expressions.md
+        - ffill_bfill_w_window.md
+        - self_joins.md
+        - sessionize.md
+        - topk.md
+        - memtable_join.md
+        - duckdb_register.md
+        - streamlit.md
+        - section: Extend with custom operations
+          contents:
+            - how_to/extending/elementwise.ipynb
+            - how_to/extending/reduction.ipynb
+            
 
 
 quartodoc:
