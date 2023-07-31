@@ -1,14 +1,6 @@
 project:
   type: website
 
-website:
-  title: "."
-  navbar:
-    left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
-      - href: reference/index.qmd
 
 format:
   html:
@@ -16,8 +8,38 @@ format:
     css: styles.css
     toc: true
 
+
 metadata-files:
   - reference/_sidebar.yml
+
+
+website:
+  title: "."
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: blog/rendered/ibis-version-6.0.0-release.ipynb
+        text: Blog
+      - href: reference/index.qmd
+
+  sidebar:
+    - id: blog
+      title: Blog
+      contents: 
+        - blog/rendered/ibis-version-6.0.0-release.ipynb
+        - blog/rendered/torch.ipynb
+        - blog/rendered/campaign-finance.ipynb
+        - blog/ibis-to-file.md
+        - blog/ibis-examples.md
+        - blog/selectors.md
+        - blog/ibis_substrait_to_duckdb.md
+        - blog/ibis-version-4.0.0-release.md
+        - blog/rendered/ci-analysis.ipynb
+        - blog/ffill-and-bfill-using-ibis.md
+        - blog/Ibis-version-3.1.0-release.md
+        - blog/Ibis-version-3.0.0-release.md
+
 
 quartodoc:
   package: ibis
