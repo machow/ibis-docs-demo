@@ -1,0 +1,20 @@
+---
+title: Dask
+execute:
+  echo: false
+  output: asis
+---
+
+```{python}
+from _utils import default_template
+
+print(
+    default_template(
+        backend_name = "Dask",
+        backend_url = "https://dask.org",
+        backend_module = "dask",
+        backend_param_style = "a dictionary of paths",
+        intro = "",
+    )
+)
+```

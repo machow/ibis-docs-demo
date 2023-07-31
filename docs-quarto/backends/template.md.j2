@@ -1,0 +1,84 @@
+# [{{ backend_name }}]({{ backend_url }})
+
+{% if is_experimental %}
+!!! experimental "{% if version_added %}Introduced in v{{ version_added }}{% else %}Experimental{% endif %}"
+
+    The {{ backend_name }} backend is experimental and is subject to backwards incompatible changes.
+
+{% elif version_added %}
+!!! tip "Introduced in v{{ version_added }}"
+{% endif %}
+
+{% if intro %}{{ intro }}{% endif %}
+
+{% if not (development_only | default(False)) %}
+
+## Install
+
+Install `ibis` and dependencies for the {{ backend_name }} backend:
+
+
+:::::: {.panel-tabset}
+
+## pip
+
+```sh
+pip install 'ibis-framework{% if not is_core %}[{{ backend_module }}]{% endif %}'
+```
+
+
+{% for mgr in ["conda", "mamba"] %}
+
+## {{ mgr }}
+
+
+```sh
+{{ mgr }} install -c conda-forge ibis-{% if is_core %}framework{% else %}{{ backend_module }}{% endif %}
+```
+
+{% endfor %}
+
+::::::
+
+
+{% else %}
+!!! info "The {{ backend_name }} backend isn't released yet!"
+
+    [Set up a development environment](../community/contribute/01_environment.md) to use this backend.
+
+{% endif %}
+
+## Connect
+
+### API
+
+Create a client by passing in {{ backend_param_style }} to `ibis.{{ backend_module }}.connect`.
+
+<!-- prettier-ignore-start -->
+See [`ibis.backends.{{ backend_module }}.Backend.do_connect`][ibis.backends.{{ backend_module }}.{{ do_connect_base | default('Backend') }}.do_connect]
+for connection parameter information.
+<!-- prettier-ignore-end -->
+
+<!-- prettier-ignore-start -->
+!!! info "`ibis.{{ backend_module }}.connect` is a thin wrapper around [`ibis.backends.{{ backend_module }}.Backend.do_connect`][ibis.backends.{{ backend_module }}.{{ do_connect_base | default('Backend') }}.do_connect]."
+<!-- prettier-ignore-end -->
+
+### Connection Parameters
+
+{% set object_path = "ibis.backends." + backend_module + "."  + (do_connect_base or 'Backend') + ".do_connect" %}
+
+{{ render_doc(object_path, header_level = 3) }}
+
+{% if not exclude_backend_api %}
+
+## Backend API
+
+{% set backend_path = "ibis.backends." + backend_module + ".Backend" %}
+
+<!--
+TODO: ensure inherited members get shown for docs below
+-->
+
+{{ render_doc(backend_path, header_level = 2) }}
+
+{% endif %}
