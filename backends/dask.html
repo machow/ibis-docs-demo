@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>. – index</title>
+<title>. - Dask</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -66,7 +100,6 @@ ul.task-list li input[type="checkbox"] {
 
 <body class="nav-sidebar floating nav-fixed">
 
-
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
@@ -87,11 +120,11 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../backends/index.html" rel="" target="">
+    <a class="nav-link active" href="../backends/index.html" rel="" target="" aria-current="page">
  <span class="menu-text">Backends</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../reference/index.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../reference/index.html" rel="" target="">
  <span class="menu-text">Reference</span></a>
   </li>  
 </ul>
@@ -105,7 +138,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../reference/index.html">Reference</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../backends/dask.html">Dask</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -119,122 +152,22 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../reference/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Reference</span></a>
+  <a href="../backends/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Backends</span></a>
   </div>
 </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">Expressions</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../reference/top_level.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Top-level APIs</span></a>
+  <a href="../backends/dask.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Dask</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../reference/expression-tables.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Table Expressions</span></a>
+  <a href="../backends/impala.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Impala</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../reference/expression-generic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Generic Expression APIs</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../reference/expression-numeric.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Numeric and Boolean Expressions</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../reference/expression-strings.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">String Expressions</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../reference/temporal.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">temporal</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../reference/expression-collections.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Complex Type Expressions</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../reference/expression-geospatial.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Geospatial Expressions</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text">Other</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../reference/selectors.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">selectors</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../reference/expr.schema.Schema.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">expr.schema.Schema</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../reference/config.Options.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">config.Options</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../reference/config.Repr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">config.Repr</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../reference/config.SQL.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">config.SQL</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../reference/config.ContextAdjustment.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">config.ContextAdjustment</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../reference/expr.datatypes.core.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">expr.datatypes.core</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
     </ul>
     </div>
 </nav>
@@ -245,10 +178,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#reference" id="toc-reference" class="nav-link active" data-scroll-target="#reference">Reference</a>
+  <li><a href="#dask" id="toc-dask" class="nav-link active" data-scroll-target="#dask">Dask</a>
   <ul class="collapse">
-  <li><a href="#expressions" id="toc-expressions" class="nav-link" data-scroll-target="#expressions">Expressions</a></li>
-  <li><a href="#other" id="toc-other" class="nav-link" data-scroll-target="#other">Other</a></li>
+  <li><a href="#install" id="toc-install" class="nav-link" data-scroll-target="#install">Install</a></li>
+  <li><a href="#connect" id="toc-connect" class="nav-link" data-scroll-target="#connect">Connect</a>
+  <ul class="collapse">
+  <li><a href="#api" id="toc-api" class="nav-link" data-scroll-target="#api">API</a></li>
+  <li><a href="#connection-parameters" id="toc-connection-parameters" class="nav-link" data-scroll-target="#connection-parameters">Connection Parameters</a></li>
+  <li><a href="#ibis.backends.dask.Backend.do_connect" id="toc-ibis.backends.dask.Backend.do_connect" class="nav-link" data-scroll-target="#ibis.backends.dask.Backend.do_connect">ibis.backends.dask.Backend.do_connect</a></li>
+  </ul></li>
+  <li><a href="#backend-api" id="toc-backend-api" class="nav-link" data-scroll-target="#backend-api">Backend API</a></li>
+  <li><a href="#ibis.backends.dask.Backend" id="toc-ibis.backends.dask.Backend" class="nav-link" data-scroll-target="#ibis.backends.dask.Backend">ibis.backends.dask.Backend</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -256,83 +196,108 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Dask</h1>
+</div>
 
 
-<section id="reference" class="level1">
-<h1>Reference</h1>
-<section id="expressions" class="level2">
-<h2 class="anchored" data-anchor-id="expressions">Expressions</h2>
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="dask" class="level1">
+<h1><a href="https://dask.org">Dask</a></h1>
+<section id="install" class="level2">
+<h2 class="anchored" data-anchor-id="install">Install</h2>
+<p>Install <code>ibis</code> and dependencies for the Dask backend:</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">pip</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">conda</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">mamba</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="st">'ibis-framework[dask]'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge ibis-dask</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> install <span class="at">-c</span> conda-forge ibis-dask</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="connect" class="level2">
+<h2 class="anchored" data-anchor-id="connect">Connect</h2>
+<section id="api" class="level3">
+<h3 class="anchored" data-anchor-id="api">API</h3>
+<p>Create a client by passing in a dictionary of paths to <code>ibis.dask.connect</code>.</p>
+<!-- prettier-ignore-start -->
+<p>See [<code>ibis.backends.dask.Backend.do_connect</code>][ibis.backends.dask.None.do_connect] for connection parameter information. <!-- prettier-ignore-end --></p>
+<!-- prettier-ignore-start -->
+<p>!!! info “<code>ibis.dask.connect</code> is a thin wrapper around [<code>ibis.backends.dask.Backend.do_connect</code>][ibis.backends.dask.None.do_connect].” <!-- prettier-ignore-end --></p>
+</section>
+<section id="connection-parameters" class="level3">
+<h3 class="anchored" data-anchor-id="connection-parameters">Connection Parameters</h3>
+</section>
+<section id="ibis.backends.dask.Backend.do_connect" class="level3">
+<h3 class="anchored" data-anchor-id="ibis.backends.dask.Backend.do_connect">ibis.backends.dask.Backend.do_connect</h3>
+<p><code>backends.dask.Backend.do_connect(self, dictionary=None)</code></p>
+<p>Construct a Dask backend client from a dictionary of data sources.</p>
+<section id="parameters" class="level4">
+<h4 class="anchored" data-anchor-id="parameters">Parameters</h4>
 <table class="table">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 37%">
+<col style="width: 44%">
+<col style="width: 7%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
 <tbody>
 <tr class="odd">
-<td><a href="../reference/top_level.html">Top-level APIs</a></td>
-<td>These methods and objecst are available directly on the <code>ibis</code> module.</td>
-</tr>
-<tr class="even">
-<td><a href="../reference/expression-tables.html">Table Expressions</a></td>
-<td>Table expressions form the basis for most Ibis expressions.</td>
-</tr>
-<tr class="odd">
-<td><a href="../reference/expression-generic.html">Generic Expression APIs</a></td>
-<td>These expressions are available on scalars and columns of any element type.</td>
-</tr>
-<tr class="even">
-<td><a href="../reference/expression-numeric.html">Numeric and Boolean Expressions</a></td>
-<td>These APIs are available on numeric and boolean expressions.</td>
-</tr>
-<tr class="odd">
-<td><a href="../reference/expression-strings.html">String Expressions</a></td>
-<td>All string operations are valid for both scalars and columns.</td>
-</tr>
-<tr class="even">
-<td><a href="../reference/temporal.html#ibis.expr.types.temporal">temporal</a></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><a href="../reference/expression-collections.html">Complex Type Expressions</a></td>
-<td>These APIs are available on arrays, maps and structs.</td>
-</tr>
-<tr class="even">
-<td><a href="../reference/expression-geospatial.html">Geospatial Expressions</a></td>
-<td>Ibis supports the following geospatial expression APIs</td>
+<td><code>dictionary</code></td>
+<td>typing.MutableMapping[str, dask.DataFrame] | None</td>
+<td>An optional mapping from <code>str</code> table names to Dask DataFrames.</td>
+<td><code>None</code></td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="other" class="level2">
-<h2 class="anchored" data-anchor-id="other">Other</h2>
-<table class="table">
-<tbody>
-<tr class="odd">
-<td><a href="../reference/selectors.html#ibis.selectors">selectors</a></td>
-<td>Convenient column selectors.</td>
-</tr>
-<tr class="even">
-<td><a href="../reference/expr.schema.Schema.html#ibis.expr.schema.Schema">expr.schema.Schema</a></td>
-<td>An object for holding table schema information.</td>
-</tr>
-<tr class="odd">
-<td><a href="../reference/config.Options.html#ibis.config.Options">config.Options</a></td>
-<td>Ibis configuration options.</td>
-</tr>
-<tr class="even">
-<td><a href="../reference/config.Repr.html#ibis.config.Repr">config.Repr</a></td>
-<td>Expression printing options.</td>
-</tr>
-<tr class="odd">
-<td><a href="../reference/config.SQL.html#ibis.config.SQL">config.SQL</a></td>
-<td>SQL-related options.</td>
-</tr>
-<tr class="even">
-<td><a href="../reference/config.ContextAdjustment.html#ibis.config.ContextAdjustment">config.ContextAdjustment</a></td>
-<td>Options related to time context adjustment.</td>
-</tr>
-<tr class="odd">
-<td><a href="../reference/expr.datatypes.core.html#ibis.expr.datatypes.core">expr.datatypes.core</a></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<section id="examples" class="level4">
+<h4 class="anchored" data-anchor-id="examples">Examples</h4>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> ibis</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> dask.dataframe <span class="im">as</span> dd</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> data <span class="op">=</span> {</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>...     <span class="st">"t"</span>: dd.read_parquet(<span class="st">"path/to/file.parquet"</span>),</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>...     <span class="st">"s"</span>: dd.read_csv(<span class="st">"path/to/file.csv"</span>),</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>... }</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> ibis.dask.<span class="ex">connect</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+</section>
+<section id="backend-api" class="level2">
+<h2 class="anchored" data-anchor-id="backend-api">Backend API</h2>
+<!--
+TODO: ensure inherited members get shown for docs below
+-->
+</section>
+<section id="ibis.backends.dask.Backend" class="level2">
+<h2 class="anchored" data-anchor-id="ibis.backends.dask.Backend">ibis.backends.dask.Backend</h2>
+<p><code>backends.dask.Backend()</code></p>
 
 
 </section>
