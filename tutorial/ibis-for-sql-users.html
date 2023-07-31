@@ -1,0 +1,1442 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.361">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>. - Install</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">.</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html" rel="" target="">
+ <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../concept/why_ibis.html" rel="" target="">
+ <span class="menu-text">Why Ibis?</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../tutorial/index.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Ibis tutorials</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../how_to/configuration.html" rel="" target="">
+ <span class="menu-text">Configure Ibis</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../reference/index.html" rel="" target="">
+ <span class="menu-text">Reference</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../blog/rendered/ibis-version-6.0.0-release.html" rel="" target="">
+ <span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../release_notes.html" rel="" target="">
+ <span class="menu-text">🚧 Release notes</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../tutorial/ibis-for-sql-users.html">Install</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorial/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ibis tutorials</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorial/getting_started.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Getting started with <code>ibis</code></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorial/ibis-for-dplyr-users.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ibis for dplyr users</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorial/ibis-for-pandas-users.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Install</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../tutorial/ibis-for-sql-users.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Install</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#pypi" id="toc-pypi" class="nav-link active" data-scroll-target="#pypi">PyPI</a></li>
+  <li><a href="#conda-forge" id="toc-conda-forge" class="nav-link" data-scroll-target="#conda-forge">conda-forge</a></li>
+  <li><a href="#ibis-for-sql-users" id="toc-ibis-for-sql-users" class="nav-link" data-scroll-target="#ibis-for-sql-users">Ibis for SQL users</a>
+  <ul class="collapse">
+  <li><a href="#projections-selectaddremove-columns" id="toc-projections-selectaddremove-columns" class="nav-link" data-scroll-target="#projections-selectaddremove-columns">Projections: select/add/remove columns</a>
+  <ul class="collapse">
+  <li><a href="#mutate-add-or-modify-columns-easily" id="toc-mutate-add-or-modify-columns-easily" class="nav-link" data-scroll-target="#mutate-add-or-modify-columns-easily"><code>mutate</code>: Add or modify columns easily</a></li>
+  <li><a href="#select-equivalent" id="toc-select-equivalent" class="nav-link" data-scroll-target="#select-equivalent"><code>SELECT *</code> equivalent</a></li>
+  <li><a href="#using-functions-in-projections" id="toc-using-functions-in-projections" class="nav-link" data-scroll-target="#using-functions-in-projections">Using functions in projections</a></li>
+  </ul></li>
+  <li><a href="#filtering-where" id="toc-filtering-where" class="nav-link" data-scroll-target="#filtering-where">Filtering / <code>WHERE</code></a></li>
+  <li><a href="#aggregation-group-by" id="toc-aggregation-group-by" class="nav-link" data-scroll-target="#aggregation-group-by">Aggregation / <code>GROUP BY</code></a>
+  <ul class="collapse">
+  <li><a href="#non-trivial-grouping-keys" id="toc-non-trivial-grouping-keys" class="nav-link" data-scroll-target="#non-trivial-grouping-keys">Non-trivial grouping keys</a></li>
+  <li><a href="#aggregates-considering-table-subsets" id="toc-aggregates-considering-table-subsets" class="nav-link" data-scroll-target="#aggregates-considering-table-subsets">Aggregates considering table subsets</a></li>
+  <li><a href="#count-convenience-size" id="toc-count-convenience-size" class="nav-link" data-scroll-target="#count-convenience-size"><code>count(*)</code> convenience: <code>size()</code></a></li>
+  <li><a href="#frequency-table-convenience-value_counts" id="toc-frequency-table-convenience-value_counts" class="nav-link" data-scroll-target="#frequency-table-convenience-value_counts">Frequency table convenience: <code>value_counts</code></a></li>
+  <li><a href="#having-clause" id="toc-having-clause" class="nav-link" data-scroll-target="#having-clause"><code>HAVING</code> clause</a></li>
+  </ul></li>
+  <li><a href="#sorting-order-by" id="toc-sorting-order-by" class="nav-link" data-scroll-target="#sorting-order-by">Sorting / <code>ORDER BY</code></a></li>
+  <li><a href="#limit-and-offset" id="toc-limit-and-offset" class="nav-link" data-scroll-target="#limit-and-offset"><code>LIMIT</code> and <code>OFFSET</code></a></li>
+  <li><a href="#common-column-expressions" id="toc-common-column-expressions" class="nav-link" data-scroll-target="#common-column-expressions">Common column expressions</a>
+  <ul class="collapse">
+  <li><a href="#type-casts" id="toc-type-casts" class="nav-link" data-scroll-target="#type-casts">Type casts</a></li>
+  <li><a href="#case-statements" id="toc-case-statements" class="nav-link" data-scroll-target="#case-statements"><code>CASE</code> statements</a></li>
+  <li><a href="#using-null-in-expressions" id="toc-using-null-in-expressions" class="nav-link" data-scroll-target="#using-null-in-expressions">Using <code>NULL</code> in expressions</a></li>
+  <li><a href="#set-membership-in-not-in" id="toc-set-membership-in-not-in" class="nav-link" data-scroll-target="#set-membership-in-not-in">Set membership: <code>IN</code> / <code>NOT IN</code></a></li>
+  <li><a href="#constant-and-literal-expressions" id="toc-constant-and-literal-expressions" class="nav-link" data-scroll-target="#constant-and-literal-expressions">Constant and literal expressions</a></li>
+  <li><a href="#is-null-and-is-not-null" id="toc-is-null-and-is-not-null" class="nav-link" data-scroll-target="#is-null-and-is-not-null"><code>IS NULL</code> and <code>IS NOT NULL</code></a></li>
+  <li><a href="#between" id="toc-between" class="nav-link" data-scroll-target="#between"><code>BETWEEN</code></a></li>
+  </ul></li>
+  <li><a href="#joins" id="toc-joins" class="nav-link" data-scroll-target="#joins">Joins</a>
+  <ul class="collapse">
+  <li><a href="#join-projection" id="toc-join-projection" class="nav-link" data-scroll-target="#join-projection">Join + projection</a></li>
+  <li><a href="#join-aggregation" id="toc-join-aggregation" class="nav-link" data-scroll-target="#join-aggregation">Join + aggregation</a></li>
+  <li><a href="#join-with-select" id="toc-join-with-select" class="nav-link" data-scroll-target="#join-with-select">Join with <code>SELECT *</code></a></li>
+  <li><a href="#multiple-joins" id="toc-multiple-joins" class="nav-link" data-scroll-target="#multiple-joins">Multiple joins</a></li>
+  <li><a href="#self-joins" id="toc-self-joins" class="nav-link" data-scroll-target="#self-joins">Self joins</a></li>
+  <li><a href="#overlapping-join-keys" id="toc-overlapping-join-keys" class="nav-link" data-scroll-target="#overlapping-join-keys">Overlapping join keys</a></li>
+  <li><a href="#non-equality-join-predicates" id="toc-non-equality-join-predicates" class="nav-link" data-scroll-target="#non-equality-join-predicates">Non-equality join predicates</a></li>
+  <li><a href="#other-ways-to-specify-join-keys" id="toc-other-ways-to-specify-join-keys" class="nav-link" data-scroll-target="#other-ways-to-specify-join-keys">Other ways to specify join keys</a></li>
+  </ul></li>
+  <li><a href="#subqueries" id="toc-subqueries" class="nav-link" data-scroll-target="#subqueries">Subqueries</a>
+  <ul class="collapse">
+  <li><a href="#correlated-exists-not-exists-filters" id="toc-correlated-exists-not-exists-filters" class="nav-link" data-scroll-target="#correlated-exists-not-exists-filters">Correlated <code>EXISTS</code> / <code>NOT EXISTS</code> filters</a></li>
+  <li><a href="#subqueries-with-in-not-in" id="toc-subqueries-with-in-not-in" class="nav-link" data-scroll-target="#subqueries-with-in-not-in">Subqueries with <code>IN</code> / <code>NOT IN</code></a></li>
+  <li><a href="#comparison-with-scalar-aggregates" id="toc-comparison-with-scalar-aggregates" class="nav-link" data-scroll-target="#comparison-with-scalar-aggregates">Comparison with scalar aggregates</a></li>
+  <li><a href="#conditional-aggregates" id="toc-conditional-aggregates" class="nav-link" data-scroll-target="#conditional-aggregates">Conditional aggregates</a></li>
+  </ul></li>
+  <li><a href="#distinct-expressions" id="toc-distinct-expressions" class="nav-link" data-scroll-target="#distinct-expressions"><code>DISTINCT</code> expressions</a></li>
+  <li><a href="#window-functions" id="toc-window-functions" class="nav-link" data-scroll-target="#window-functions">Window functions</a></li>
+  <li><a href="#top-k-operations" id="toc-top-k-operations" class="nav-link" data-scroll-target="#top-k-operations">Top-K operations</a></li>
+  <li><a href="#date-time-data" id="toc-date-time-data" class="nav-link" data-scroll-target="#date-time-data">Date / time data</a>
+  <ul class="collapse">
+  <li><a href="#casting-to-date-time-types" id="toc-casting-to-date-time-types" class="nav-link" data-scroll-target="#casting-to-date-time-types">Casting to date / time types</a></li>
+  <li><a href="#intervals" id="toc-intervals" class="nav-link" data-scroll-target="#intervals">Intervals</a></li>
+  </ul></li>
+  <li><a href="#buckets-and-histograms" id="toc-buckets-and-histograms" class="nav-link" data-scroll-target="#buckets-and-histograms">Buckets and histograms</a></li>
+  <li><a href="#unions" id="toc-unions" class="nav-link" data-scroll-target="#unions">Unions</a></li>
+  <li><a href="#esoterica" id="toc-esoterica" class="nav-link" data-scroll-target="#esoterica">Esoterica</a>
+  <ul class="collapse">
+  <li><a href="#common-table-expressions-ctes" id="toc-common-table-expressions-ctes" class="nav-link" data-scroll-target="#common-table-expressions-ctes">Common table expressions (CTEs)</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Install</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>If you don’t have <code>ibis</code> installed, you can install it from:</p>
+<section id="pypi" class="level3">
+<h3 class="anchored" data-anchor-id="pypi">PyPI</h3>
+<pre><code>python -m pip install 'ibis-framework[duckdb]'</code></pre>
+</section>
+<section id="conda-forge" class="level3">
+<h3 class="anchored" data-anchor-id="conda-forge">conda-forge</h3>
+<pre><code>conda install -c conda-forge ibis-framework</code></pre>
+<p>You can check out <a href="https://ibis-project.org/install/">the install page</a> for more detailed instructions.</p>
+</section>
+<section id="ibis-for-sql-users" class="level1">
+<h1>Ibis for SQL users</h1>
+<p>Ibis provides a full-featured replacement for SQL <code>SELECT</code> queries, but expressed with Python code that is:</p>
+<ul>
+<li>Type-checked and validated as you go. No more debugging cryptic database errors; Ibis catches your mistakes right away.</li>
+<li>Easier to write. Pythonic function calls with tab completion in IPython.</li>
+<li>More composable. Break complex queries down into easier-to-digest pieces</li>
+<li>Easier to reuse. Mix and match Ibis snippets to create expressions tailored for your analysis.</li>
+</ul>
+<p>We intend for all <code>SELECT</code> queries to be fully portable to Ibis. Coverage of other DDL statements (e.g.&nbsp;<code>CREATE TABLE</code> or <code>INSERT</code>) may vary from engine to engine.</p>
+<blockquote class="blockquote">
+<p><strong>Note</strong>: If you find any SQL idioms or use cases in your work that are not represented here, please reach out so we can add more to this guide!</p>
+</blockquote>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ibis</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>ibis.options.sql.default_limit <span class="op">=</span> <span class="va">None</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="projections-selectaddremove-columns" class="level2">
+<h2 class="anchored" data-anchor-id="projections-selectaddremove-columns">Projections: select/add/remove columns</h2>
+<p>All tables in Ibis are immutable. To select a subset of a table’s columns, or to add new columns, you must produce a new table by means of a <em>projection</em>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> ibis.table(</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    [(<span class="st">'one'</span>, <span class="st">'string'</span>), (<span class="st">'two'</span>, <span class="st">'float'</span>), (<span class="st">'three'</span>, <span class="st">'int32'</span>)], <span class="st">'my_data'</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>t</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>In SQL, you might write something like:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> two, one</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> my_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In Ibis, this is</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>proj <span class="op">=</span> t[<span class="st">'two'</span>, <span class="st">'one'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>or</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>proj <span class="op">=</span> t.select([<span class="st">'two'</span>, <span class="st">'one'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This generates the expected SQL:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(proj)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>What about adding new columns? To form a valid projection, all column expressions must be <strong>named</strong>. Let’s look at the SQL:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> two, one, three <span class="op">*</span> <span class="dv">2</span> <span class="kw">AS</span> new_col</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> my_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The last expression is written:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>new_col <span class="op">=</span> (t.three <span class="op">*</span> <span class="dv">2</span>).name(<span class="st">'new_col'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now, we have:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>proj <span class="op">=</span> t[<span class="st">'two'</span>, <span class="st">'one'</span>, new_col]</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(proj)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="mutate-add-or-modify-columns-easily" class="level3">
+<h3 class="anchored" data-anchor-id="mutate-add-or-modify-columns-easily"><code>mutate</code>: Add or modify columns easily</h3>
+<p>Since adding new columns or modifying existing columns is so common, there is a convenience method <code>mutate</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>mutated <span class="op">=</span> t.mutate(new_col<span class="op">=</span>t.three <span class="op">*</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Notice that using the <code>name</code> was not necessary here because we’re using Python keywords to provide the name. Indeed:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(mutated)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>If you modify an existing column with <code>mutate</code> it will list out all the other columns:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>mutated <span class="op">=</span> t.mutate(two<span class="op">=</span>t.two <span class="op">*</span> <span class="dv">2</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(mutated)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="select-equivalent" class="level3">
+<h3 class="anchored" data-anchor-id="select-equivalent"><code>SELECT *</code> equivalent</h3>
+<p>Especially in combination with relational joins, it’s convenient to be able to select all columns in a table using the <code>SELECT *</code> construct. To do this, use the table expression itself in a projection:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>proj <span class="op">=</span> t[t]</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(proj)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This is how <code>mutate</code> is implemented. The example above <code>t.mutate(new_col=t.three * 2)</code> can be written as a normal projection:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>proj <span class="op">=</span> t[t, new_col]</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(proj)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Let’s consider a table we might wish to join with <code>t</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>t2 <span class="op">=</span> ibis.table([(<span class="st">'key'</span>, <span class="st">'string'</span>), (<span class="st">'value'</span>, <span class="st">'float'</span>)], <span class="st">'dim_table'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now let’s take the SQL:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> t0.<span class="op">*</span>, t0.two <span class="op">-</span> t1.<span class="fu">value</span> <span class="kw">AS</span> diff</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> my_data t0</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> dim_table t1</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">ON</span> t0.one <span class="op">=</span> t1.<span class="kw">key</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To write this with Ibis, it is:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>diff <span class="op">=</span> (t.two <span class="op">-</span> t2.value).name(<span class="st">'diff'</span>)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>joined <span class="op">=</span> t.join(t2, t.one <span class="op">==</span> t2.key)[t, diff]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>And verify the generated SQL:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(joined)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="using-functions-in-projections" class="level3">
+<h3 class="anchored" data-anchor-id="using-functions-in-projections">Using functions in projections</h3>
+<p>If you pass a function instead of a string or Ibis expression in any projection context, it will be invoked with the “parent” table as its argument. This can help significantly when [composing complex operations. Consider this SQL:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> one, <span class="fu">avg</span>(<span class="fu">abs</span>(the_sum)) <span class="kw">AS</span> mad</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> (</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">SELECT</span> one, three, <span class="fu">sum</span>(two) <span class="kw">AS</span> the_sum</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> my_data</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">GROUP</span> <span class="kw">BY</span> <span class="dv">1</span>, <span class="dv">2</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>) t0</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This can be written as one chained expression:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>expr <span class="op">=</span> (</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    t.group_by([<span class="st">'one'</span>, <span class="st">'three'</span>])</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    .aggregate(the_sum<span class="op">=</span>t.two.<span class="bu">sum</span>())</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>    .group_by(<span class="st">'one'</span>)</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    .aggregate(mad<span class="op">=</span><span class="kw">lambda</span> x: x.the_sum.<span class="bu">abs</span>().mean())</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Indeed:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(expr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="filtering-where" class="level2">
+<h2 class="anchored" data-anchor-id="filtering-where">Filtering / <code>WHERE</code></h2>
+<p>You can add filter clauses to a table expression either by indexing with <code>[]</code> (like pandas) or use the <code>filter</code> method:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>filtered <span class="op">=</span> t[t.two <span class="op">&gt;</span> <span class="dv">0</span>]</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(filtered)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><code>filter</code> can take a list of expressions, which must all be satisfied for a row to be included in the result:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>filtered <span class="op">=</span> t.<span class="bu">filter</span>([t.two <span class="op">&gt;</span> <span class="dv">0</span>, t.one.isin([<span class="st">'A'</span>, <span class="st">'B'</span>])])</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(filtered)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To compose boolean expressions with <code>AND</code> or <code>OR</code>, use the respective <code>&amp;</code> and <code>|</code> operators:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>cond <span class="op">=</span> (t.two <span class="op">&lt;</span> <span class="dv">0</span>) <span class="op">|</span> ((t.two <span class="op">&gt;</span> <span class="dv">0</span>) <span class="op">|</span> t.one.isin([<span class="st">'A'</span>, <span class="st">'B'</span>]))</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>filtered <span class="op">=</span> t[cond]</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(filtered)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="aggregation-group-by" class="level2">
+<h2 class="anchored" data-anchor-id="aggregation-group-by">Aggregation / <code>GROUP BY</code></h2>
+<p>To aggregate a table, you need:</p>
+<ul>
+<li>Zero or more grouping expressions (these can be column names)</li>
+<li>One or more aggregation expressions</li>
+</ul>
+<p>Let’s look at the <code>aggregate</code> method on tables:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>stats <span class="op">=</span> [t.two.<span class="bu">sum</span>().name(<span class="st">'total_two'</span>), t.three.mean().name(<span class="st">'avg_three'</span>)]</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>agged <span class="op">=</span> t.aggregate(stats)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>If you don’t use any group expressions, the result will have a single row with your statistics of interest:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>agged.schema()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(agged)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To add groupings, use either the <code>by</code> argument of <code>aggregate</code> or use the <code>group_by</code> construct:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>agged2 <span class="op">=</span> t.aggregate(stats, by<span class="op">=</span><span class="st">'one'</span>)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>agged3 <span class="op">=</span> t.group_by(<span class="st">'one'</span>).aggregate(stats)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(agged3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="non-trivial-grouping-keys" class="level3">
+<h3 class="anchored" data-anchor-id="non-trivial-grouping-keys">Non-trivial grouping keys</h3>
+<p>You can use any expression (or function, like in projections) deriving from the table you are aggregating. The only constraint is that the expressions must be named. Let’s look at an example:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>events <span class="op">=</span> ibis.table(</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    [(<span class="st">'ts'</span>, <span class="st">'timestamp'</span>), (<span class="st">'event_type'</span>, <span class="st">'int32'</span>), (<span class="st">'session_id'</span>, <span class="st">'int64'</span>)],</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    name<span class="op">=</span><span class="st">'web_events'</span>,</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Suppose we wanted to total up event types by year and month:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>keys <span class="op">=</span> [events.ts.year().name(<span class="st">'year'</span>), events.ts.month().name(<span class="st">'month'</span>)]</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>sessions <span class="op">=</span> events.session_id.nunique()</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>stats <span class="op">=</span> events.group_by(keys).aggregate(</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>    total<span class="op">=</span>events.count(), sessions<span class="op">=</span>sessions</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now we have:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(stats)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="aggregates-considering-table-subsets" class="level3">
+<h3 class="anchored" data-anchor-id="aggregates-considering-table-subsets">Aggregates considering table subsets</h3>
+<p>In analytics is it common to compare statistics from different subsets of a table. Let’s consider a dataset containing people’s name, age, gender, and nationality:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>pop <span class="op">=</span> ibis.table(</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    [</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'name'</span>, <span class="st">'string'</span>),</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'country'</span>, <span class="st">'string'</span>),</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'gender'</span>, <span class="st">'string'</span>),</span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'age'</span>, <span class="st">'int16'</span>),</span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>    ],</span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>    name<span class="op">=</span><span class="st">'population'</span>,</span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now, suppose you wanted to know for each country:</p>
+<ul>
+<li>Average overall age</li>
+<li>Average male age</li>
+<li>Average female age</li>
+<li>Total number of persons</li>
+</ul>
+<p>In SQL, you may write:</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> country,</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">count</span>(<span class="op">*</span>) <span class="kw">AS</span> num_persons,</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">AVG</span>(age) <span class="kw">AS</span> avg_age</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">AVG</span>(<span class="cf">CASE</span> <span class="cf">WHEN</span> gender <span class="op">=</span> <span class="st">'M'</span></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>             <span class="cf">THEN</span> age</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>             <span class="cf">ELSE</span> <span class="kw">NULL</span></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>           <span class="cf">END</span>) <span class="kw">AS</span> avg_male,</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>       <span class="fu">AVG</span>(<span class="cf">CASE</span> <span class="cf">WHEN</span> gender <span class="op">=</span> <span class="st">'F'</span></span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>             <span class="cf">THEN</span> age</span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>             <span class="cf">ELSE</span> <span class="kw">NULL</span></span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>           <span class="cf">END</span>) <span class="kw">AS</span> avg_female,</span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> population</span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Ibis makes this much simpler by giving you <code>where</code> option in aggregation functions:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>expr <span class="op">=</span> pop.group_by(<span class="st">'country'</span>).aggregate(</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>    num_persons<span class="op">=</span>pop.count(),</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>    avg_age<span class="op">=</span>pop.age.mean(),</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>    avg_male<span class="op">=</span>pop.age.mean(where<span class="op">=</span>pop.gender <span class="op">==</span> <span class="st">'M'</span>),</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>    avg_female<span class="op">=</span>pop.age.mean(where<span class="op">=</span>pop.gender <span class="op">==</span> <span class="st">'F'</span>),</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This indeed generates the correct SQL. Note that SQL engines handle <code>NULL</code> values differently in aggregation functions, but Ibis will write the SQL expression that is correct for your query engine.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(expr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="count-convenience-size" class="level3">
+<h3 class="anchored" data-anchor-id="count-convenience-size"><code>count(*)</code> convenience: <code>size()</code></h3>
+<p>Computing group frequencies is so common that, like pandas, we have a method <code>size</code> that is a shortcut for the <code>count(*)</code> idiom:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>freqs <span class="op">=</span> events.group_by(keys).size()</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(freqs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="frequency-table-convenience-value_counts" class="level3">
+<h3 class="anchored" data-anchor-id="frequency-table-convenience-value_counts">Frequency table convenience: <code>value_counts</code></h3>
+<p>Consider the SQL idiom:</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> some_column_expression, <span class="fu">count</span>(<span class="op">*</span>)</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> <span class="kw">table</span></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This is so common that, like pandas, there is a generic array method <code>value_counts</code> which does this for us:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>expr <span class="op">=</span> events.ts.year().value_counts()</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(expr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="having-clause" class="level3">
+<h3 class="anchored" data-anchor-id="having-clause"><code>HAVING</code> clause</h3>
+<p>The SQL <code>HAVING</code> clause enables you to filter the results of an aggregation based on some group-wise condition holding true. For example, suppose we wanted to limit our analysis to groups containing at least 1000 observations:</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> one, <span class="fu">sum</span>(two) <span class="kw">AS</span> total</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> my_data</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> <span class="dv">1</span></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a><span class="kw">HAVING</span> <span class="fu">count</span>(<span class="op">*</span>) <span class="op">&gt;=</span> <span class="dv">1000</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>With Ibis, you can do:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>expr <span class="op">=</span> (</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>    t.group_by(<span class="st">'one'</span>)</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>    .having(t.count() <span class="op">&gt;=</span> <span class="dv">1000</span>)</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>    .aggregate(t.two.<span class="bu">sum</span>().name(<span class="st">'total'</span>))</span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(expr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="sorting-order-by" class="level2">
+<h2 class="anchored" data-anchor-id="sorting-order-by">Sorting / <code>ORDER BY</code></h2>
+<p>To sort a table, use the <code>order_by</code> method along with either column names or expressions that indicate the sorting keys:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="bu">sorted</span> <span class="op">=</span> events.order_by([events.ts.year(), events.ts.month()])</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(<span class="bu">sorted</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The default for sorting is in ascending order. To reverse the sort direction of any key, either wrap it in <code>ibis.desc</code> or pass a tuple with <code>False</code> as the second value:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="bu">sorted</span> <span class="op">=</span> events.order_by(</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>    [ibis.desc(<span class="st">'event_type'</span>), (events.ts.month(), <span class="va">False</span>)]</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>).limit(<span class="dv">100</span>)</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(<span class="bu">sorted</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="limit-and-offset" class="level2">
+<h2 class="anchored" data-anchor-id="limit-and-offset"><code>LIMIT</code> and <code>OFFSET</code></h2>
+<p>This one is easy. The table <code>limit</code> function truncates a table to the indicates number of rows. So if you only want the first 1000 rows (which may not be deterministic depending on the SQL engine), you can do:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>limited <span class="op">=</span> t.limit(<span class="dv">1000</span>)</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(limited)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The <code>offset</code> option in <code>limit</code> skips rows. So if you wanted rows 11 through 20, you could do:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>limited <span class="op">=</span> t.limit(<span class="dv">10</span>, offset<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(limited)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="common-column-expressions" class="level2">
+<h2 class="anchored" data-anchor-id="common-column-expressions">Common column expressions</h2>
+<p>See the full <code class="interpreted-text" role="ref">API documentation &lt;api&gt;</code> for all of the available value methods and tools for creating value expressions. We mention a few common ones here as they relate to common SQL queries.</p>
+<section id="type-casts" class="level3">
+<h3 class="anchored" data-anchor-id="type-casts">Type casts</h3>
+<p>Ibis’s type system is independent of any SQL system. You cast Ibis expressions from one Ibis type to another. For example:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>expr <span class="op">=</span> t.mutate(date<span class="op">=</span>t.one.cast(<span class="st">'timestamp'</span>), four<span class="op">=</span>t.three.cast(<span class="st">'float32'</span>))</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(expr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="case-statements" class="level3">
+<h3 class="anchored" data-anchor-id="case-statements"><code>CASE</code> statements</h3>
+<p>SQL dialects typically support one or more kind of <code>CASE</code> statements. The first is the <em>simple case</em> that compares against exact values of an expression.</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> expr</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">WHEN</span> value_1 <span class="cf">THEN</span> result_1</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">WHEN</span> value_2 <span class="cf">THEN</span> result_2</span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">ELSE</span> <span class="kw">default</span></span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a><span class="cf">END</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Value expressions in Ibis have a <code>case</code> method that allows us to emulate these semantics:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>case <span class="op">=</span> (</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>    t.one.cast(<span class="st">'timestamp'</span>)</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>    .year()</span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>    .case()</span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>    .when(<span class="dv">2015</span>, <span class="st">'This year'</span>)</span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>    .when(<span class="dv">2014</span>, <span class="st">'Last year'</span>)</span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a>    .else_(<span class="st">'Earlier'</span>)</span>
+<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a>    .end()</span>
+<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-11"><a href="#cb49-11" aria-hidden="true" tabindex="-1"></a>expr <span class="op">=</span> t.mutate(year_group<span class="op">=</span>case)</span>
+<span id="cb49-12"><a href="#cb49-12" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(expr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The more general case is that of an arbitrary list of boolean expressions and result values:</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span></span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">WHEN</span> boolean_expr1 <span class="cf">THEN</span> result_1</span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">WHEN</span> boolean_expr2 <span class="cf">THEN</span> result_2</span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">WHEN</span> boolean_expr3 <span class="cf">THEN</span> result_3</span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">ELSE</span> <span class="kw">default</span></span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a><span class="cf">END</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To do this, use <code>ibis.case</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>case <span class="op">=</span> (</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>    ibis.case()</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>    .when(t.two <span class="op">&lt;</span> <span class="dv">0</span>, t.three <span class="op">*</span> <span class="dv">2</span>)</span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>    .when(t.two <span class="op">&gt;</span> <span class="dv">1</span>, t.three)</span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>    .else_(t.two)</span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>    .end()</span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a>expr <span class="op">=</span> t.mutate(cond_value<span class="op">=</span>case)</span>
+<span id="cb51-10"><a href="#cb51-10" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(expr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>There are several places where Ibis builds cases for you in a simplified way. One example is the <code>ifelse</code> function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>switch <span class="op">=</span> (t.two <span class="op">&lt;</span> <span class="dv">0</span>).ifelse(<span class="st">'Negative'</span>, <span class="st">'Non-Negative'</span>)</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>expr <span class="op">=</span> t.mutate(group<span class="op">=</span>switch)</span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(expr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="using-null-in-expressions" class="level3">
+<h3 class="anchored" data-anchor-id="using-null-in-expressions">Using <code>NULL</code> in expressions</h3>
+<p>To use <code>NULL</code> in an expression, either use the special <code>ibis.NA</code> value or <code>ibis.null()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>pos_two <span class="op">=</span> (t.two <span class="op">&gt;</span> <span class="dv">0</span>).ifelse(t.two, ibis.NA)</span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>expr <span class="op">=</span> t.mutate(two_positive<span class="op">=</span>pos_two)</span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(expr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="set-membership-in-not-in" class="level3">
+<h3 class="anchored" data-anchor-id="set-membership-in-not-in">Set membership: <code>IN</code> / <code>NOT IN</code></h3>
+<p>Let’s look again at the population dataset. Suppose you wanted to combine the United States and Canada data into a “North America” category. Here would be some SQL to do it:</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span></span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">WHEN</span> <span class="fu">upper</span>(country) <span class="kw">IN</span> (<span class="st">'UNITED STATES'</span>, <span class="st">'CANADA'</span>)</span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">THEN</span> <span class="st">'North America'</span></span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">ELSE</span> country</span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a><span class="cf">END</span> <span class="kw">AS</span> refined_group</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The Ibis equivalent of <code>IN</code> is the <code>isin</code> method. So we can write:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>refined <span class="op">=</span> (</span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>    pop.country.upper()</span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>    .isin([<span class="st">'UNITED STATES'</span>, <span class="st">'CANADA'</span>])</span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>    .ifelse(<span class="st">'North America'</span>, pop.country)</span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-7"><a href="#cb55-7" aria-hidden="true" tabindex="-1"></a>expr <span class="op">=</span> pop.mutate(refined_group<span class="op">=</span>refined)</span>
+<span id="cb55-8"><a href="#cb55-8" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(expr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The opposite of <code>isin</code> is <code>notin</code>.</p>
+</section>
+<section id="constant-and-literal-expressions" class="level3">
+<h3 class="anchored" data-anchor-id="constant-and-literal-expressions">Constant and literal expressions</h3>
+<p>Consider a SQL expression like:</p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="st">'foo'</span> <span class="kw">IN</span> (column1, column2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>which is equivalent to</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>column1 <span class="op">=</span> <span class="st">'foo'</span> <span class="kw">OR</span> column2 <span class="op">=</span> <span class="st">'foo'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To build expressions off constant values, you must first convert the value (whether a Python string or number) to an Ibis expression using <code>ibis.literal</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>t3 <span class="op">=</span> ibis.table(</span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>    [(<span class="st">'column1'</span>, <span class="st">'string'</span>), (<span class="st">'column2'</span>, <span class="st">'string'</span>), (<span class="st">'column3'</span>, <span class="st">'float'</span>)],</span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'data'</span>,</span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a>value <span class="op">=</span> ibis.literal(<span class="st">'foo'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Once you’ve done this, you can use the literal expression like any other array or scalar expression:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>has_foo <span class="op">=</span> value.isin([t3.column1, t3.column2])</span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>expr <span class="op">=</span> t3.mutate(has_foo<span class="op">=</span>has_foo)</span>
+<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(expr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>In many other situations, you can use constants without having to use <code>ibis.literal</code>. For example, we could add a column containing nothing but the number 5 like so:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>expr <span class="op">=</span> t3.mutate(number5<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(expr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="is-null-and-is-not-null" class="level3">
+<h3 class="anchored" data-anchor-id="is-null-and-is-not-null"><code>IS NULL</code> and <code>IS NOT NULL</code></h3>
+<p>These are simple: use the <code>isnull</code> and <code>notnull</code> functions respectively, which yield boolean arrays:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>indic <span class="op">=</span> t.two.isnull().ifelse(<span class="st">'valid'</span>, <span class="st">'invalid'</span>)</span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>expr <span class="op">=</span> t.mutate(is_valid<span class="op">=</span>indic)</span>
+<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(expr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>agged <span class="op">=</span> (</span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>    expr[expr.one.notnull()]</span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>    .group_by(<span class="st">'is_valid'</span>)</span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>    .aggregate(three_count<span class="op">=</span><span class="kw">lambda</span> t: t.three.notnull().<span class="bu">sum</span>())</span>
+<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb62-6"><a href="#cb62-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-7"><a href="#cb62-7" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(agged)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="between" class="level3">
+<h3 class="anchored" data-anchor-id="between"><code>BETWEEN</code></h3>
+<p>The <code>between</code> method on arrays and scalars compiles to the SQL <code>BETWEEN</code> keyword. The result of <code>between</code> is boolean and can be used with any other boolean expression:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>expr <span class="op">=</span> t[t.two.between(<span class="dv">10</span>, <span class="dv">50</span>) <span class="op">&amp;</span> t.one.notnull()]</span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(expr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="joins" class="level2">
+<h2 class="anchored" data-anchor-id="joins">Joins</h2>
+<p>Ibis supports several kinds of joins between table expressions:</p>
+<ul>
+<li><code>inner_join</code>: maps to SQL <code>INNER JOIN</code></li>
+<li><code>cross_join</code>: a cartesian product join with no keys. Equivalent to <code>inner_join</code> with no join predicates</li>
+<li><code>left_join</code>: maps to SQL <code>LEFT OUTER JOIN</code></li>
+<li><code>outer_join</code>: maps to SQL <code>FULL OUTER JOIN</code></li>
+<li><code>semi_join</code>: maps to SQL <code>LEFT SEMI JOIN</code>. May or may not be an explicit join type in your query engine.</li>
+<li><code>anti_join</code>: maps to SQL <code>LEFT ANTI JOIN</code>. May or may not be an explicit join type in your query engine.</li>
+</ul>
+<p>The <code>join</code> table method is by default the same as <code>inner_join</code>.</p>
+<p>Let’s look at a couple example tables to see how joins work in Ibis:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>t1 <span class="op">=</span> ibis.table(</span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>    [(<span class="st">'value1'</span>, <span class="st">'float'</span>), (<span class="st">'key1'</span>, <span class="st">'string'</span>), (<span class="st">'key2'</span>, <span class="st">'string'</span>)], <span class="st">'table1'</span></span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a>t2 <span class="op">=</span> ibis.table(</span>
+<span id="cb64-6"><a href="#cb64-6" aria-hidden="true" tabindex="-1"></a>    [(<span class="st">'value2'</span>, <span class="st">'float'</span>), (<span class="st">'key3'</span>, <span class="st">'string'</span>), (<span class="st">'key4'</span>, <span class="st">'string'</span>)], <span class="st">'table2'</span></span>
+<span id="cb64-7"><a href="#cb64-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Let’s join on one key:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>joined <span class="op">=</span> t1.left_join(t2, t1.key1 <span class="op">==</span> t2.key3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The immediate result of a join does not yet have a set schema. That is determined by the next action that you take. There’s several ways forward from here that address the spectrum of SQL use cases.</p>
+<section id="join-projection" class="level3">
+<h3 class="anchored" data-anchor-id="join-projection">Join + projection</h3>
+<p>Consider the SQL:</p>
+<div class="sourceCode" id="cb66"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> t0.<span class="op">*</span>, t1.value2</span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> table1 t0</span>
+<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">LEFT</span> <span class="kw">OUTER</span> <span class="kw">JOIN</span> table2 t1</span>
+<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">ON</span> t0.key1 <span class="op">=</span> t1.key3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>After one or more joins, you can reference any of the joined tables in a projection immediately after:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>expr <span class="op">=</span> joined[t1, t2.value2]</span>
+<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(expr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>If you need to compute an expression that involves both tables, you can do that also:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>expr <span class="op">=</span> joined[t1.key1, (t1.value1 <span class="op">-</span> t2.value2).name(<span class="st">'diff'</span>)]</span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(expr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="join-aggregation" class="level3">
+<h3 class="anchored" data-anchor-id="join-aggregation">Join + aggregation</h3>
+<p>You can directly aggregate a join without need for projection, which also allows you to form statistics that reference any of the joined tables.</p>
+<p>Consider this SQL:</p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> t0.key1, <span class="fu">avg</span>(t0.value1 <span class="op">-</span> t1.value2) <span class="kw">AS</span> avg_diff</span>
+<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> table1 t0</span>
+<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">LEFT</span> <span class="kw">OUTER</span> <span class="kw">JOIN</span> table2 t1</span>
+<span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">ON</span> t0.key1 <span class="op">=</span> t1.key3</span>
+<span id="cb69-5"><a href="#cb69-5" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>As you would hope, the code is as follows:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>avg_diff <span class="op">=</span> (t1.value1 <span class="op">-</span> t2.value2).mean()</span>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>expr <span class="op">=</span> (</span>
+<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a>    t1.left_join(t2, t1.key1 <span class="op">==</span> t2.key3)</span>
+<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a>    .group_by(t1.key1)</span>
+<span id="cb70-5"><a href="#cb70-5" aria-hidden="true" tabindex="-1"></a>    .aggregate(avg_diff<span class="op">=</span>avg_diff)</span>
+<span id="cb70-6"><a href="#cb70-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb70-7"><a href="#cb70-7" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(expr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="join-with-select" class="level3">
+<h3 class="anchored" data-anchor-id="join-with-select">Join with <code>SELECT *</code></h3>
+<p>If you try to compile or execute a join that has not been projected or aggregated, it will be <em>fully materialized</em>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>joined <span class="op">=</span> t1.left_join(t2, t1.key1 <span class="op">==</span> t2.key3)</span>
+<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(joined)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="multiple-joins" class="level3">
+<h3 class="anchored" data-anchor-id="multiple-joins">Multiple joins</h3>
+<p>You can join multiple tables together in succession without needing to address any of the above concerns.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>t3 <span class="op">=</span> ibis.table([(<span class="st">'value3'</span>, <span class="st">'float'</span>), (<span class="st">'key5'</span>, <span class="st">'string'</span>)], <span class="st">'table3'</span>)</span>
+<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> (t1.value1 <span class="op">+</span> t2.value2 <span class="op">+</span> t3.value3).<span class="bu">sum</span>()</span>
+<span id="cb72-4"><a href="#cb72-4" aria-hidden="true" tabindex="-1"></a>expr <span class="op">=</span> (</span>
+<span id="cb72-5"><a href="#cb72-5" aria-hidden="true" tabindex="-1"></a>    t1.join(t2, [t1.key1 <span class="op">==</span> t2.key3, t1.key2 <span class="op">==</span> t2.key4])</span>
+<span id="cb72-6"><a href="#cb72-6" aria-hidden="true" tabindex="-1"></a>    .join(t3, t1.key1 <span class="op">==</span> t3.key5)</span>
+<span id="cb72-7"><a href="#cb72-7" aria-hidden="true" tabindex="-1"></a>    .group_by([t2.key4, t3.key5])</span>
+<span id="cb72-8"><a href="#cb72-8" aria-hidden="true" tabindex="-1"></a>    .aggregate(total<span class="op">=</span>total)</span>
+<span id="cb72-9"><a href="#cb72-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb72-10"><a href="#cb72-10" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(expr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="self-joins" class="level3">
+<h3 class="anchored" data-anchor-id="self-joins">Self joins</h3>
+<p>What about when you need to join a table on itself? For example:</p>
+<div class="sourceCode" id="cb73"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> t0.one, <span class="fu">avg</span>(t0.two <span class="op">-</span> t1.three) <span class="kw">AS</span> metric</span>
+<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> my_data t0</span>
+<span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> my_data t1</span>
+<span id="cb73-4"><a href="#cb73-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">ON</span> t0.one <span class="op">=</span> t1.one</span>
+<span id="cb73-5"><a href="#cb73-5" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The table <code>view</code> method enables you to form a <em>self-reference</em> that is referentially distinct in expressions. Now you can proceed normally:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>t_view <span class="op">=</span> t.view()</span>
+<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a>stat <span class="op">=</span> (t.two <span class="op">-</span> t_view.three).mean()</span>
+<span id="cb74-4"><a href="#cb74-4" aria-hidden="true" tabindex="-1"></a>expr <span class="op">=</span> (</span>
+<span id="cb74-5"><a href="#cb74-5" aria-hidden="true" tabindex="-1"></a>    t.join(t_view, t.three.cast(<span class="st">'string'</span>) <span class="op">==</span> t_view.one)</span>
+<span id="cb74-6"><a href="#cb74-6" aria-hidden="true" tabindex="-1"></a>    .group_by(t.one)</span>
+<span id="cb74-7"><a href="#cb74-7" aria-hidden="true" tabindex="-1"></a>    .aggregate(metric<span class="op">=</span>stat)</span>
+<span id="cb74-8"><a href="#cb74-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb74-9"><a href="#cb74-9" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(expr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="overlapping-join-keys" class="level3">
+<h3 class="anchored" data-anchor-id="overlapping-join-keys">Overlapping join keys</h3>
+<p>In many cases the columns being joined between two tables or table expressions have the same name. Consider this example:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a>t4 <span class="op">=</span> ibis.table(</span>
+<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a>    [</span>
+<span id="cb75-3"><a href="#cb75-3" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'key1'</span>, <span class="st">'string'</span>),</span>
+<span id="cb75-4"><a href="#cb75-4" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'key2'</span>, <span class="st">'string'</span>),</span>
+<span id="cb75-5"><a href="#cb75-5" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'key3'</span>, <span class="st">'string'</span>),</span>
+<span id="cb75-6"><a href="#cb75-6" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'value1'</span>, <span class="st">'float'</span>),</span>
+<span id="cb75-7"><a href="#cb75-7" aria-hidden="true" tabindex="-1"></a>    ],</span>
+<span id="cb75-8"><a href="#cb75-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'table4'</span>,</span>
+<span id="cb75-9"><a href="#cb75-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb75-10"><a href="#cb75-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb75-11"><a href="#cb75-11" aria-hidden="true" tabindex="-1"></a>t5 <span class="op">=</span> ibis.table(</span>
+<span id="cb75-12"><a href="#cb75-12" aria-hidden="true" tabindex="-1"></a>    [</span>
+<span id="cb75-13"><a href="#cb75-13" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'key1'</span>, <span class="st">'string'</span>),</span>
+<span id="cb75-14"><a href="#cb75-14" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'key2'</span>, <span class="st">'string'</span>),</span>
+<span id="cb75-15"><a href="#cb75-15" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'key3'</span>, <span class="st">'string'</span>),</span>
+<span id="cb75-16"><a href="#cb75-16" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'value2'</span>, <span class="st">'float'</span>),</span>
+<span id="cb75-17"><a href="#cb75-17" aria-hidden="true" tabindex="-1"></a>    ],</span>
+<span id="cb75-18"><a href="#cb75-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">'table5'</span>,</span>
+<span id="cb75-19"><a href="#cb75-19" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>In these case, we can specify a list of common join keys:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>joined <span class="op">=</span> t4.join(t5, [<span class="st">'key1'</span>, <span class="st">'key2'</span>, <span class="st">'key3'</span>])</span>
+<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a>expr <span class="op">=</span> joined[t4, t5.value2]</span>
+<span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(expr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You can mix the overlapping key names with other expressions:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>joined <span class="op">=</span> t4.join(t5, [<span class="st">'key1'</span>, <span class="st">'key2'</span>, t4.key3.left(<span class="dv">4</span>) <span class="op">==</span> t4.key3.left(<span class="dv">4</span>)])</span>
+<span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a>expr <span class="op">=</span> joined[t4, t5.value2]</span>
+<span id="cb77-3"><a href="#cb77-3" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(expr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="non-equality-join-predicates" class="level3">
+<h3 class="anchored" data-anchor-id="non-equality-join-predicates">Non-equality join predicates</h3>
+<p>You can join tables with boolean clauses that are not equality. Some query engines support these efficiently, some inefficiently, or some not at all. In the latter case, these conditions get moved by Ibis into the <code>WHERE</code> part of the <code>SELECT</code> query.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>expr <span class="op">=</span> t1.join(t2, t1.value1 <span class="op">&lt;</span> t2.value2).group_by(t1.key1).size()</span>
+<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(expr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="other-ways-to-specify-join-keys" class="level3">
+<h3 class="anchored" data-anchor-id="other-ways-to-specify-join-keys">Other ways to specify join keys</h3>
+<p>You can also pass a list of column names instead of forming boolean expressions:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a>joined <span class="op">=</span> t1.join(t2, [(<span class="st">'key1'</span>, <span class="st">'key3'</span>), (<span class="st">'key2'</span>, <span class="st">'key4'</span>)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="subqueries" class="level2">
+<h2 class="anchored" data-anchor-id="subqueries">Subqueries</h2>
+<p>Ibis creates inline views and nested subqueries automatically. This section concerns more complex subqueries involving foreign references and other advanced relational algebra.</p>
+<section id="correlated-exists-not-exists-filters" class="level3">
+<h3 class="anchored" data-anchor-id="correlated-exists-not-exists-filters">Correlated <code>EXISTS</code> / <code>NOT EXISTS</code> filters</h3>
+<p>The SQL <code>EXISTS</code> and <code>NOT EXISTS</code> constructs are typically used for efficient filtering in large many-to-many relationships.</p>
+<p>Let’s consider a web dataset involving website session / usage data and purchases:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a>events <span class="op">=</span> ibis.table(</span>
+<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a>    [</span>
+<span id="cb80-3"><a href="#cb80-3" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'session_id'</span>, <span class="st">'int64'</span>),</span>
+<span id="cb80-4"><a href="#cb80-4" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'user_id'</span>, <span class="st">'int64'</span>),</span>
+<span id="cb80-5"><a href="#cb80-5" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'event_type'</span>, <span class="st">'int32'</span>),</span>
+<span id="cb80-6"><a href="#cb80-6" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'ts'</span>, <span class="st">'timestamp'</span>),</span>
+<span id="cb80-7"><a href="#cb80-7" aria-hidden="true" tabindex="-1"></a>    ],</span>
+<span id="cb80-8"><a href="#cb80-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'events'</span>,</span>
+<span id="cb80-9"><a href="#cb80-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb80-10"><a href="#cb80-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb80-11"><a href="#cb80-11" aria-hidden="true" tabindex="-1"></a>purchases <span class="op">=</span> ibis.table(</span>
+<span id="cb80-12"><a href="#cb80-12" aria-hidden="true" tabindex="-1"></a>    [</span>
+<span id="cb80-13"><a href="#cb80-13" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'item_id'</span>, <span class="st">'int64'</span>),</span>
+<span id="cb80-14"><a href="#cb80-14" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'user_id'</span>, <span class="st">'int64'</span>),</span>
+<span id="cb80-15"><a href="#cb80-15" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'price'</span>, <span class="st">'float'</span>),</span>
+<span id="cb80-16"><a href="#cb80-16" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'ts'</span>, <span class="st">'timestamp'</span>),</span>
+<span id="cb80-17"><a href="#cb80-17" aria-hidden="true" tabindex="-1"></a>    ],</span>
+<span id="cb80-18"><a href="#cb80-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">'purchases'</span>,</span>
+<span id="cb80-19"><a href="#cb80-19" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now, the key <code>user_id</code> appears with high frequency in both tables. But let’s say you want to limit your analysis of the <code>events</code> table to only sessions by users who have made a purchase.</p>
+<p>In SQL, you can do this using the somewhat esoteric <code>EXISTS</code> construct:</p>
+<div class="sourceCode" id="cb81"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> t0.<span class="op">*</span></span>
+<span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> <span class="kw">events</span> t0</span>
+<span id="cb81-3"><a href="#cb81-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> <span class="kw">EXISTS</span> (</span>
+<span id="cb81-4"><a href="#cb81-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">SELECT</span> <span class="dv">1</span></span>
+<span id="cb81-5"><a href="#cb81-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> purchases t1</span>
+<span id="cb81-6"><a href="#cb81-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">WHERE</span> t0.user_id <span class="op">=</span> t1.user_id</span>
+<span id="cb81-7"><a href="#cb81-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To describe this operation in Ibis, you compare the <code>user_id</code> columns and use the <code>any</code> reduction:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a>cond <span class="op">=</span> (events.user_id <span class="op">==</span> purchases.user_id).<span class="bu">any</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This can now be used to filter <code>events</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a>expr <span class="op">=</span> events[cond]</span>
+<span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(expr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>If you negate the condition, it will instead give you only event data from user <em>that have not made a purchase</em>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>expr <span class="op">=</span> events[<span class="op">-</span>cond]</span>
+<span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(expr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="subqueries-with-in-not-in" class="level3">
+<h3 class="anchored" data-anchor-id="subqueries-with-in-not-in">Subqueries with <code>IN</code> / <code>NOT IN</code></h3>
+<p>Subquery filters with <code>IN</code> (and <code>NOT IN</code>) are functionally similar to <code>EXISTS</code> subqueries. Let’s look at some SQL:</p>
+<div class="sourceCode" id="cb85"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb85-2"><a href="#cb85-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> <span class="kw">events</span></span>
+<span id="cb85-3"><a href="#cb85-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> user_id <span class="kw">IN</span> (</span>
+<span id="cb85-4"><a href="#cb85-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">SELECT</span> user_id</span>
+<span id="cb85-5"><a href="#cb85-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> purchases</span>
+<span id="cb85-6"><a href="#cb85-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This is almost semantically the same as the <code>EXISTS</code> example. Indeed, you can write with Ibis:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a>cond <span class="op">=</span> events.user_id.isin(purchases.user_id)</span>
+<span id="cb86-2"><a href="#cb86-2" aria-hidden="true" tabindex="-1"></a>expr <span class="op">=</span> events[cond]</span>
+<span id="cb86-3"><a href="#cb86-3" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(expr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Depending on the query engine, the query planner/optimizer will often rewrite <code>IN</code> or <code>EXISTS</code> subqueries into the same set of relational algebra operations.</p>
+</section>
+<section id="comparison-with-scalar-aggregates" class="level3">
+<h3 class="anchored" data-anchor-id="comparison-with-scalar-aggregates">Comparison with scalar aggregates</h3>
+<p>Sometime you want to compare a value with an unconditional aggregate value from a different table. Take the SQL:</p>
+<div class="sourceCode" id="cb87"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb87-2"><a href="#cb87-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> table1</span>
+<span id="cb87-3"><a href="#cb87-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> value1 <span class="op">&gt;</span> (</span>
+<span id="cb87-4"><a href="#cb87-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">SELECT</span> <span class="fu">max</span>(value2)</span>
+<span id="cb87-5"><a href="#cb87-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> table2</span>
+<span id="cb87-6"><a href="#cb87-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>With Ibis, the code is simpler and more pandas-like:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a>expr <span class="op">=</span> t1[t1.value1 <span class="op">&gt;</span> t2.value2.<span class="bu">max</span>()]</span>
+<span id="cb88-2"><a href="#cb88-2" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(expr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="conditional-aggregates" class="level3">
+<h3 class="anchored" data-anchor-id="conditional-aggregates">Conditional aggregates</h3>
+<p>Suppose you want to compare a value with the aggregate value for some common group values between two tables. Here’s some SQL:</p>
+<div class="sourceCode" id="cb89"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb89-2"><a href="#cb89-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> table1 t0</span>
+<span id="cb89-3"><a href="#cb89-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> value1 <span class="op">&gt;</span> (</span>
+<span id="cb89-4"><a href="#cb89-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">SELECT</span> <span class="fu">avg</span>(value2)</span>
+<span id="cb89-5"><a href="#cb89-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">FROM</span> table2 t1</span>
+<span id="cb89-6"><a href="#cb89-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">WHERE</span> t0.key1 <span class="op">=</span> t1.key3</span>
+<span id="cb89-7"><a href="#cb89-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This query computes the average for each distinct value of <code>key3</code> and uses the corresponding average for the comparison, rather than the whole-table average as above.</p>
+<p>With Ibis, the code is similar, but you add the correlated filter to the average statistic:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a>stat <span class="op">=</span> t2[t1.key1 <span class="op">==</span> t2.key3].value2.mean()</span>
+<span id="cb90-2"><a href="#cb90-2" aria-hidden="true" tabindex="-1"></a>expr <span class="op">=</span> t1[t1.value1 <span class="op">&gt;</span> stat]</span>
+<span id="cb90-3"><a href="#cb90-3" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(expr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="distinct-expressions" class="level2">
+<h2 class="anchored" data-anchor-id="distinct-expressions"><code>DISTINCT</code> expressions</h2>
+<p>In SQL, the <code>DISTINCT</code> keyword is used in a couple of ways:</p>
+<ul>
+<li>Deduplicating identical rows in some <code>SELECT</code> statement</li>
+<li>Aggregating on the distinct values of some column expression</li>
+</ul>
+<p>Ibis supports both use cases. So let’s have a look. The first case is the simplest: call <code>distinct</code> on a table expression. First, here’s the SQL:</p>
+<div class="sourceCode" id="cb91"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">DISTINCT</span> <span class="op">*</span></span>
+<span id="cb91-2"><a href="#cb91-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> table1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>And the Ibis Python code:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a>expr <span class="op">=</span> t1.distinct()</span>
+<span id="cb92-2"><a href="#cb92-2" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(expr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>For distinct aggregates, the most common case is <code>COUNT(DISTINCT ...)</code>, which computes the number of unique values in an expression. So if we’re looking at the <code>events</code> table, let’s compute the number of distinct <code>event_type</code> values for each <code>user_id</code>. First, the SQL:</p>
+<div class="sourceCode" id="cb93"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> user_id, <span class="fu">COUNT</span>(<span class="kw">DISTINCT</span> event_type) <span class="kw">AS</span> unique_events</span>
+<span id="cb93-2"><a href="#cb93-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> <span class="kw">events</span></span>
+<span id="cb93-3"><a href="#cb93-3" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In Ibis this is:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a>metric <span class="op">=</span> events.event_type.nunique()</span>
+<span id="cb94-2"><a href="#cb94-2" aria-hidden="true" tabindex="-1"></a>expr <span class="op">=</span> events.group_by(<span class="st">'user_id'</span>).aggregate(unique_events<span class="op">=</span>metric)</span>
+<span id="cb94-3"><a href="#cb94-3" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(expr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="window-functions" class="level2">
+<h2 class="anchored" data-anchor-id="window-functions">Window functions</h2>
+<p>Window functions in SQL allow you to write expressions that involve possibly-ordered groups of a table. Each window function involves one of the following:</p>
+<ul>
+<li>An analytic function. Most aggregate functions are valid analytic functions, and there are additional ones such as <code>LEAD</code>, <code>LAG</code>, <code>NTILE</code>, and others.</li>
+<li>A <code>PARTITION BY</code> clause. This may be omitted.</li>
+<li>An <code>ORDER BY</code> clause. This may be omitted for many functions.</li>
+<li>A window frame clause. The default is to use the entire partition.</li>
+</ul>
+<p>So you may see SQL like:</p>
+<div class="sourceCode" id="cb95"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="fu">AVG</span>(<span class="fu">value</span>) <span class="kw">OVER</span> (<span class="kw">PARTITION</span> <span class="kw">BY</span> key1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Or simply</p>
+<div class="sourceCode" id="cb96"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="fu">AVG</span>(<span class="fu">value</span>) <span class="kw">OVER</span> ()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Ibis will automatically write window clauses when you use aggregate functions in a non-aggregate context. Suppose you wanted to subtract the mean of a column from itself:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb97"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a>expr <span class="op">=</span> t.mutate(two_demean<span class="op">=</span>t.two <span class="op">-</span> t.two.mean())</span>
+<span id="cb97-2"><a href="#cb97-2" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(expr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>If you use <code>mutate</code> in conjunction with <code>group_by</code>, it will add a <code>PARTITION BY</code> to the <code>OVER</code> specification:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb98"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a>expr <span class="op">=</span> t.group_by(<span class="st">'one'</span>).mutate(two_demean<span class="op">=</span>t.two <span class="op">-</span> t.two.mean())</span>
+<span id="cb98-2"><a href="#cb98-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb98-3"><a href="#cb98-3" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(expr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>For functions like <code>LAG</code> that require an ordering, we can add an <code>order_by</code> call:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb99"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a>expr <span class="op">=</span> (</span>
+<span id="cb99-2"><a href="#cb99-2" aria-hidden="true" tabindex="-1"></a>    t.group_by(<span class="st">'one'</span>)</span>
+<span id="cb99-3"><a href="#cb99-3" aria-hidden="true" tabindex="-1"></a>    .order_by(t.two)</span>
+<span id="cb99-4"><a href="#cb99-4" aria-hidden="true" tabindex="-1"></a>    .mutate(two_first_diff<span class="op">=</span>t.two <span class="op">-</span> t.two.lag())</span>
+<span id="cb99-5"><a href="#cb99-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb99-6"><a href="#cb99-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb99-7"><a href="#cb99-7" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(expr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>For more precision, you can create a <code>Window</code> object that also includes a window frame clause:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb100"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a>w <span class="op">=</span> ibis.window(group_by<span class="op">=</span><span class="st">'one'</span>, preceding<span class="op">=</span><span class="dv">5</span>, following<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb100-2"><a href="#cb100-2" aria-hidden="true" tabindex="-1"></a>expr <span class="op">=</span> t.mutate(group_demeaned<span class="op">=</span>t.two <span class="op">-</span> t.two.mean().over(w))</span>
+<span id="cb100-3"><a href="#cb100-3" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(expr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="top-k-operations" class="level2">
+<h2 class="anchored" data-anchor-id="top-k-operations">Top-K operations</h2>
+<p>A common SQL idiom is the “top-K” or “top-N” operation: subsetting a dimension by aggregate statistics:</p>
+<div class="sourceCode" id="cb101"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb101-1"><a href="#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> key1, <span class="fu">count</span>(<span class="op">*</span>) <span class="kw">AS</span> `count`</span>
+<span id="cb101-2"><a href="#cb101-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> table1</span>
+<span id="cb101-3"><a href="#cb101-3" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> <span class="dv">1</span></span>
+<span id="cb101-4"><a href="#cb101-4" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> `count` <span class="kw">DESC</span></span>
+<span id="cb101-5"><a href="#cb101-5" aria-hidden="true" tabindex="-1"></a><span class="kw">LIMIT</span> <span class="dv">10</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Ibis has a special analytic expression <code>topk</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb102"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a>expr <span class="op">=</span> t1.key1.topk(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This can be evaluated directly, yielding the above query:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb103"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb103-1"><a href="#cb103-1" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(expr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="date-time-data" class="level2">
+<h2 class="anchored" data-anchor-id="date-time-data">Date / time data</h2>
+<p>See <code class="interpreted-text" role="ref">Timestamp methods &lt;api.timestamp&gt;</code> for a table of available date/time methods.</p>
+<p>For example, we can do:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb104"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a>expr <span class="op">=</span> events.mutate(year<span class="op">=</span>events.ts.year(), month<span class="op">=</span>events.ts.month())</span>
+<span id="cb104-2"><a href="#cb104-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb104-3"><a href="#cb104-3" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(expr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="casting-to-date-time-types" class="level3">
+<h3 class="anchored" data-anchor-id="casting-to-date-time-types">Casting to date / time types</h3>
+<p>In many cases, you can convert string values to datetime / timestamp with <code>strings.cast('timestamp')</code>, but you may have to do some more reconnaissance into the data if this does not work.</p>
+</section>
+<section id="intervals" class="level3">
+<h3 class="anchored" data-anchor-id="intervals">Intervals</h3>
+<p>Ibis has a set of interval APIs that allow you to do date/time arithmetic. For example:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb105"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb105-1"><a href="#cb105-1" aria-hidden="true" tabindex="-1"></a>expr <span class="op">=</span> events[events.ts <span class="op">&gt;</span> (ibis.now() <span class="op">-</span> ibis.interval(years<span class="op">=</span><span class="dv">1</span>))]</span>
+<span id="cb105-2"><a href="#cb105-2" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(expr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The implementation of each timedelta offset will depend on the query engine.</p>
+</section>
+</section>
+<section id="buckets-and-histograms" class="level2">
+<h2 class="anchored" data-anchor-id="buckets-and-histograms">Buckets and histograms</h2>
+<p>To appear.</p>
+</section>
+<section id="unions" class="level2">
+<h2 class="anchored" data-anchor-id="unions">Unions</h2>
+<p>SQL dialects often support two kinds of <code>UNION</code> operations:</p>
+<ul>
+<li><code>UNION</code>: the combination of <em>distinct</em> rows from each table.</li>
+<li><code>UNION ALL</code>: the combination of all rows from each table, whether or not they are distinct.</li>
+</ul>
+<p>The Ibis <code>union</code> function by distinct is a <code>UNION ALL</code>, and you can set <code>distinct=True</code> to get the normal <code>UNION</code> behavior:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb106"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a>expr1 <span class="op">=</span> t1.limit(<span class="dv">10</span>)</span>
+<span id="cb106-2"><a href="#cb106-2" aria-hidden="true" tabindex="-1"></a>expr2 <span class="op">=</span> t1.limit(<span class="dv">10</span>, offset<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb106-3"><a href="#cb106-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb106-4"><a href="#cb106-4" aria-hidden="true" tabindex="-1"></a>expr <span class="op">=</span> expr1.union(expr2)</span>
+<span id="cb106-5"><a href="#cb106-5" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(expr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="esoterica" class="level2">
+<h2 class="anchored" data-anchor-id="esoterica">Esoterica</h2>
+<p>This area will be the spillover for miscellaneous SQL concepts and how queries featuring them can be ported to Ibis.</p>
+<section id="common-table-expressions-ctes" class="level3">
+<h3 class="anchored" data-anchor-id="common-table-expressions-ctes">Common table expressions (CTEs)</h3>
+<p>The simplest SQL CTE is a SQL statement that is used multiple times in a <code>SELECT</code> query, which can be “factored” out using the <code>WITH</code> keyword:</p>
+<div class="sourceCode" id="cb107"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb107-1"><a href="#cb107-1" aria-hidden="true" tabindex="-1"></a><span class="kw">WITH</span> t0 <span class="kw">AS</span> (</span>
+<span id="cb107-2"><a href="#cb107-2" aria-hidden="true" tabindex="-1"></a>   <span class="kw">SELECT</span> region, kind, <span class="fu">sum</span>(amount) <span class="kw">AS</span> total</span>
+<span id="cb107-3"><a href="#cb107-3" aria-hidden="true" tabindex="-1"></a>   <span class="kw">FROM</span> purchases</span>
+<span id="cb107-4"><a href="#cb107-4" aria-hidden="true" tabindex="-1"></a>   <span class="kw">GROUP</span> <span class="kw">BY</span> <span class="dv">1</span>, <span class="dv">2</span></span>
+<span id="cb107-5"><a href="#cb107-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb107-6"><a href="#cb107-6" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> t0.region, t0.total <span class="op">-</span> t1.total</span>
+<span id="cb107-7"><a href="#cb107-7" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> t0</span>
+<span id="cb107-8"><a href="#cb107-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">INNER</span> <span class="kw">JOIN</span> t0 t1</span>
+<span id="cb107-9"><a href="#cb107-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">ON</span> t0.region <span class="op">=</span> t1.region</span>
+<span id="cb107-10"><a href="#cb107-10" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> t0.kind <span class="op">=</span> <span class="st">'foo'</span> <span class="kw">AND</span> t1.kind <span class="op">=</span> <span class="st">'bar'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Explicit CTEs are not necessary with Ibis. Let’s look at an example involving joining an aggregated table on itself after filtering:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb108"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a>purchases <span class="op">=</span> ibis.table(</span>
+<span id="cb108-2"><a href="#cb108-2" aria-hidden="true" tabindex="-1"></a>    [</span>
+<span id="cb108-3"><a href="#cb108-3" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'region'</span>, <span class="st">'string'</span>),</span>
+<span id="cb108-4"><a href="#cb108-4" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'kind'</span>, <span class="st">'string'</span>),</span>
+<span id="cb108-5"><a href="#cb108-5" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'user'</span>, <span class="st">'int64'</span>),</span>
+<span id="cb108-6"><a href="#cb108-6" aria-hidden="true" tabindex="-1"></a>        (<span class="st">'amount'</span>, <span class="st">'float'</span>),</span>
+<span id="cb108-7"><a href="#cb108-7" aria-hidden="true" tabindex="-1"></a>    ],</span>
+<span id="cb108-8"><a href="#cb108-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'purchases'</span>,</span>
+<span id="cb108-9"><a href="#cb108-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb108-10"><a href="#cb108-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb108-11"><a href="#cb108-11" aria-hidden="true" tabindex="-1"></a>metric <span class="op">=</span> purchases.amount.<span class="bu">sum</span>().name(<span class="st">'total'</span>)</span>
+<span id="cb108-12"><a href="#cb108-12" aria-hidden="true" tabindex="-1"></a>agged <span class="op">=</span> purchases.group_by([<span class="st">'region'</span>, <span class="st">'kind'</span>]).aggregate(metric)</span>
+<span id="cb108-13"><a href="#cb108-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb108-14"><a href="#cb108-14" aria-hidden="true" tabindex="-1"></a>left <span class="op">=</span> agged[agged.kind <span class="op">==</span> <span class="st">'foo'</span>]</span>
+<span id="cb108-15"><a href="#cb108-15" aria-hidden="true" tabindex="-1"></a>right <span class="op">=</span> agged[agged.kind <span class="op">==</span> <span class="st">'bar'</span>]</span>
+<span id="cb108-16"><a href="#cb108-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb108-17"><a href="#cb108-17" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> left.join(right, left.region <span class="op">==</span> right.region)[</span>
+<span id="cb108-18"><a href="#cb108-18" aria-hidden="true" tabindex="-1"></a>    left.region, (left.total <span class="op">-</span> right.total).name(<span class="st">'diff'</span>)</span>
+<span id="cb108-19"><a href="#cb108-19" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Ibis automatically creates a CTE for <code>agged</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb109"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb109-1"><a href="#cb109-1" aria-hidden="true" tabindex="-1"></a>ibis.show_sql(result)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

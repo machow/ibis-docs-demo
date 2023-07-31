@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>. - Dask</title>
+<title>. – backends</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -120,12 +86,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../backends/index.html" rel="" target="" aria-current="page">
- <span class="menu-text">Backends</span></a>
+    <a class="nav-link active" href="../concept/why_ibis.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Why Ibis?</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../tutorial/index.html" rel="" target="">
+ <span class="menu-text">Ibis tutorials</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../how_to/configuration.html" rel="" target="">
+ <span class="menu-text">Configure Ibis</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../reference/index.html" rel="" target="">
  <span class="menu-text">Reference</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../blog/rendered/ibis-version-6.0.0-release.html" rel="" target="">
+ <span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../release_notes.html" rel="" target="">
+ <span class="menu-text">🚧 Release notes</span></a>
   </li>  
 </ul>
             <div class="quarto-navbar-tools ms-auto">
@@ -138,7 +120,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../backends/dask.html">Dask</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../concept/backends.html">Backends</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -152,20 +134,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../backends/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../concept/why_ibis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Why Ibis?</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concept/design.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Design</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../concept/backends.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Backends</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../backends/dask.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Dask</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../backends/impala.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Impala</span></a>
   </div>
 </li>
     </ul>
@@ -178,17 +160,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#dask" id="toc-dask" class="nav-link active" data-scroll-target="#dask">Dask</a>
+  <li><a href="#backends" id="toc-backends" class="nav-link active" data-scroll-target="#backends">Backends</a>
   <ul class="collapse">
-  <li><a href="#install" id="toc-install" class="nav-link" data-scroll-target="#install">Install</a></li>
-  <li><a href="#connect" id="toc-connect" class="nav-link" data-scroll-target="#connect">Connect</a>
-  <ul class="collapse">
-  <li><a href="#api" id="toc-api" class="nav-link" data-scroll-target="#api">API</a></li>
-  <li><a href="#connection-parameters" id="toc-connection-parameters" class="nav-link" data-scroll-target="#connection-parameters">Connection Parameters</a></li>
-  <li><a href="#ibis.backends.dask.Backend.do_connect" id="toc-ibis.backends.dask.Backend.do_connect" class="nav-link" data-scroll-target="#ibis.backends.dask.Backend.do_connect">ibis.backends.dask.Backend.do_connect</a></li>
-  </ul></li>
-  <li><a href="#backend-api" id="toc-backend-api" class="nav-link" data-scroll-target="#backend-api">Backend API</a></li>
-  <li><a href="#ibis.backends.dask.Backend" id="toc-ibis.backends.dask.Backend" class="nav-link" data-scroll-target="#ibis.backends.dask.Backend">ibis.backends.dask.Backend</a></li>
+  <li><a href="#string-generating-backends" id="toc-string-generating-backends" class="nav-link" data-scroll-target="#string-generating-backends">String generating backends</a></li>
+  <li><a href="#expression-generating-backends" id="toc-expression-generating-backends" class="nav-link" data-scroll-target="#expression-generating-backends">Expression generating backends</a></li>
+  <li><a href="#direct-execution-backends" id="toc-direct-execution-backends" class="nav-link" data-scroll-target="#direct-execution-backends">Direct execution backends</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -196,108 +172,48 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Dask</h1>
-</div>
 
 
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-</header>
-
-<section id="dask" class="level1">
-<h1><a href="https://dask.org">Dask</a></h1>
-<section id="install" class="level2">
-<h2 class="anchored" data-anchor-id="install">Install</h2>
-<p>Install <code>ibis</code> and dependencies for the Dask backend:</p>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">pip</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">conda</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">mamba</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<div class="sourceCode" id="cb1"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="st">'ibis-framework[dask]'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<div class="sourceCode" id="cb2"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge ibis-dask</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<div class="sourceCode" id="cb3"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">mamba</span> install <span class="at">-c</span> conda-forge ibis-dask</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
+<section id="backends" class="level1">
+<h1>Backends</h1>
+<p>A backend is where execution of Ibis table expressions occur after compiling into some intermediate representation. A backend is often a database and the intermediate representation often SQL, but several types of backends exist. See the <a href="../backends/">backends page</a> for specific documentation on each.</p>
+<section id="string-generating-backends" class="level2">
+<h2 class="anchored" data-anchor-id="string-generating-backends">String generating backends</h2>
+<p>The first category of backends translate Ibis table expressions into query strings.</p>
+<p>The compiler turns each table expression into a query string and passes that query to the database through a driver API for execution.</p>
+<ul>
+<li><a href="../backends/impala/">Apache Impala</a></li>
+<li><a href="../backends/clickhouse/">ClickHouse</a></li>
+<li><a href="../backends/bigquery/">Google BigQuery</a></li>
+<li><a href="https://github.com/heavyai/ibis-heavyai">HeavyAI</a></li>
+</ul>
 </section>
-<section id="connect" class="level2">
-<h2 class="anchored" data-anchor-id="connect">Connect</h2>
-<section id="api" class="level3">
-<h3 class="anchored" data-anchor-id="api">API</h3>
-<p>Create a client by passing in a dictionary of paths to <code>ibis.dask.connect</code>.</p>
-<!-- prettier-ignore-start -->
-<p>See [<code>ibis.backends.dask.Backend.do_connect</code>][ibis.backends.dask.None.do_connect] for connection parameter information. <!-- prettier-ignore-end --></p>
-<!-- prettier-ignore-start -->
-<p>!!! info “<code>ibis.dask.connect</code> is a thin wrapper around [<code>ibis.backends.dask.Backend.do_connect</code>][ibis.backends.dask.None.do_connect].” <!-- prettier-ignore-end --></p>
+<section id="expression-generating-backends" class="level2">
+<h2 class="anchored" data-anchor-id="expression-generating-backends">Expression generating backends</h2>
+<p>The next category of backends translates Ibis table expressions into another system’s table expression objects, for example, SQLAlchemy.</p>
+<p>Instead of generating a query string for each table expression, these backends produce another kind of table expression object and typically have high-level APIs for execution.</p>
+<ul>
+<li><a href="../backends/datafusion/">Apache Arrow Datafusion</a></li>
+<li><a href="../backends/druid/">Apache Druid</a></li>
+<li><a href="../backends/pyspark/">Apache PySpark</a></li>
+<li><a href="../backends/dask/">Dask</a></li>
+<li><a href="../backends/duckdb/">DuckDB</a></li>
+<li><a href="../backends/mssql/">MS SQL Server</a></li>
+<li><a href="../backends/mysql/">MySQL</a></li>
+<li><a href="../backends/oracle/">Oracle</a></li>
+<li><a href="../backends/polars/">Polars</a></li>
+<li><a href="../backends/postgresql/">PostgreSQL</a></li>
+<li><a href="../backends/sqlite/">SQLite</a></li>
+<li><a href="../backends/snowflake/">Snowflake</a></li>
+<li><a href="../backends/trino/">Trino</a></li>
+</ul>
 </section>
-<section id="connection-parameters" class="level3">
-<h3 class="anchored" data-anchor-id="connection-parameters">Connection Parameters</h3>
-</section>
-<section id="ibis.backends.dask.Backend.do_connect" class="level3">
-<h3 class="anchored" data-anchor-id="ibis.backends.dask.Backend.do_connect">ibis.backends.dask.Backend.do_connect</h3>
-<p><code>backends.dask.Backend.do_connect(self, dictionary=None)</code></p>
-<p>Construct a Dask backend client from a dictionary of data sources.</p>
-<section id="parameters" class="level4">
-<h4 class="anchored" data-anchor-id="parameters">Parameters</h4>
-<table class="table">
-<colgroup>
-<col style="width: 9%">
-<col style="width: 37%">
-<col style="width: 44%">
-<col style="width: 7%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>dictionary</code></td>
-<td>typing.MutableMapping[str, dask.DataFrame] | None</td>
-<td>An optional mapping from <code>str</code> table names to Dask DataFrames.</td>
-<td><code>None</code></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="examples" class="level4">
-<h4 class="anchored" data-anchor-id="examples">Examples</h4>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> ibis</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">import</span> dask.dataframe <span class="im">as</span> dd</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> data <span class="op">=</span> {</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>...     <span class="st">"t"</span>: dd.read_parquet(<span class="st">"path/to/file.parquet"</span>),</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>...     <span class="st">"s"</span>: dd.read_csv(<span class="st">"path/to/file.csv"</span>),</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>... }</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> ibis.dask.<span class="ex">connect</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-</section>
-</section>
-<section id="backend-api" class="level2">
-<h2 class="anchored" data-anchor-id="backend-api">Backend API</h2>
-<!--
-TODO: ensure inherited members get shown for docs below
--->
-</section>
-<section id="ibis.backends.dask.Backend" class="level2">
-<h2 class="anchored" data-anchor-id="ibis.backends.dask.Backend">ibis.backends.dask.Backend</h2>
-<p><code>backends.dask.Backend()</code></p>
+<section id="direct-execution-backends" class="level2">
+<h2 class="anchored" data-anchor-id="direct-execution-backends">Direct execution backends</h2>
+<p>The pandas backend is the only direct execution backend. A full description of the implementation can be found in the module docstring of the pandas backend located in <code>ibis/backends/pandas/core.py</code>.</p>
+<ul>
+<li><a href="../backends/pandas/">pandas</a></li>
+</ul>
 
 
 </section>
