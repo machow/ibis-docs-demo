@@ -5,7 +5,10 @@ project:
 format:
   html:
     theme: cosmo
-    css: styles.css
+    css:
+      - stylesheets/code_select.css
+      - stylesheets/extra.css
+
     toc: true
 
 
@@ -14,17 +17,22 @@ metadata-files:
 
 
 website:
-  title: "."
+  title: "Ibis Project"
   navbar:
     left:
-      - href: index.qmd
+      - href: index.md
         text: Home
       - href: concept/why_ibis.md
+        text: Concepts
       - href: tutorial/index.md
+        text: Tutorials
       - href: how_to/configuration.md
+        text: How-to guides
       - href: reference/index.qmd
       - href: blog/rendered/ibis-version-6.0.0-release.ipynb
         text: Blog
+      - href: community/index.md
+        text: Community
       - href: release_notes.md
         text: "🚧 Release notes"
 
