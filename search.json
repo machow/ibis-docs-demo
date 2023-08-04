@@ -1554,6 +1554,27 @@
     "text": "Name\nDescription\n\n\n\n\nDayOfWeek\nA namespace of methods for extracting day of week information.\n\n\n\n\n\nexpr.types.temporal.DayOfWeek(self, expr)\nA namespace of methods for extracting day of week information.\n\n\n\n\n\nName\nDescription\n\n\n\n\nfull_name\nGet the name of the day of the week.\n\n\nindex\nGet the index of the day of the week.\n\n\n\n\n\nexpr.types.temporal.DayOfWeek.full_name(self)\nGet the name of the day of the week.\n\n\n\n\n\nType\nDescription\n\n\n\n\nStringValue\nThe name of the day of the week\n\n\n\n\n\n\n\nexpr.types.temporal.DayOfWeek.index(self)\nGet the index of the day of the week.\n\n\n\n\n\n\n\n\n\nType\nDescription\n\n\n\n\nIntegerValue\nThe index of the day of the week. !!! note “Ibis follows pandas’ conventions for day numbers: Monday = 0 and Sunday = 6.”"
   },
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": " The Ibis Project",
+    "section": "",
+    "text": "Getting Started Install\n\n\n\n\n&gt;&gt;&gt; import ibis\n&gt;&gt;&gt; movies = ibis.examples.ml_latest_small_movies.fetch()\n&gt;&gt;&gt; rating_by_year = movies.group_by('year').avg_rating.mean()\n&gt;&gt;&gt; q = rating_by_year.order_by(rating_by_year.year.desc())\n\n\n\n&gt;&gt;&gt; con.compile(q)\n\nSELECT year, avg(avg_rating)\nFROM movies t1\nGROUP BY t1.year\nORDER BY t1.year DESC\n\n\n\n&gt;&gt;&gt; con.to_pandas(q)\n\n     year  mean(avg_rating)\n0    2021          2.586362\n1    2020          2.719994\n2    2019          2.932275\n3    2018          3.005046\n4    2017          3.071669\n\n\n\n\n\n\nConsistent syntax across backends: Enjoy a uniform Python API, whether using DuckDB, PostgreSQL, PySpark, BigQuery, or any other supported backend.\nPerformant: Execute queries as fast as the database engine itself.\nInteractive: Explore data in a notebook or REPL.\nExtensible: Add new operations, optimizations, and custom APIs.\nFree and open-source: licensed under Apache 2.0, available on Github."
+  },
+  {
+    "objectID": "index.html#the-flexibility-of-python-analytics-with-the-scale-and-performance-of-modern-sql.",
+    "href": "index.html#the-flexibility-of-python-analytics-with-the-scale-and-performance-of-modern-sql.",
+    "title": " The Ibis Project",
+    "section": "",
+    "text": "Getting Started Install\n\n\n\n\n&gt;&gt;&gt; import ibis\n&gt;&gt;&gt; movies = ibis.examples.ml_latest_small_movies.fetch()\n&gt;&gt;&gt; rating_by_year = movies.group_by('year').avg_rating.mean()\n&gt;&gt;&gt; q = rating_by_year.order_by(rating_by_year.year.desc())\n\n\n\n&gt;&gt;&gt; con.compile(q)\n\nSELECT year, avg(avg_rating)\nFROM movies t1\nGROUP BY t1.year\nORDER BY t1.year DESC\n\n\n\n&gt;&gt;&gt; con.to_pandas(q)\n\n     year  mean(avg_rating)\n0    2021          2.586362\n1    2020          2.719994\n2    2019          2.932275\n3    2018          3.005046\n4    2017          3.071669"
+  },
+  {
+    "objectID": "index.html#features",
+    "href": "index.html#features",
+    "title": " The Ibis Project",
+    "section": "",
+    "text": "Consistent syntax across backends: Enjoy a uniform Python API, whether using DuckDB, PostgreSQL, PySpark, BigQuery, or any other supported backend.\nPerformant: Execute queries as fast as the database engine itself.\nInteractive: Explore data in a notebook or REPL.\nExtensible: Add new operations, optimizations, and custom APIs.\nFree and open-source: licensed under Apache 2.0, available on Github."
+  },
+  {
     "objectID": "blog/ibis_substrait_to_duckdb.html",
     "href": "blog/ibis_substrait_to_duckdb.html",
     "title": "Ibis + Substrait + DuckDB",
